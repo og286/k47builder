@@ -113,19 +113,21 @@
   .stepper button{width:26px;height:26px;padding:0;border-radius:5px}
   .stepper .n{min-width:22px;text-align:center}
   .chk{width:18px;height:18px}
-  .qsel{max-width:150px}
-  .picker{position:relative;flex:1;min-width:150px}
+  .qsel{min-width:170px;width:auto}
+  .picker{position:relative;flex:1;min-width:190px}
   .picker>.sel{display:flex;align-items:center;gap:8px;width:100%;text-align:left;padding:6px 8px}
-  .picker .selph{width:30px;height:30px;border-radius:5px}
-  .picker .cap{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px}
+  .picker>.sel .cost{flex:0 0 auto;white-space:nowrap;margin-left:auto;padding-left:6px}
+  .picker .selph{width:30px;height:30px;border-radius:5px;flex:0 0 auto}
+  .picker .cap{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px}
   .menu{position:absolute;z-index:40;top:calc(100% + 4px);left:0;right:0;max-height:320px;overflow:auto;
     background:var(--panel);border:1px solid var(--menubd);border-radius:6px;box-shadow:0 10px 26px var(--shadow)}
   .mrow{display:flex;align-items:center;gap:8px;padding:6px 8px;cursor:pointer;border-bottom:1px solid var(--line)}
   .mrow:hover{background:var(--chipbg)}.mrow:last-child{border-bottom:none}
   .mrow .thumb{width:34px;height:34px}
-  .mrow .info{flex:1;min-width:0}.mrow .info .n{font-size:13px;font-weight:700}
+  .mrow .info{flex:1 1 auto;min-width:0}.mrow .info .n{font-size:13px;font-weight:700}
   .mrow .info .s{font-size:11px;color:var(--dim)}
-  .mrow .pc{color:var(--accent);font-weight:700;font-size:13px}
+  .mrow .pc{color:var(--accent);font-weight:700;font-size:13px;flex:0 0 auto;white-space:nowrap;margin-left:auto;padding-left:6px}
+  .mrow .thumb{flex:0 0 auto}.mrow>.iconbtn,.mrow>button{flex:0 0 auto}
   .statpanel{border-top:1px dashed var(--line);padding:10px;background:var(--statbg)}
   .statheadline{display:flex;flex-wrap:wrap;align-items:center;gap:10px;background:var(--chipbg);
     border:1px solid var(--accent);border-radius:6px;padding:8px 10px;margin-bottom:8px}
@@ -353,13 +355,15 @@ function unitIcon(cat,cls){
 }
 // thumbnail markup; zoomImg=true lets the image itself open the lightbox (unit rows),
 // false keeps the image's own click (picker menu = select) and only the 🔍 badge enlarges.
+// each unit auto-looks for images/<unit-id>.jpg (or an explicit/override photo); falls back to the tactical symbol if the file isn't there
 function thumbHTML(u,zoomImg){
-  const ph=photoOf(u);
-  if(!ph)return `<div class="thumb ph sym">${unitIcon(u.category,'phicon')}</div>`;
+  const src=photoOf(u)||('images/'+u.id+'.jpg');
   const nm=(u.name||'').replace(/"/g,'&quot;');
-  return `<span class="thumbwrap"><img class="thumb${zoomImg?' zoomable':''}" src="${ph}"${zoomImg?` data-full="${ph}" data-cap="${nm}"`:''} alt="">`
-    +`<span class="zoomcue" data-full="${ph}" data-cap="${nm}" title="Tap to enlarge">🔍</span></span>`;
+  return `<span class="thumbwrap" data-cat="${u.category}"><img class="thumb${zoomImg?' zoomable':''}" src="${src}"${zoomImg?` data-full="${src}" data-cap="${nm}"`:''} onerror="thumbFail(this)" alt="">`
+    +`<span class="zoomcue" data-full="${src}" data-cap="${nm}" title="Tap to enlarge">🔍</span></span>`;
 }
+function thumbFail(img){const w=img.closest('.thumbwrap');if(!w)return;
+  const cat=w.getAttribute('data-cat');w.outerHTML=`<div class="thumb ph sym">${unitIcon(cat,'phicon')}</div>`;}
 function openLightbox(src,cap){let lb=document.getElementById('lightbox');
   if(!lb){lb=document.createElement('div');lb.id='lightbox';lb.className='lightbox';
     lb.innerHTML='<img><div class="cap"></div>';lb.onclick=()=>{lb.style.display='none';};
@@ -681,8 +685,11 @@ const GLOSS_RE=(()=>{const t=Object.keys(GALL).sort((a,b)=>b.length-a.length)
 function glossify(text){if(!text||!GLOSS_RE)return text||'';
   return text.replace(GLOSS_RE,m=>`<span class="gloss" data-term="${m}">${m}</span>`);}
 // glossify a whole label only if it EXACTLY matches a glossary entry (avoids partial matches like HE in "Improved HE")
+function glossBase(name){return (name||'').replace(/\s*\([^)]*\)\s*$/,'').trim();}
+function glossDef(name){return GALL_L[(name||'').toLowerCase()]||GALL_L[glossBase(name).toLowerCase()]||'';}
 function glossChip(name){if(!name)return'';
-  return GALL_L[name.toLowerCase()]?`<span class="gloss" data-term="${name}">${name}</span>`:name;}
+  const key=GALL_L[name.toLowerCase()]?name:(GALL_L[glossBase(name).toLowerCase()]?glossBase(name):null);
+  return key?`<span class="gloss" data-term="${key}">${name}</span>`:name;}
 // tooltip chip carrying its own text (for rules whose definition comes from the army list, e.g. "Resourceful")
 function ruleChip(name,text){if(text)return `<span class="gloss" data-tip="${String(text).replace(/"/g,'&quot;')}">${name}</span>`;return glossChip(name);}
 function matchWeapons(text){
@@ -817,15 +824,21 @@ function renderStatPanel(u,inst){
   }
   {
     const ruleItems=(s.rules||[]).map(x=>({name:x.name,text:x.text||''}));
-    if(inst){(u.upgrades||[]).forEach((o,ui)=>{if(!inst.ups?.[ui])return;
-      if(matchWeapons(o.desc).length)return;            // weapon upgrades (ATRDs, Panzerfausts) go to the weapon table
-      if(!ruleItems.some(r=>r.name.toLowerCase()===o.desc.toLowerCase()))
-        ruleItems.push({name:o.desc,text:'',added:true});
-    });}
+    const addRule=nm=>{if(nm&&!ruleItems.some(r=>r.name.toLowerCase()===nm.toLowerCase()))ruleItems.push({name:nm,text:'',added:true});};
+    if(inst){
+      (u.upgrades||[]).forEach((o,ui)=>{if(!inst.ups?.[ui])return;
+        if(matchWeapons(o.desc).length)return;          // weapon upgrades (ATRDs, Panzerfausts) go to the weapon table
+        addRule(o.desc);});
+      // special rules granted by a selected option (e.g. "…and the Sniper special rule")
+      (u.options||[]).forEach((o,oi)=>{if(!(inst.opts?.[oi]>0))return;
+        const m=(o.desc||'').match(/\band the (.+?)\s+special rule/i);if(m)addRule(m[1].trim());});
+      // Command Vehicle upgrade grants the Command Vehicle rule (a +Morale aura; doesn't change own stats)
+      if(inst.cmdVehicle)addRule('Command Vehicle');
+    }
     if(ruleItems.length){
       const r=document.createElement('div');r.className='statrules';r.innerHTML='<h4>Special Rules</h4>';
       ruleItems.forEach(x=>{const d=document.createElement('div');d.className='srule';const up=x.added?' <span class="c">(upgrade)</span>':'';
-        if(expandRules){let text=x.text||GALL_L[x.name.toLowerCase()]||'';
+        if(expandRules){let text=x.text||glossDef(x.name)||'';
           d.innerHTML=`<span class="rn">${x.name}</span>${text?' — '+text:''}${up}`;}
         else{d.innerHTML=`<span class="rn">${ruleChip(x.name,x.text)}</span>${up}`;}
         r.appendChild(d);});

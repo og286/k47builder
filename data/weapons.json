@@ -1,530 +1,646 @@
 {
-  "weapon_profiles": [
-    {
-      "name": "M177 Dual Tesla Cannon",
-      "range": "48\"",
-      "shots": "2",
-      "pen": "+2..+3",
-      "special": "Team, Fixed, Rift Weapon; Tesla Arc (1)",
-      "aliases": [
-        "m177 dual tesla cannon",
-        "m177"
-      ]
-    },
-    {
-      "name": "M21 Light Tesla Cannon",
-      "range": "30\"",
-      "shots": "1",
-      "pen": "+1",
-      "special": "Team, Fixed, Rift Weapon; Tesla Arc (3)",
-      "aliases": [
-        "m21 light tesla cannon",
-        "m21 tesla",
-        "m21"
-      ]
-    },
-    {
-      "name": "M17 Tesla Cannon",
-      "range": "36\"",
-      "shots": "1",
-      "pen": "+2",
-      "special": "Team, Fixed, Rift Weapon; Tesla Arc (3)",
-      "aliases": [
-        "m17 tesla cannon",
-        "m17 tesla"
-      ]
-    },
-    {
-      "name": "Heavy Tesla Rifle",
-      "range": "18\" / 6\"",
-      "shots": "1 / 3",
-      "pen": "+1",
-      "special": "Two modes: Charge (Team, Tesla Arc 1) / Rapid (Assault)",
-      "aliases": [
-        "heavy tesla rifle"
-      ]
-    },
-    {
-      "name": "Tesla Gauntlet",
-      "range": "Close Quarters",
-      "shots": "—",
-      "pen": "+2",
-      "special": "Rift Weapon; Tesla Arc (1) (close combat)",
-      "aliases": [
-        "tesla gauntlet"
-      ]
-    },
-    {
-      "name": "Super-heavy Anti-tank Gun",
-      "range": "84\"",
-      "shots": "1",
-      "pen": "+7",
-      "special": "Team, Fixed, Anti-Tank Gun, HE (3\")",
-      "aliases": [
-        "super-heavy anti-tank gun",
-        "super heavy anti-tank gun",
-        "super-heavy at gun"
-      ]
-    },
-    {
-      "name": "Heavy Anti-tank Gun",
-      "range": "72\"",
-      "shots": "1",
-      "pen": "+6",
-      "special": "Team, Fixed, Anti-Tank Gun, HE (2\")",
-      "aliases": [
-        "heavy anti-tank gun",
-        "heavy at gun"
-      ]
-    },
-    {
-      "name": "Medium Anti-tank Gun",
-      "range": "60\"",
-      "shots": "1",
-      "pen": "+5",
-      "special": "Team, Fixed, Anti-Tank Gun, HE (1\")",
-      "aliases": [
-        "medium anti-tank gun",
-        "medium at gun"
-      ]
-    },
-    {
-      "name": "Light Anti-tank Gun",
-      "range": "48\"",
-      "shots": "1",
-      "pen": "+4",
-      "special": "Team, Fixed, Anti-Tank Gun, HE (1\")",
-      "aliases": [
-        "light anti-tank gun",
-        "light at gun"
-      ]
-    },
-    {
-      "name": "Heavy Automatic Cannon",
-      "range": "72\"",
-      "shots": "2",
-      "pen": "+3",
-      "special": "Team, Fixed, HE (1\")",
-      "aliases": [
-        "heavy automatic cannon"
-      ]
-    },
-    {
-      "name": "Light Automatic Cannon",
-      "range": "48\"",
-      "shots": "2",
-      "pen": "+2",
-      "special": "Team, Fixed, HE (1\")",
-      "aliases": [
-        "light automatic cannon",
-        "automatic cannon"
-      ]
-    },
-    {
-      "name": "Heavy Machine Gun (HMG)",
-      "range": "48\"",
-      "shots": "6*",
-      "pen": "+1",
-      "special": "Team, Fixed (*Shots halved on a Vehicle)",
-      "aliases": [
-        "heavy machine gun",
-        "hmg"
-      ]
-    },
-    {
-      "name": "Medium Machine Gun (MMG)",
-      "range": "36\"",
-      "shots": "6*",
-      "pen": "–",
-      "special": "Team, Fixed (*Shots halved on a Vehicle)",
-      "aliases": [
-        "medium machine gun",
-        "mmg"
-      ]
-    },
-    {
-      "name": "Flamethrower (Vehicle)",
-      "range": "12\"",
-      "shots": "1",
-      "pen": "+2",
-      "special": "Flamethrower",
-      "aliases": [
-        "flamethrower (vehicle)",
-        "vehicle flamethrower"
-      ]
-    },
-    {
-      "name": "Super Bazooka",
-      "range": "24\"",
-      "shots": "1",
-      "pen": "+6",
-      "special": "Team, Shaped Charge",
-      "aliases": [
-        "super bazooka",
-        "panzerschreck"
-      ]
-    },
-    {
-      "name": "Bazooka",
-      "range": "24\"",
-      "shots": "1",
-      "pen": "+5",
-      "special": "Team, Shaped Charge",
-      "aliases": [
-        "bazooka"
-      ]
-    },
-    {
-      "name": "Anti-tank Rifle",
-      "range": "48\"",
-      "shots": "1",
-      "pen": "+2",
-      "special": "Team",
-      "aliases": [
-        "anti-tank rifle",
-        "anti tank rifle"
-      ]
-    },
-    {
-      "name": "AT Rifle Grenade",
-      "range": "12\"",
-      "shots": "1",
-      "pen": "+3",
-      "special": "Shaped Charge",
-      "aliases": [
-        "at rifle grenade",
-        "anti-tank rifle grenade"
-      ]
-    },
-    {
-      "name": "ATRD (Anti-tank Rocket Device)",
-      "range": "12\"",
-      "shots": "1",
-      "pen": "+6",
-      "special": "Anti-tank Launchers, Shaped Charge",
-      "aliases": [
-        "atrd"
-      ]
-    },
-    {
-      "name": "Heavy Mortar",
-      "range": "12-72\"",
-      "shots": "1",
-      "pen": "HE",
-      "special": "Team, Fixed, Indirect Fire, HE (3\")",
-      "aliases": [
-        "heavy mortar"
-      ]
-    },
-    {
-      "name": "Medium Mortar",
-      "range": "12-60\"",
-      "shots": "1",
-      "pen": "HE",
-      "special": "Team, Fixed, Indirect Fire, HE (2\")",
-      "aliases": [
-        "medium mortar"
-      ]
-    },
-    {
-      "name": "Light Mortar",
-      "range": "12-36\"",
-      "shots": "1",
-      "pen": "HE",
-      "special": "Team, Indirect Fire, HE (1\")",
-      "aliases": [
-        "light mortar"
-      ]
-    },
-    {
-      "name": "Heavy Howitzer",
-      "range": "72\" (42-84\")",
-      "shots": "1",
-      "pen": "HE",
-      "special": "Team, Fixed, Howitzer, HE (4\")",
-      "aliases": [
-        "heavy howitzer"
-      ]
-    },
-    {
-      "name": "Medium Howitzer",
-      "range": "60\" (36-72\")",
-      "shots": "1",
-      "pen": "HE",
-      "special": "Team, Fixed, Howitzer, HE (3\")",
-      "aliases": [
-        "medium howitzer"
-      ]
-    },
-    {
-      "name": "Light Howitzer",
-      "range": "48\" (30-60\")",
-      "shots": "1",
-      "pen": "HE",
-      "special": "Team, Fixed, Howitzer, HE (2\")",
-      "aliases": [
-        "light howitzer"
-      ]
-    },
-    {
-      "name": "Medium Rocket System",
-      "range": "24\"",
-      "shots": "1",
-      "pen": "HE",
-      "special": "Team, Fixed, HE (3\")",
-      "aliases": [
-        "medium rocket system"
-      ]
-    },
-    {
-      "name": "Rifle Grenade",
-      "range": "6-18\"",
-      "shots": "1",
-      "pen": "HE",
-      "special": "Indirect Fire, HE (1\")",
-      "aliases": [
-        "rifle grenade"
-      ]
-    },
-    {
-      "name": "Grenade Launcher",
-      "range": "6-18\" / 12\"",
-      "shots": "1",
-      "pen": "HE / +3",
-      "special": "Fires Rifle Grenades & AT Rifle Grenades",
-      "aliases": [
-        "grenade launcher"
-      ]
-    },
-    {
-      "name": "Thompson M1X1/2",
-      "range": "12\" / 6\"",
-      "shots": "2 / 1",
-      "pen": "+1 / +2",
-      "special": "Mode weapon — choose Normal (Assault) or E-Slug each time it fires",
-      "aliases": [
-        "thompson m1x1/2",
-        "thompson m1x1",
-        "m1x1"
-      ]
-    },
-    {
-      "name": "Assault Rifle",
-      "range": "18\"",
-      "shots": "2",
-      "pen": "–",
-      "special": "Assault",
-      "aliases": [
-        "assault rifle"
-      ]
-    },
-    {
-      "name": "Automatic Rifle",
-      "range": "30\"",
-      "shots": "2",
-      "pen": "–",
-      "special": "–",
-      "aliases": [
-        "automatic rifle"
-      ]
-    },
-    {
-      "name": "Light Machine Gun (LMG)",
-      "range": "36\"",
-      "shots": "4*",
-      "pen": "–",
-      "special": "Team (*Shots halved on a Vehicle)",
-      "aliases": [
-        "lmg",
-        "light machine gun"
-      ]
-    },
-    {
-      "name": "Infantry Flamethrower",
-      "range": "6\"",
-      "shots": "1",
-      "pen": "+2",
-      "special": "Team, Flamethrower",
-      "aliases": [
-        "infantry flamethrower",
-        "flamethrower (infantry)",
-        "flamethrower"
-      ]
-    },
-    {
-      "name": "Submachine Gun (SMG)",
-      "range": "12\"",
-      "shots": "2",
-      "pen": "–",
-      "special": "Assault",
-      "aliases": [
-        "smg",
-        "submachine gun",
-        "thompson"
-      ]
-    },
-    {
-      "name": "Rifle",
-      "range": "24\"",
-      "shots": "1",
-      "pen": "–",
-      "special": "–",
-      "aliases": [
-        "rifle"
-      ]
-    },
-    {
-      "name": "Pistol",
-      "range": "6\"",
-      "shots": "1",
-      "pen": "–",
-      "special": "–",
-      "aliases": [
-        "pistol"
-      ]
-    },
-    {
-      "name": "Schwerefeld Projektor",
-      "range": "48\"",
-      "shots": "2",
-      "pen": "+4",
-      "special": "Team, Fixed, Rift Weapon; Gravity Pulse",
-      "aliases": [
-        "schwerefeld projektor",
-        "schwerefeld"
-      ]
-    },
-    {
-      "name": "Schienenkanone",
-      "range": "96\"",
-      "shots": "1",
-      "pen": "+8",
-      "special": "Team, Fixed, Rift Weapon; Hyper Velocity, Anti-Tank Gun",
-      "aliases": [
-        "schienenkanone"
-      ]
-    },
-    {
-      "name": "Maschinen Schwere",
-      "range": "36\"",
-      "shots": "2",
-      "pen": "+2",
-      "special": "Team, Fixed, Rift Weapon; Gravity Pulse",
-      "aliases": [
-        "maschinen schwere"
-      ]
-    },
-    {
-      "name": "Schwarzlicht MP 40SzL Schmeisser",
-      "range": "12\"",
-      "shots": "2",
-      "pen": "+1",
-      "special": "Assault",
-      "aliases": [
-        "schmeisser",
-        "mp 40szl"
-      ]
-    },
-    {
-      "name": "Schwarzlicht P 08SzL Luger",
-      "range": "6\"",
-      "shots": "1",
-      "pen": "+1",
-      "special": "Assault",
-      "aliases": [
-        "luger",
-        "p 08szl"
-      ]
-    },
-    {
-      "name": "StG 44Z",
-      "range": "18\"",
-      "shots": "3",
-      "pen": "–",
-      "special": "Assault",
-      "aliases": [
-        "stg 44z",
-        "stg44z"
-      ]
-    },
-    {
-      "name": "Panzerfaust",
-      "range": "12\"",
-      "shots": "1",
-      "pen": "+6",
-      "special": "Anti-tank Launchers, Shaped Charge",
-      "aliases": [
-        "panzerfaust"
-      ]
-    },
-    {
-      "name": "Light Rocket System",
-      "range": "18\"",
-      "shots": "1",
-      "pen": "HE",
-      "special": "Team, Fixed, HE (2\")",
-      "aliases": [
-        "light rocket system"
-      ]
-    },
-    {
-      "name": "Heavy Rocket System",
-      "range": "36\"",
-      "shots": "1",
-      "pen": "HE",
-      "special": "Team, Fixed, HE (4\")",
-      "aliases": [
-        "heavy rocket system"
-      ]
-    },
-    {
-      "name": "Teeth and Claws",
-      "range": "Close Quarters",
-      "shots": "—",
-      "pen": "+2",
-      "special": "Close-combat weapon (+2 Pen at Close Quarters)",
-      "aliases": [
-        "teeth and claws"
-      ]
-    },
-    {
-      "name": "Talons",
-      "range": "Close Quarters",
-      "shots": "—",
-      "pen": "+1",
-      "special": "Close-combat weapon (+1 Pen at Close Quarters)",
-      "aliases": [
-        "talons"
-      ]
-    },
-    {
-      "name": "Fists",
-      "range": "Close Quarters",
-      "shots": "—",
-      "pen": "–",
-      "special": "Close-combat weapon",
-      "aliases": [
-        "fists"
-      ]
-    }
-  ],
-  "weapon_special_rules": {
-    "Assault": "No –1 penalty for moving and shooting. Infantry armed with an Assault weapon also count as Tough Fighters in Close Quarters.",
-    "Team": "Crew-served weapon: needs two or more soldiers to fire at full effect (e.g. MMG or Bazooka teams).",
-    "Fixed": "Best fired stationary. Can only target enemies within a 45° front arc; on an Advance it may rotate on the spot but not move, and it can never launch an Assault.",
-    "Anti-Tank Gun": "+1 to hit Vehicles when shooting with a Fire Order (including Ambush and Reaction Fire).",
-    "Anti-tank Launchers": "Disposable. One model per Order may fire it in place of its normal weapon; the unit may instead fire them all at once (roll a D6 for shots) and is then out of ammo.",
-    "Shaped Charge": "Ignores the +1 Pen for point-blank range. Pen is halved (rounding up) against Walkers and Powered Armour.",
-    "HE": "High Explosive: fires a blast template of the shown diameter and every model touched is hit. HE (X\") sets the blast size and Pen. Not modified by range.",
-    "Indirect Fire": "Lobs shots over intervening troops. Cannot hit targets inside its minimum range; the crew still need line of sight (or a Spotter), and a 6 is needed to range in.",
-    "Howitzer": "May fire directly with no minimum range, or use Indirect Fire with the minimum range shown in brackets on the chart.",
-    "Flamethrower": "Ignores Cover saves; a hit becomes D6 hits (D6+1 from a vehicle); always hits Top Armour; inflicts extra Pins and forces a Morale check. May run dry on a roll of 1–2.",
-    "Rift Weapon": "Has a basic profile that is always usable; exhaust an Active Rift Die to trigger its special Rift ability (a Surging die can Overload it). Pen is not reduced by range.",
-    "Tesla Arc": "Exhaust a Rift Die to add (X) extra shots (Arcs). While used, the weapon gains +1 to hit Vehicles and ignores some defences.",
-    "Corrosive": "Exhaust a Rift Die to increase the weapon's Pen against the target by the die type shown (e.g. D2 or D6).",
-    "Mode": "The weapon has multiple profiles; each model may freely switch profile between shooting and Close Quarters.",
-    "Gravity Pulse": "A Rift ability: exhaust a Rift Die to unleash a gravity pulse, warping space around the target for extra effect (see Core Rulebook).",
-    "Hyper Velocity": "Exhaust a Rift Die to fire a Hyper Velocity shot: +1 to hit and +1 Pen, and it ignores Cover saves.",
-    "E-Slug": "The Thompson M1X1/2's alternate fire profile (it's a Mode weapon). Each time it fires you pick ONE profile: Normal (12\", 2 shots, +1, Assault) or E-Slug (6\", 1 shot, +2) — a short-range electro-slug that hits vehicle electronics and tough organic targets hard. You don't fire both in one action, and needn't fire Normal first; the 'empty the magazine' line is flavour, not a rule."
+ "weapon_profiles": [
+  {
+   "name": "PIAT",
+   "range": "12\"",
+   "shots": "1",
+   "pen": "+5",
+   "special": "Team, Shaped Charge",
+   "aliases": [
+    "piat",
+    "projector, infantry, anti-tank"
+   ]
+  },
+  {
+   "name": "Meteor Launcher",
+   "range": "60\"",
+   "shots": "1",
+   "pen": "HE",
+   "special": "Team, Fixed, HE (3\"), Indirect Fire, Rift Weapon, Corrosive (D6)",
+   "aliases": [
+    "meteor launcher"
+   ]
+  },
+  {
+   "name": "Type 99 Shiboru Cannon",
+   "range": "48\"",
+   "shots": "2",
+   "pen": "+4",
+   "special": "Team, Fixed, Rift Weapon; Crush",
+   "aliases": [
+    "type 99 shiboru cannon",
+    "type 99 shiboru"
+   ]
+  },
+  {
+   "name": "Type 61 Light Shiboru Cannon",
+   "range": "36\"",
+   "shots": "2",
+   "pen": "+3",
+   "special": "Team, Fixed, Rift Weapon; Crush",
+   "aliases": [
+    "type 61 light shiboru cannon",
+    "type 61 shiboru",
+    "light shiboru cannon"
+   ]
+  },
+  {
+   "name": "Type 10 Shiboru Rifle",
+   "range": "24\"",
+   "shots": "1",
+   "pen": "+1",
+   "special": "Rift Weapon; Crush",
+   "aliases": [
+    "type 10 shiboru rifle",
+    "shiboru rifle"
+   ]
+  },
+  {
+   "name": "Zvukovoy Proeyektor",
+   "range": "24\"",
+   "shots": "4",
+   "pen": "+2",
+   "special": "Team, Fixed, Rift Weapon; Shockwave",
+   "aliases": [
+    "zvukovoy proeyektor",
+    "zvukovoy projektor"
+   ]
+  },
+  {
+   "name": "Zvukovoy Avtomat",
+   "range": "6\"",
+   "shots": "3",
+   "pen": "+1",
+   "special": "Assault, Rift Weapon; Shockwave",
+   "aliases": [
+    "zvukovoy avtomat"
+   ]
+  },
+  {
+   "name": "PTRS-46 Pulya-Poykbi",
+   "range": "18\" / 6\"",
+   "shots": "1 / 2",
+   "pen": "+2 / –",
+   "special": "Two modes: (a) Mode / (b) Mode, Assault",
+   "aliases": [
+    "ptrs-46 pulya-poykbi",
+    "pulya-poykbi",
+    "pulya"
+   ]
+  },
+  {
+   "name": "ROKS-6 Plamya-Poykbi",
+   "range": "6\" / 6\"",
+   "shots": "1 / 2",
+   "pen": "+2 / –",
+   "special": "Two modes: (a) Mode, Flamethrower / (b) Mode, Assault",
+   "aliases": [
+    "roks-6 plamya-poykbi",
+    "plamya-poykbi",
+    "plamya"
+   ]
+  },
+  {
+   "name": "DPM Pulemet-Poykbi",
+   "range": "18\" / 6\"",
+   "shots": "4 / 2",
+   "pen": "+1 / –",
+   "special": "Two modes: (a) Mode / (b) Mode, Assault",
+   "aliases": [
+    "dpm pulemet-poykbi",
+    "pulemet-poykbi",
+    "pulemet"
+   ]
+  },
+  {
+   "name": "M177 Dual Tesla Cannon",
+   "range": "48\"",
+   "shots": "2",
+   "pen": "+2..+3",
+   "special": "Team, Fixed, Rift Weapon; Tesla Arc (1)",
+   "aliases": [
+    "m177 dual tesla cannon",
+    "m177"
+   ]
+  },
+  {
+   "name": "M21 Light Tesla Cannon",
+   "range": "30\"",
+   "shots": "1",
+   "pen": "+1",
+   "special": "Team, Fixed, Rift Weapon; Tesla Arc (3)",
+   "aliases": [
+    "m21 light tesla cannon",
+    "m21 tesla",
+    "m21"
+   ]
+  },
+  {
+   "name": "M17 Tesla Cannon",
+   "range": "36\"",
+   "shots": "1",
+   "pen": "+2",
+   "special": "Team, Fixed, Rift Weapon; Tesla Arc (3)",
+   "aliases": [
+    "m17 tesla cannon",
+    "m17 tesla"
+   ]
+  },
+  {
+   "name": "Heavy Tesla Rifle",
+   "range": "18\" / 6\"",
+   "shots": "1 / 3",
+   "pen": "+1",
+   "special": "Two modes: Charge (Team, Tesla Arc 1) / Rapid (Assault)",
+   "aliases": [
+    "heavy tesla rifle"
+   ]
+  },
+  {
+   "name": "Tesla Gauntlet",
+   "range": "Close Quarters",
+   "shots": "—",
+   "pen": "+2",
+   "special": "Rift Weapon; Tesla Arc (1) (close combat)",
+   "aliases": [
+    "tesla gauntlet"
+   ]
+  },
+  {
+   "name": "Super-heavy Anti-tank Gun",
+   "range": "84\"",
+   "shots": "1",
+   "pen": "+7",
+   "special": "Team, Fixed, Anti-Tank Gun, HE (3\")",
+   "aliases": [
+    "super-heavy anti-tank gun",
+    "super heavy anti-tank gun",
+    "super-heavy at gun"
+   ]
+  },
+  {
+   "name": "Heavy Anti-tank Gun",
+   "range": "72\"",
+   "shots": "1",
+   "pen": "+6",
+   "special": "Team, Fixed, Anti-Tank Gun, HE (2\")",
+   "aliases": [
+    "heavy anti-tank gun",
+    "heavy at gun"
+   ]
+  },
+  {
+   "name": "Medium Anti-tank Gun",
+   "range": "60\"",
+   "shots": "1",
+   "pen": "+5",
+   "special": "Team, Fixed, Anti-Tank Gun, HE (1\")",
+   "aliases": [
+    "medium anti-tank gun",
+    "medium at gun"
+   ]
+  },
+  {
+   "name": "Light Anti-tank Gun",
+   "range": "48\"",
+   "shots": "1",
+   "pen": "+4",
+   "special": "Team, Fixed, Anti-Tank Gun, HE (1\")",
+   "aliases": [
+    "light anti-tank gun",
+    "light at gun"
+   ]
+  },
+  {
+   "name": "Heavy Automatic Cannon",
+   "range": "72\"",
+   "shots": "2",
+   "pen": "+3",
+   "special": "Team, Fixed, HE (1\")",
+   "aliases": [
+    "heavy automatic cannon"
+   ]
+  },
+  {
+   "name": "Light Automatic Cannon",
+   "range": "48\"",
+   "shots": "2",
+   "pen": "+2",
+   "special": "Team, Fixed, HE (1\")",
+   "aliases": [
+    "light automatic cannon",
+    "automatic cannon"
+   ]
+  },
+  {
+   "name": "Heavy Machine Gun (HMG)",
+   "range": "48\"",
+   "shots": "6*",
+   "pen": "+1",
+   "special": "Team, Fixed (*Shots halved on a Vehicle)",
+   "aliases": [
+    "heavy machine gun",
+    "hmg"
+   ]
+  },
+  {
+   "name": "Medium Machine Gun (MMG)",
+   "range": "36\"",
+   "shots": "6*",
+   "pen": "–",
+   "special": "Team, Fixed (*Shots halved on a Vehicle)",
+   "aliases": [
+    "medium machine gun",
+    "mmg"
+   ]
+  },
+  {
+   "name": "Flamethrower (Vehicle)",
+   "range": "12\"",
+   "shots": "1",
+   "pen": "+2",
+   "special": "Flamethrower",
+   "aliases": [
+    "flamethrower (vehicle)",
+    "vehicle flamethrower"
+   ]
+  },
+  {
+   "name": "Super Bazooka",
+   "range": "24\"",
+   "shots": "1",
+   "pen": "+6",
+   "special": "Team, Shaped Charge",
+   "aliases": [
+    "super bazooka",
+    "panzerschreck"
+   ]
+  },
+  {
+   "name": "Bazooka",
+   "range": "24\"",
+   "shots": "1",
+   "pen": "+5",
+   "special": "Team, Shaped Charge",
+   "aliases": [
+    "bazooka"
+   ]
+  },
+  {
+   "name": "Anti-tank Rifle",
+   "range": "48\"",
+   "shots": "1",
+   "pen": "+2",
+   "special": "Team",
+   "aliases": [
+    "anti-tank rifle",
+    "anti tank rifle"
+   ]
+  },
+  {
+   "name": "AT Rifle Grenade",
+   "range": "12\"",
+   "shots": "1",
+   "pen": "+3",
+   "special": "Shaped Charge",
+   "aliases": [
+    "at rifle grenade",
+    "anti-tank rifle grenade"
+   ]
+  },
+  {
+   "name": "ATRD (Anti-tank Rocket Device)",
+   "range": "12\"",
+   "shots": "1",
+   "pen": "+6",
+   "special": "Anti-tank Launchers, Shaped Charge",
+   "aliases": [
+    "atrd"
+   ]
+  },
+  {
+   "name": "Heavy Mortar",
+   "range": "12-72\"",
+   "shots": "1",
+   "pen": "HE",
+   "special": "Team, Fixed, Indirect Fire, HE (3\")",
+   "aliases": [
+    "heavy mortar"
+   ]
+  },
+  {
+   "name": "Medium Mortar",
+   "range": "12-60\"",
+   "shots": "1",
+   "pen": "HE",
+   "special": "Team, Fixed, Indirect Fire, HE (2\")",
+   "aliases": [
+    "medium mortar"
+   ]
+  },
+  {
+   "name": "Light Mortar",
+   "range": "12-36\"",
+   "shots": "1",
+   "pen": "HE",
+   "special": "Team, Indirect Fire, HE (1\")",
+   "aliases": [
+    "light mortar"
+   ]
+  },
+  {
+   "name": "Heavy Howitzer",
+   "range": "72\" (42-84\")",
+   "shots": "1",
+   "pen": "HE",
+   "special": "Team, Fixed, Howitzer, HE (4\")",
+   "aliases": [
+    "heavy howitzer"
+   ]
+  },
+  {
+   "name": "Medium Howitzer",
+   "range": "60\" (36-72\")",
+   "shots": "1",
+   "pen": "HE",
+   "special": "Team, Fixed, Howitzer, HE (3\")",
+   "aliases": [
+    "medium howitzer"
+   ]
+  },
+  {
+   "name": "Light Howitzer",
+   "range": "48\" (30-60\")",
+   "shots": "1",
+   "pen": "HE",
+   "special": "Team, Fixed, Howitzer, HE (2\")",
+   "aliases": [
+    "light howitzer"
+   ]
+  },
+  {
+   "name": "Medium Rocket System",
+   "range": "24\"",
+   "shots": "1",
+   "pen": "HE",
+   "special": "Team, Fixed, HE (3\")",
+   "aliases": [
+    "medium rocket system"
+   ]
+  },
+  {
+   "name": "Rifle Grenade",
+   "range": "6-18\"",
+   "shots": "1",
+   "pen": "HE",
+   "special": "Indirect Fire, HE (1\")",
+   "aliases": [
+    "rifle grenade"
+   ]
+  },
+  {
+   "name": "Grenade Launcher",
+   "range": "6-18\" / 12\"",
+   "shots": "1",
+   "pen": "HE / +3",
+   "special": "Fires Rifle Grenades & AT Rifle Grenades",
+   "aliases": [
+    "grenade launcher"
+   ]
+  },
+  {
+   "name": "Thompson M1X1/2",
+   "range": "12\" / 6\"",
+   "shots": "2 / 1",
+   "pen": "+1 / +2",
+   "special": "Mode weapon — choose Normal (Assault) or E-Slug each time it fires",
+   "aliases": [
+    "thompson m1x1/2",
+    "thompson m1x1",
+    "m1x1"
+   ]
+  },
+  {
+   "name": "Assault Rifle",
+   "range": "18\"",
+   "shots": "2",
+   "pen": "–",
+   "special": "Assault",
+   "aliases": [
+    "assault rifle"
+   ]
+  },
+  {
+   "name": "Automatic Rifle",
+   "range": "30\"",
+   "shots": "2",
+   "pen": "–",
+   "special": "–",
+   "aliases": [
+    "automatic rifle"
+   ]
+  },
+  {
+   "name": "Light Machine Gun (LMG)",
+   "range": "36\"",
+   "shots": "4*",
+   "pen": "–",
+   "special": "Team (*Shots halved on a Vehicle)",
+   "aliases": [
+    "lmg",
+    "light machine gun"
+   ]
+  },
+  {
+   "name": "Infantry Flamethrower",
+   "range": "6\"",
+   "shots": "1",
+   "pen": "+2",
+   "special": "Team, Flamethrower",
+   "aliases": [
+    "infantry flamethrower",
+    "flamethrower (infantry)",
+    "flamethrower"
+   ]
+  },
+  {
+   "name": "Submachine Gun (SMG)",
+   "range": "12\"",
+   "shots": "2",
+   "pen": "–",
+   "special": "Assault",
+   "aliases": [
+    "smg",
+    "submachine gun",
+    "thompson"
+   ]
+  },
+  {
+   "name": "Rifle",
+   "range": "24\"",
+   "shots": "1",
+   "pen": "–",
+   "special": "–",
+   "aliases": [
+    "rifle"
+   ]
+  },
+  {
+   "name": "Pistol",
+   "range": "6\"",
+   "shots": "1",
+   "pen": "–",
+   "special": "–",
+   "aliases": [
+    "pistol"
+   ]
+  },
+  {
+   "name": "Schwerefeld Projektor",
+   "range": "48\"",
+   "shots": "2",
+   "pen": "+4",
+   "special": "Team, Fixed, Rift Weapon; Gravity Pulse",
+   "aliases": [
+    "schwerefeld projektor",
+    "schwerefeld"
+   ]
+  },
+  {
+   "name": "Schienenkanone",
+   "range": "96\"",
+   "shots": "1",
+   "pen": "+8",
+   "special": "Team, Fixed, Rift Weapon; Hyper Velocity, Anti-Tank Gun",
+   "aliases": [
+    "schienenkanone"
+   ]
+  },
+  {
+   "name": "Maschinen Schwere",
+   "range": "36\"",
+   "shots": "2",
+   "pen": "+2",
+   "special": "Team, Fixed, Rift Weapon; Gravity Pulse",
+   "aliases": [
+    "maschinen schwere"
+   ]
+  },
+  {
+   "name": "Schwarzlicht MP 40SzL Schmeisser",
+   "range": "12\"",
+   "shots": "2",
+   "pen": "+1",
+   "special": "Assault",
+   "aliases": [
+    "schmeisser",
+    "mp 40szl"
+   ]
+  },
+  {
+   "name": "Schwarzlicht P 08SzL Luger",
+   "range": "6\"",
+   "shots": "1",
+   "pen": "+1",
+   "special": "Assault",
+   "aliases": [
+    "luger",
+    "p 08szl"
+   ]
+  },
+  {
+   "name": "StG 44Z",
+   "range": "18\"",
+   "shots": "3",
+   "pen": "–",
+   "special": "Assault",
+   "aliases": [
+    "stg 44z",
+    "stg44z"
+   ]
+  },
+  {
+   "name": "Panzerfaust",
+   "range": "12\"",
+   "shots": "1",
+   "pen": "+6",
+   "special": "Anti-tank Launchers, Shaped Charge",
+   "aliases": [
+    "panzerfaust",
+    "rpg-1",
+    "priam"
+   ]
+  },
+  {
+   "name": "Light Rocket System",
+   "range": "18\"",
+   "shots": "1",
+   "pen": "HE",
+   "special": "Team, Fixed, HE (2\")",
+   "aliases": [
+    "light rocket system"
+   ]
+  },
+  {
+   "name": "Heavy Rocket System",
+   "range": "36\"",
+   "shots": "1",
+   "pen": "HE",
+   "special": "Team, Fixed, HE (4\")",
+   "aliases": [
+    "heavy rocket system"
+   ]
+  },
+  {
+   "name": "Teeth and Claws",
+   "range": "Close Quarters",
+   "shots": "—",
+   "pen": "+2",
+   "special": "Close-combat weapon (+2 Pen at Close Quarters)",
+   "aliases": [
+    "teeth and claws"
+   ]
+  },
+  {
+   "name": "Talons",
+   "range": "Close Quarters",
+   "shots": "—",
+   "pen": "+1",
+   "special": "Close-combat weapon (+1 Pen at Close Quarters)",
+   "aliases": [
+    "talons"
+   ]
+  },
+  {
+   "name": "Fists",
+   "range": "Close Quarters",
+   "shots": "—",
+   "pen": "–",
+   "special": "Close-combat weapon",
+   "aliases": [
+    "fists"
+   ]
   }
+ ],
+ "weapon_special_rules": {
+  "Assault": "No –1 penalty for moving and shooting. Infantry armed with an Assault weapon also count as Tough Fighters in Close Quarters.",
+  "Team": "Crew-served weapon: needs two or more soldiers to fire at full effect (e.g. MMG or Bazooka teams).",
+  "Fixed": "Best fired stationary. Can only target enemies within a 45° front arc; on an Advance it may rotate on the spot but not move, and it can never launch an Assault.",
+  "Anti-Tank Gun": "+1 to hit Vehicles when shooting with a Fire Order (including Ambush and Reaction Fire).",
+  "Anti-tank Launchers": "Disposable. One model per Order may fire it in place of its normal weapon; the unit may instead fire them all at once (roll a D6 for shots) and is then out of ammo.",
+  "Shaped Charge": "Ignores the +1 Pen for point-blank range. Pen is halved (rounding up) against Walkers and Powered Armour.",
+  "HE": "High Explosive: fires a blast template of the shown diameter and every model touched is hit. HE (X\") sets the blast size and Pen. Not modified by range.",
+  "Indirect Fire": "Lobs shots over intervening troops. Cannot hit targets inside its minimum range; the crew still need line of sight (or a Spotter), and a 6 is needed to range in.",
+  "Howitzer": "May fire directly with no minimum range, or use Indirect Fire with the minimum range shown in brackets on the chart.",
+  "Flamethrower": "Ignores Cover saves; a hit becomes D6 hits (D6+1 from a vehicle); always hits Top Armour; inflicts extra Pins and forces a Morale check. May run dry on a roll of 1–2.",
+  "Rift Weapon": "Has a basic profile that is always usable; exhaust an Active Rift Die to trigger its special Rift ability (a Surging die can Overload it). Pen is not reduced by range.",
+  "Tesla Arc": "Exhaust a Rift Die to add (X) extra shots (Arcs). While used, the weapon gains +1 to hit Vehicles and ignores some defences.",
+  "Corrosive": "Exhaust a Rift Die to increase the weapon's Pen against the target by the die type shown (e.g. D2 or D6).",
+  "Mode": "The weapon has multiple profiles; each model may freely switch profile between shooting and Close Quarters.",
+  "Gravity Pulse": "A Rift ability: exhaust a Rift Die to unleash a gravity pulse, warping space around the target for extra effect (see Core Rulebook).",
+  "Hyper Velocity": "Exhaust a Rift Die to fire a Hyper Velocity shot: +1 to hit and +1 Pen, and it ignores Cover saves.",
+  "E-Slug": "The Thompson M1X1/2's alternate fire profile (it's a Mode weapon). Each time it fires you pick ONE profile: Normal (12\", 2 shots, +1, Assault) or E-Slug (6\", 1 shot, +2) — a short-range electro-slug that hits vehicle electronics and tough organic targets hard. You don't fire both in one action, and needn't fire Normal first; the 'empty the magazine' line is flavour, not a rule.",
+  "Crush": "A unit with Crush weaponry may exhaust a Rift Die when firing (including in Ambush). If the weapon scores hits with all of its shots, it automatically inflicts one additional hit at the same Pen with no to-hit roll. Against a Vehicle hit by all of its shots, add the Pen values together (including the bonus hit) and roll damage as a single hit.",
+  "Shockwave": "A unit with Shockwave weaponry may exhaust a Rift Die when firing (including in Ambush) to generate a blast. Roll to hit as normal, then combine the shots that hit into a single hit whose HE-equivalent template size equals the number of hits scored. Shockwave attacks ignore Cover Saves; their Pen equals the template size."
+ }
 }

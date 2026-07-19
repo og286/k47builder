@@ -1,0 +1,3248 @@
+{
+ "id": "soviet",
+ "name": "Soviet",
+ "army_special_rules": [
+  {
+   "name": "Harmonic Resonance",
+   "text": "At the start of every Game Turn roll a D6 for each enemy unit on the table that does not have the Fearless special rule. On a 5+, that unit immediately receives a Pin Marker."
+  },
+  {
+   "name": "Za Stalina",
+   "text": "Whenever a Soviet Bloc Infantry or Artillery unit fails a Morale Check and would be destroyed as a result, re-roll it and apply the second result instead. If a test is passed in this way, that unit is immediately up-rated to the next Quality level for the rest of the game. If the unit was already Veteran, it gains +1 Morale Value instead."
+  },
+  {
+   "name": "Heroes of the Soviet Bloc",
+   "text": "At the start of the game, before deployment, one non-Hero, non-Rift Infantry unit in a Soviet Bloc force may be designated 'Heroes of the Soviet Bloc'. The chosen unit immediately gains a point of Guts – any model in the unit may spend it as if they were a Hero. Furthermore, friendly units within 6\" of the Heroes of the Soviet Bloc unit gain the Fanatics special rule."
+  },
+  {
+   "name": "Stolen Rift-Tech",
+   "text": "Once per Game, when a Soviet Bloc Rift Die is drawn randomly from the Dice Bag, rolled and assigned to a Soviet Bloc Rift unit, its owning player may swap the result with that of another Rift Die assigned to another unit within 6\", friend or foe. For example, if it rolled an Exhausted result and an enemy unit within 6\" had an Active Rift Die, you may change the Soviet Rift Die to Active and the enemy's Rift Die to Exhausted."
+  }
+ ],
+ "special_platoons": [],
+ "company_commander_allowed": 1,
+ "units": [
+  {
+   "id": "soviet-commissar-gregor-drugov",
+   "name": "Commissar Gregor Drugov",
+   "unit_type": "Hero (May be used as a Company Commander) 160",
+   "category": "company_commander",
+   "composition": "1 Heroic Officer REQUISITION POINTS",
+   "cost": {
+    "fixed": 160
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Deadly (3)",
+    "Fearless",
+    "Hard to Kill",
+    "Horror",
+    "Large",
+    "Tough Fighters (Drugov only)",
+    "Wide Formation",
+    "Not One Step Back!"
+   ],
+   "rift_dice": 2,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "Drugov – 25mm",
+    "weapons": [
+     "Drugov – Assault Rifle, Teeth and Claws (+2 Pen at Close Quarters)",
+     "Ursus Bodyguards – Teeth and Claws (+2 Pen at Close Quarters)"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "7+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Deadly (3)",
+      "text": "Drugov; Deadly (4) – Ursus Bodyguards"
+     },
+     {
+      "name": "Fearless",
+      "text": ""
+     },
+     {
+      "name": "Hard to Kill",
+      "text": ""
+     },
+     {
+      "name": "Horror",
+      "text": ""
+     },
+     {
+      "name": "Large",
+      "text": ""
+     },
+     {
+      "name": "Tough Fighters (Drugov only)",
+      "text": ""
+     },
+     {
+      "name": "Wide Formation",
+      "text": ""
+     },
+     {
+      "name": "Not One Step Back!",
+      "text": "When a friendly Infantry unit fails an Order Test within 6\" of Drugov, remove one model from the unit and re-roll the test."
+     }
+    ],
+    "rift": {
+     "dice": 2,
+     "enhancement": "Ursine Fury. When issued a Run Order Drugov can opt to enter an Ursine Fury. Drugov and his Ursus bodyguards gain the Fast special rule and increase their Teeth and Claws bonus to +3 Pen at Close Quarters for the remainder of the Game Turn. If Drugov uses Ursine Fury exhaust one of his Rift Dice after he has executed his Order.",
+     "surging": "Increase Damage Value to 8+.",
+     "exhausted": "Gain Lumbering special rule – Reduced to a movement rate of 4\" on an Advance Order and 8\" on a Run Order.",
+     "note": ""
+    },
+    "hero_stats": {
+     "Guts": 3,
+     "Rift Mastery": 1,
+     "Luck": 1
+    }
+   }
+  },
+  {
+   "id": "soviet-company-commander-officer",
+   "name": "Company Commander - Officer",
+   "unit_type": "Company Commander",
+   "category": "company_commander",
+   "composition": "1 Officer Inexperienced: 42",
+   "cost": {
+    "inexperienced": 42,
+    "regular": 60,
+    "veteran": 78
+   },
+   "model_count": 1,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "hero_stat",
+     "desc": "Guts",
+     "cost": 10,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "hero_stat",
+     "desc": "Luck",
+     "cost": 15,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers with Pistols",
+     "cost": {
+      "inexperienced": 6,
+      "regular": 9,
+      "veteran": 12
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Assault Rifle",
+     "cost": 7,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "RPG-1s",
+     "cost": 5,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-company-commander-officer-in-guards-mk-ii-armour",
+   "name": "Company Commander - Officer In Guards MK II Armour",
+   "unit_type": "Company Commander",
+   "category": "company_commander",
+   "composition": "1 Officer in Grade 1 Heavy Powered Armour Regular: 69",
+   "cost": {
+    "regular": 69,
+    "veteran": 87
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Heavy"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "hero_stat",
+     "desc": "Guts",
+     "cost": 10,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "hero_stat",
+     "desc": "Luck",
+     "cost": 15,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers in Grade",
+     "cost": {
+      "regular": 19,
+      "veteran": 22
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace SMG with Anti-tank Rifle",
+     "cost": 11,
+     "per_model": true,
+     "limit": {
+      "n": 1,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "RPG-1s",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Stubborn",
+     "cost": 1,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "SMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "5+",
+     "veteran": "6+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Heavy",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-platoon-commander-officer",
+   "name": "Platoon Commander - Officer",
+   "unit_type": "Platoon Commander",
+   "category": "platoon_commander",
+   "composition": "1 Officer Inexperienced: 21",
+   "cost": {
+    "inexperienced": 21,
+    "regular": 30,
+    "veteran": 39
+   },
+   "model_count": 1,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "hero_stat",
+     "desc": "Guts",
+     "cost": 10,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "hero_stat",
+     "desc": "Luck",
+     "cost": 15,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers armed with Pistols",
+     "cost": {
+      "inexperienced": 6,
+      "regular": 9,
+      "veteran": 12
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Assault Rifle",
+     "cost": 7,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "RPG-1s",
+     "cost": 5,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-platoon-commander-officer-in-guards-mk-ii-armour",
+   "name": "Platoon Commander - Officer In Guards MK II Armour",
+   "unit_type": "Platoon Commander",
+   "category": "platoon_commander",
+   "composition": "1 Officer in Grade 1 Heavy Powered Armour Regular: 39",
+   "cost": {
+    "regular": 39,
+    "veteran": 48
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Heavy"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "hero_stat",
+     "desc": "Guts",
+     "cost": 10,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "hero_stat",
+     "desc": "Luck",
+     "cost": 15,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers in Grade",
+     "cost": {
+      "regular": 19,
+      "veteran": 22
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace SMG with Anti-tank Rifle",
+     "cost": 11,
+     "per_model": true,
+     "limit": {
+      "n": 1,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "RPG-1s",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Stubborn",
+     "cost": 1,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "SMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "5+",
+     "veteran": "6+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Heavy",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-medic",
+   "name": "Medic",
+   "unit_type": "Medic",
+   "category": "medic",
+   "composition": "1 Medic Regular: 23",
+   "cost": {
+    "regular": 23,
+    "veteran": 30
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Medic"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers armed with Pistols",
+     "cost": {
+      "regular": 9,
+      "veteran": 12
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": "additional soldiers only"
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": "additional soldiers only"
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Assault Rifle",
+     "cost": 7,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": "additional soldiers only"
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Medic",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-artillery-forward-observer",
+   "name": "Artillery Forward Observer",
+   "unit_type": "Forward Observer",
+   "category": "forward_observer",
+   "composition": "1 Artillery Forward Observer Regular: 75",
+   "cost": {
+    "regular": 75,
+    "veteran": 90
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Infiltrator"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers armed with Pistols",
+     "cost": {
+      "regular": 9,
+      "veteran": 12
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Assault Rifle",
+     "cost": 7,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Infiltrator",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-air-force-forward-observer",
+   "name": "Air Force Forward Observer",
+   "unit_type": "Forward Observer",
+   "category": "forward_observer",
+   "composition": "1 Air Force Forward Observer Regular: 75",
+   "cost": {
+    "regular": 75,
+    "veteran": 90
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Infiltrator"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers armed with Pistols",
+     "cost": {
+      "regular": 9,
+      "veteran": 12
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Assault Rifle",
+     "cost": 7,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Infiltrator",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-commissar",
+   "name": "Commissar",
+   "unit_type": "Commissar (see below)",
+   "category": "platoon_commander",
+   "composition": "1 Commissar Inexperienced: 15",
+   "cost": {
+    "inexperienced": 15,
+    "regular": 21,
+    "veteran": 27
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Commissar",
+    "Not One Step Back!"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers armed with Pistols",
+     "cost": {
+      "inexperienced": 6,
+      "regular": 9,
+      "veteran": 12
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Assault Rifle",
+     "cost": 7,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Commissar",
+      "text": "A Soviet Bloc force can include a single Commissar, not part of any Platoon Selector, in the same way as a Company Commander."
+     },
+     {
+      "name": "Not One Step Back!",
+      "text": "When a friendly Infantry unit fails an Order Test within 6\" of a Commissar, remove one model from the unit and re-roll the test."
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-soviet-infantry-squad",
+   "name": "Soviet Infantry Squad",
+   "unit_type": "Basic Infantry",
+   "category": "infantry_basic",
+   "composition": "1 NCO and 4 Soldiers REQUISITION POINTS",
+   "cost": {
+    "inexperienced": 35,
+    "regular": 50,
+    "veteran": 65
+   },
+   "model_count": 5,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers",
+     "cost": {
+      "inexperienced": 7,
+      "regular": 10,
+      "veteran": 13
+     },
+     "per_model": true,
+     "limit": {
+      "n": 7,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Rifle with SMG",
+     "cost": 4,
+     "per_model": true,
+     "limit": {
+      "n": 12,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Rifle with Assault Rifle",
+     "cost": 6,
+     "per_model": true,
+     "limit": {
+      "n": 12,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Rifle with LMG",
+     "cost": 15,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Rifle with Infantry Flamethrower",
+     "cost": 30,
+     "per_model": true,
+     "limit": {
+      "n": 1,
+      "scope": "squad"
+     },
+     "condition": "only if engineers option taken"
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "RPG-1s",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Stubborn (Veteran Squads only)",
+     "cost": 1,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Tough Fighters (Veteran Squads only)",
+     "cost": 1,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Engineers",
+     "cost": 1,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Rifle"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-guards-mk-i-armoured-infantry",
+   "name": "Guards MK I Armoured Infantry",
+   "unit_type": "Advanced Infantry",
+   "category": "infantry_advanced",
+   "composition": "1 NCO and 4 Soldiers in Grade 1 Heavy Powered Armour REQUISITION POINTS",
+   "cost": {
+    "regular": 135,
+    "veteran": 150
+   },
+   "model_count": 5,
+   "special_rules": [
+    "Heavy",
+    "Lumbering"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers in Guards Mk I",
+     "cost": {
+      "regular": 27,
+      "veteran": 30
+     },
+     "per_model": true,
+     "limit": {
+      "n": 5,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "RPG-1s",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Stubborn",
+     "cost": 1,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Engineers",
+     "cost": 1,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "DPM Pulemet-Poykbi"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "4\"",
+      "run": "8\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "5+",
+     "veteran": "6+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Heavy",
+      "text": ""
+     },
+     {
+      "name": "Lumbering",
+      "text": "Guards Mk I Armoured Infantry have a movement rate of 4\" on an Advance Order and 8\" on a Run Order."
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-guards-mk-ii-armoured-infantry",
+   "name": "Guards MK II Armoured Infantry",
+   "unit_type": "Advanced Infantry",
+   "category": "infantry_advanced",
+   "composition": "1 NCO and 4 Soldiers in Grade 1 Heavy Powered Armour REQUISITION POINTS",
+   "cost": {
+    "regular": 95,
+    "veteran": 110
+   },
+   "model_count": 5,
+   "special_rules": [
+    "Heavy"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers in Guards Mk II",
+     "cost": {
+      "regular": 19,
+      "veteran": 22
+     },
+     "per_model": true,
+     "limit": {
+      "n": 5,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace SMG with Anti-tank Rifle",
+     "cost": 11,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "RPG-1s",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Stubborn",
+     "cost": 1,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Engineers",
+     "cost": 1,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "SMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "5+",
+     "veteran": "6+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Heavy",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-moroz-gul",
+   "name": "Moroz Gul",
+   "unit_type": "Specialist Infantry 140",
+   "category": "infantry_specialist",
+   "composition": "1 NCO and 4 Moroz Gul REQUISITION POINTS",
+   "cost": {
+    "fixed": 140
+   },
+   "model_count": 5,
+   "special_rules": [
+    "Fast",
+    "Fieldcraft",
+    "Frozen Meat",
+    "Horror",
+    "Infiltrator"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Moroz Gul",
+     "cost": {
+      "flat": 28
+     },
+     "per_model": true,
+     "limit": {
+      "n": 5,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace SMG with Assault Rifle",
+     "cost": 2,
+     "per_model": true,
+     "limit": {
+      "n": 10,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "RPG-1s",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "SMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "8\"",
+      "run": "16\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "6+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Fast",
+      "text": ""
+     },
+     {
+      "name": "Fieldcraft",
+      "text": ""
+     },
+     {
+      "name": "Frozen Meat",
+      "text": "Moroz Gul are immune to damage and Pinning effects from Flamethrowers."
+     },
+     {
+      "name": "Horror",
+      "text": ""
+     },
+     {
+      "name": "Infiltrator",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "Killing Mist. When issued an Order a Moroz Gul Squad can opt to create an icy mist around themselves for the remainder of the Game Turn. This confers the Moroz Gul Squad Light Cover that moves with the unit. Killing Mist negates any Defensive Position bonus if the Moroz Gul Squad assaults in the same turn. If assaulting models in Open Ground the Moroz Gul Squad resolves their damage and casualties are removed before the enemy has a chance to retaliate. If a Moroz Gul squad uses Killing Mist exhaust its Rift Die after it has executed its Order.",
+     "surging": "Gain +1 Pen in Close Quarters.",
+     "exhausted": "May not be issued Run Orders.",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-ursus-infantry",
+   "name": "Ursus Infantry",
+   "unit_type": "Specialist Infantry 129",
+   "category": "infantry_specialist",
+   "composition": "3 Ursus Soldiers REQUISITION POINTS",
+   "cost": {
+    "fixed": 129
+   },
+   "model_count": 3,
+   "special_rules": [
+    "Deadly (4)",
+    "Fearless",
+    "Hard to Kill",
+    "Horror",
+    "Large",
+    "Wide Formation"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Ursus Infantry",
+     "cost": {
+      "flat": 43
+     },
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "40mm",
+    "weapons": [
+     "Teeth and Claws (+2 Pen at Close Quarters)"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "7+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Deadly (4)",
+      "text": ""
+     },
+     {
+      "name": "Fearless",
+      "text": ""
+     },
+     {
+      "name": "Hard to Kill",
+      "text": ""
+     },
+     {
+      "name": "Horror",
+      "text": ""
+     },
+     {
+      "name": "Large",
+      "text": ""
+     },
+     {
+      "name": "Wide Formation",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "Ursine Fury. When issued a Run Order Ursus Infantry can opt to enter an Ursine Fury. The unit gains the Fast special rule and each model increases its Teeth and Claws bonus to +3 Pen at Close Quarters for the remainder of the Game Turn. If this Enhancement is used exhaust the unit’s Rift Die after it has executed its Order.",
+     "surging": "Increase Damage Value to 8+.",
+     "exhausted": "Gain Lumbering special rule – Reduced to a movement rate of 4\" on an Advance Order and 8\" on a Run Order.",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-daughters-of-the-motherland",
+   "name": "Daughters Of The Motherland",
+   "unit_type": "Specialist Infantry 145",
+   "category": "infantry_specialist",
+   "composition": "1 NCO and 4 Daughters of the Motherland REQUISITION POINTS",
+   "cost": {
+    "fixed": 145
+   },
+   "model_count": 5,
+   "special_rules": [
+    "Fanatics",
+    "Fast"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Daughters of the Motherland",
+     "cost": {
+      "flat": 28
+     },
+     "per_model": true,
+     "limit": {
+      "n": 5,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Assault Rifle with LMG",
+     "cost": 9,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Assault Rifle with Zvukovoy Avtomat",
+     "cost": 29,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "RPG-1s",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Assault Rifle"
+    ],
+    "movement": [
+     {
+      "label": "Whilst Fast",
+      "adv": "8\"",
+      "run": "16\""
+     },
+     {
+      "label": "Otherwise",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "6+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Fanatics",
+      "text": ""
+     },
+     {
+      "name": "Fast",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "Rallying Cry. Before rolling for an Order Test Daughters of the Motherland can opt to exhaust their Rift Die to remove D3 Pin Markers from their own unit and all friendly units within 6\". Roll the D3 separately for each affected unit. If this results in the Daughters of the Motherland squad removing all their Pin Markers then the Order Test is passed automatically, unless the Order Test would be mandatory even without Pin Markers (e.g. Tank Fear). If this Enhancement is used, exhaust one of the Daughters of the Motherland’s Rift Dice after it has completed its Order.",
+     "surging": "Gain Hard to Kill special rule.",
+     "exhausted": "Lose Fast special rule.",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-mmg-team",
+   "name": "MMG Team",
+   "unit_type": "Machine Gun Team",
+   "category": "machine_gun_team",
+   "composition": "3 Soldiers Inexperienced: 35",
+   "cost": {
+    "inexperienced": 35,
+    "regular": 50,
+    "veteran": 65
+   },
+   "model_count": 3,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Gun Shield",
+     "cost": 5,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Medium Machine Gun"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-hmg-team",
+   "name": "HMG Team",
+   "unit_type": "Machine Gun Team",
+   "category": "machine_gun_team",
+   "composition": "4 Soldiers Inexperienced: 49",
+   "cost": {
+    "inexperienced": 49,
+    "regular": 70,
+    "veteran": 91
+   },
+   "model_count": 4,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Gun Shield",
+     "cost": 5,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Heavy Machine Gun"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-anti-tank-rifle-team",
+   "name": "Anti-Tank Rifle Team",
+   "unit_type": "Anti-tank Team",
+   "category": "anti_tank_team",
+   "composition": "2 Soldiers Inexperienced: 18",
+   "cost": {
+    "inexperienced": 18,
+    "regular": 25,
+    "veteran": 33
+   },
+   "model_count": 2,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Anti-tank Rifle"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-sniper-team",
+   "name": "Sniper Team",
+   "unit_type": "Sniper Team",
+   "category": "sniper_team",
+   "composition": "2 Soldiers Regular: 52",
+   "cost": {
+    "regular": 52,
+    "veteran": 67
+   },
+   "model_count": 2,
+   "special_rules": [
+    "Infiltrator",
+    "Sniper"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "weapon_swap",
+     "desc": "Replace the Team Leader’s Rifle with an Anti-tank Rifle",
+     "cost": 15,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace the Assistant's Pistol with a Rifle",
+     "cost": 1,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace the Assistant's Pistol with an SMG",
+     "cost": 5,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace the Assistant's Pistol with an Assault Rifle",
+     "cost": 7,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Team Leader – Rifle & Pistol",
+     "Assistant – Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Infiltrator",
+      "text": ""
+     },
+     {
+      "name": "Sniper",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-light-mortar-team",
+   "name": "Light Mortar Team",
+   "unit_type": "Light Mortar Team",
+   "category": "light_mortar_team",
+   "composition": "2 Soldiers Inexperienced: 21",
+   "cost": {
+    "inexperienced": 21,
+    "regular": 30,
+    "veteran": 39
+   },
+   "model_count": 2,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Light Mortar"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6”",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-medium-mortar-team",
+   "name": "Medium Mortar Team",
+   "unit_type": "Mortar Team",
+   "category": "mortar_team",
+   "composition": "3 Soldiers Inexperienced: 32",
+   "cost": {
+    "inexperienced": 32,
+    "regular": 45,
+    "veteran": 59
+   },
+   "model_count": 3,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Medium Mortar"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-heavy-mortar-team",
+   "name": "Heavy Mortar Team",
+   "unit_type": "Mortar Team",
+   "category": "mortar_team",
+   "composition": "4 Soldiers Inexperienced: 42",
+   "cost": {
+    "inexperienced": 42,
+    "regular": 60,
+    "veteran": 78
+   },
+   "model_count": 4,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Heavy Mortar"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-flamethrower-team",
+   "name": "Flamethrower Team",
+   "unit_type": "Flamethrower Team",
+   "category": "flamethrower_team",
+   "composition": "2 Soldiers Regular: 50",
+   "cost": {
+    "regular": 50,
+    "veteran": 65
+   },
+   "model_count": 2,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Team Leader – Infantry Flamethrower",
+     "Assistant – Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-light-artillery-team",
+   "name": "Light Artillery Team",
+   "unit_type": "Field Artillery",
+   "category": "field_artillery",
+   "composition": "3 Soldiers Inexperienced: 32",
+   "cost": {
+    "inexperienced": 32,
+    "regular": 45,
+    "veteran": 59
+   },
+   "model_count": 3,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Gun Shield",
+     "cost": 5,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Light Howitzer"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "6\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-medium-artillery-team",
+   "name": "Medium Artillery Team",
+   "unit_type": "Field Artillery",
+   "category": "field_artillery",
+   "composition": "4 Soldiers Inexperienced: 60",
+   "cost": {
+    "inexperienced": 60,
+    "regular": 85,
+    "veteran": 111
+   },
+   "model_count": 4,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Gun Shield",
+     "cost": 5,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Medium Howitzer"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "6\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-heavy-artillery-team",
+   "name": "Heavy Artillery Team",
+   "unit_type": "Field Artillery",
+   "category": "field_artillery",
+   "composition": "5 Soldiers Inexperienced: 95",
+   "cost": {
+    "inexperienced": 95,
+    "regular": 135,
+    "veteran": 176
+   },
+   "model_count": 5,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Gun Shield",
+     "cost": 5,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Heavy Howitzer"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "N/A"
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-light-anti-tank-gun-team",
+   "name": "Light Anti-Tank Gun Team",
+   "unit_type": "Anti-tank Gun",
+   "category": "anti_tank_gun",
+   "composition": "3 Soldiers Inexperienced: 35",
+   "cost": {
+    "inexperienced": 35,
+    "regular": 50,
+    "veteran": 65
+   },
+   "model_count": 3,
+   "special_rules": [
+    "Gun Shield"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Light Anti-tank Gun"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "6\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Gun Shield",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-medium-anti-tank-gun-team",
+   "name": "Medium Anti-Tank Gun Team",
+   "unit_type": "Anti-tank Gun",
+   "category": "anti_tank_gun",
+   "composition": "3 Soldiers Inexperienced: 49",
+   "cost": {
+    "inexperienced": 49,
+    "regular": 70,
+    "veteran": 91
+   },
+   "model_count": 3,
+   "special_rules": [
+    "Gun Shield"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Medium Anti-tank Gun"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "6\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Gun Shield",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-heavy-anti-tank-gun-team",
+   "name": "Heavy Anti-Tank Gun Team",
+   "unit_type": "Anti-tank Gun",
+   "category": "anti_tank_gun",
+   "composition": "4 Soldiers Inexperienced: 70",
+   "cost": {
+    "inexperienced": 70,
+    "regular": 100,
+    "veteran": 130
+   },
+   "model_count": 4,
+   "special_rules": [
+    "Gun Shield"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Heavy Anti-tank Gun"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "N/A"
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Gun Shield",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-super-heavy-anti-tank-gun-team",
+   "name": "Super-Heavy Anti-Tank Gun Team",
+   "unit_type": "Anti-tank Gun",
+   "category": "anti_tank_gun",
+   "composition": "5 Soldiers Inexperienced: 98",
+   "cost": {
+    "inexperienced": 98,
+    "regular": 140,
+    "veteran": 182
+   },
+   "model_count": 5,
+   "special_rules": [
+    "Gun Shield"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Super-heavy Anti-tank Gun"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "N/A"
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Gun Shield",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-zvukovoy-proeyektor-team",
+   "name": "Zvukovoy Proeyektor Team",
+   "unit_type": "Anti-tank Gun",
+   "category": "anti_tank_gun",
+   "composition": "3 Soldiers Inexperienced: 84",
+   "cost": {
+    "inexperienced": 84,
+    "regular": 120,
+    "veteran": 156
+   },
+   "model_count": 3,
+   "special_rules": [],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Zvukovoy Proeyektor – Counts as Heavy Artillery for the purposes of being moved by its crew"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "N/A"
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-kazak-light-walker",
+   "name": "Kazak Light Walker",
+   "unit_type": "Light Walker (2 Legs)",
+   "category": "armoured_walker",
+   "composition": null,
+   "cost": {
+    "regular": 115,
+    "veteran": 138
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Recce",
+    "Two-legged"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Forward-facing Light Automatic Cannon with Light Anti-tank Gun",
+     "cost": 20,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1x Forward-facing Light Automatic Cannon",
+     "1x Forward-facing MMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "8+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Recce",
+      "text": ""
+     },
+     {
+      "name": "Two-legged",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-dm-40-molot-medium-walker",
+   "name": "DM-40 Molot Medium Walker",
+   "unit_type": "Medium Walker (2 Legs)",
+   "category": "armoured_walker",
+   "composition": null,
+   "cost": {
+    "regular": 238,
+    "veteran": 286
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Reinforced Front Armour",
+    "Slow",
+    "Two-legged"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1x Forward-facing Medium Anti-tank Gun",
+     "Twin Forward-facing HMGs"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 6\"",
+      "run": "6\"–12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "9+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Reinforced Front Armour",
+      "text": ""
+     },
+     {
+      "name": "Slow",
+      "text": ""
+     },
+     {
+      "name": "Two-legged",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-mahmot-heavy-walker",
+   "name": "Mahmot Heavy Walker",
+   "unit_type": "Super-heavy Walker (4 Legs)",
+   "category": "armoured_walker",
+   "composition": null,
+   "cost": {
+    "regular": 495,
+    "veteran": 594
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Multi-legged",
+    "Slow"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1 x Turret-mounted Light Howitzer",
+     "1 x Forward-facing Heavy Howitzer",
+     "1 x Turret-mounted HMG covering the front and left arcs",
+     "1 x Turret-mounted HMG covering the rear and right arcs"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 6\"",
+      "run": "6\"–12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "11+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Multi-legged",
+      "text": ""
+     },
+     {
+      "name": "Slow",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-mastodont-heavy-walker",
+   "name": "Mastodont Heavy Walker",
+   "unit_type": "Super-heavy Walker (4 Legs)",
+   "category": "armoured_walker",
+   "composition": null,
+   "cost": {
+    "regular": 430,
+    "veteran": 516
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Multi-legged",
+    "Slow"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1 x Turret-mounted Super-heavy Anti-tank Gun and Co-axial MMG",
+     "1 x Forward-facing, Hull-mounted MMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 6\"",
+      "run": "6\"–12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "11+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Multi-legged",
+      "text": ""
+     },
+     {
+      "name": "Slow",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-t-34-zp-medium-tank",
+   "name": "T-34/ZP Medium Tank",
+   "unit_type": "Medium Tank",
+   "category": "tank",
+   "composition": null,
+   "cost": {
+    "inexperienced": 192,
+    "regular": 240,
+    "veteran": 288
+   },
+   "model_count": 1,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Turret-mounted Zvukovoy Proeyektor with Heavy Anti-tank Gun & Co-axial MMG",
+     "cost": -15,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Hull-mounted MMG with a Vehicle Flamethrower",
+     "cost": 40,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1x Turret-mounted Zvukovoy Proeyektor",
+     "1x Forward-facing, Hull-mounted MMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 9\"",
+      "run": "9\"–18\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "9+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": "Only If Armed With Zvukovoy Proeyektor"
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-kv-zp-heavy-tank",
+   "name": "KV-ZP Heavy Tank",
+   "unit_type": "Heavy Tank",
+   "category": "tank",
+   "composition": null,
+   "cost": {
+    "inexperienced": 256,
+    "regular": 320,
+    "veteran": 384
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Armoured All Round",
+    "Slow"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1x Turret-mounted Zvukovoy Proeyektor",
+     "1x Forward-facing, Hull-mounted MMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 6\"",
+      "run": "6\"–12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "10+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Armoured All Round",
+      "text": ""
+     },
+     {
+      "name": "Slow",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-zvukovoy-proeyektor-emplacement",
+   "name": "Zvukovoy Proeyektor Emplacement",
+   "unit_type": "Medium Emplacement (Counts as Medium Tank)",
+   "category": "tank",
+   "composition": null,
+   "cost": {
+    "inexperienced": 160,
+    "regular": 200,
+    "veteran": 240
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Armoured All Round",
+    "Emplacement"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1x Turret-mounted Zvukovoy Proeyektor"
+    ],
+    "movement": [
+     {
+      "label": "Veteran: 240",
+      "adv": "N/A",
+      "run": "N/A"
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "9+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Armoured All Round",
+      "text": ""
+     },
+     {
+      "name": "Emplacement",
+      "text": "The Zvukovoy Proeyektor Emplacement starts the game with an Immobilised result. In scenarios that do not normally allow units to start on the table, place this unit within 6” of your DZE."
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-truck",
+   "name": "Truck",
+   "unit_type": "Transport Vehicle",
+   "category": "transport",
+   "composition": null,
+   "cost": {
+    "inexperienced": 22,
+    "regular": 27,
+    "veteran": 32
+   },
+   "model_count": 1,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Forward-facing Pintle-mounted LMG",
+     "cost": 10,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "None"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "6+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-m3-white-scout-car",
+   "name": "M3 White Scout Car",
+   "unit_type": "Transport Vehicle",
+   "category": "transport",
+   "composition": null,
+   "cost": {
+    "inexperienced": 54,
+    "regular": 68,
+    "veteran": 82
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Open-topped"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Pintle-mounted MMG covering the right and rear arcs",
+     "cost": 15,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    },
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Pintle-mounted MMG covering the left and rear arcs",
+     "cost": 15,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1x Forward-facing, Pintle-mounted HMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "7+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Open-topped",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-t-20-komsomolets",
+   "name": "T-20 Komsomolets",
+   "unit_type": "Transport Vehicle",
+   "category": "transport",
+   "composition": null,
+   "cost": {
+    "inexperienced": 37,
+    "regular": 46,
+    "veteran": 55
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Open-topped"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1x Forward-facing, Hull-mounted LMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 9\"",
+      "run": "9\"–18\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "7+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Open-topped",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "soviet-gaz-jeep",
+   "name": "GAZ ‘Jeep’",
+   "unit_type": "Transport Vehicle",
+   "category": "transport",
+   "composition": null,
+   "cost": {
+    "inexperienced": 14,
+    "regular": 18,
+    "veteran": 22
+   },
+   "model_count": 1,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "None"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "6+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  }
+ ]
+}

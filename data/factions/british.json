@@ -1,0 +1,4065 @@
+{
+ "id": "british",
+ "name": "British Commonwealth",
+ "army_special_rules": [
+  {
+   "name": "Computational Systems",
+   "text": "British Commonwealth units with this special rule ignore the –1 'to hit' penalty for moving and shooting. Units must have this special rule indicated in their Unit Profile to benefit from it."
+  },
+  {
+   "name": "Automated Recovery",
+   "text": "When rolling on the Vehicle Damage tables against British Commonwealth Vehicles that are Rift Units, ignore Crew Stunned results. The damage has no effect other than the normal Pin Marker(s) inflicted for being successfully hit by a ranged weapon."
+  },
+  {
+   "name": "Keep Calm Lads",
+   "text": "Each time a British Infantry unit on a Down Order receives a Pin Marker, roll a D6. On the roll of a 4+, immediately discard it. If it would receive multiple Pin Markers at once, roll for each separately."
+  },
+  {
+   "name": "Superior Codebreaking",
+   "text": "Once per game, at the start of any Game Turn, a British Commonwealth player may choose a Die to draw from the Dice bag, rather than draw randomly. If the Order is issued to an Officer or a Command Vehicle, it may not be used to initiate a Snap to Action! ability. If there is more than one British Commonwealth player, and they decide to use this ability at the same time, roll off. The winner may make use of this ability; the loser must wait for a future turn."
+  }
+ ],
+ "special_platoons": [
+  {
+   "id": "automated-infantry",
+   "name": "Automated Infantry Platoon",
+   "faction": "british",
+   "counts_as_assault": true,
+   "notes": [
+    "The range of the Data Transmission rule on Mk IIC Automated Directors and Mk II Heavy Automated Infantry units is extended to 12\".",
+    "Mk II Heavy Automated Infantry units in this Platoon may use the Snap to Action! ability as if they were Officers, but may only issue one Order. This must be to a unit within 6\" in the same Platoon that ordinarily has the First Off the Line special rule. This rule may not be used in conjunction with Superior Codebreaking."
+   ],
+   "slots": [
+    {
+     "role": "Mk IIC Automated Director",
+     "min": 1,
+     "max": 1,
+     "match": "name",
+     "names": [
+      "MK IIC Automated Director"
+     ]
+    },
+    {
+     "role": "Mk I Automated Infantry Squads",
+     "min": 2,
+     "max": 2,
+     "match": "name",
+     "names": [
+      "MK I Automated Infantry"
+     ]
+    },
+    {
+     "role": "Mk II Heavy Automated Infantry Squad",
+     "min": 1,
+     "max": 1,
+     "match": "name",
+     "names": [
+      "MK II Heavy Automated Infantry"
+     ]
+    },
+    {
+     "role": "Mk I Automated Infantry Squads",
+     "min": 0,
+     "max": 2,
+     "match": "name",
+     "names": [
+      "MK I Automated Infantry"
+     ]
+    },
+    {
+     "role": "Mk II Heavy Automated Infantry Squad",
+     "min": 0,
+     "max": 1,
+     "match": "name",
+     "names": [
+      "MK II Heavy Automated Infantry"
+     ]
+    },
+    {
+     "role": "Automated Mobile Platforms 'Hunter'",
+     "min": 0,
+     "max": 3,
+     "match": "name",
+     "names": [
+      "Automated Mobile Platform ‘Hunter’"
+     ]
+    },
+    {
+     "role": "Automated Mobile Platforms 'Bombardier'",
+     "min": 0,
+     "max": 3,
+     "match": "name",
+     "names": [
+      "Automated Mobile Platform ‘Bombardier’"
+     ]
+    },
+    {
+     "role": "Automated Mobile Platforms 'Lancer'",
+     "min": 0,
+     "max": 3,
+     "match": "name",
+     "names": [
+      "Automated Mobile Platform ‘Lancer’"
+     ]
+    },
+    {
+     "role": "Automated Carriers",
+     "min": 0,
+     "max": 3,
+     "match": "name",
+     "names": [
+      "Automated Carrier"
+     ]
+    },
+    {
+     "role": "'B for Bertie' – Automated Infantry Hero",
+     "min": 0,
+     "max": 1,
+     "match": "name",
+     "names": [
+      "'B For Bertie' - Automated Infantry Hero"
+     ]
+    }
+   ]
+  }
+ ],
+ "company_commander_allowed": 1,
+ "units": [
+  {
+   "id": "british-b-for-bertie-automated-infantry-hero",
+   "name": "'B For Bertie' - Automated Infantry Hero",
+   "unit_type": "Hero 120",
+   "category": "hero",
+   "composition": "1 Automated Infantry Hero REQUISITION POINTS",
+   "cost": {
+    "fixed": 120
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Augmented",
+    "Computational Systems",
+    "Fearless",
+    "Friend?",
+    "Hard to Kill",
+    "In the Nick of Time",
+    "Infiltrator",
+    "Large",
+    "Lone Wanderer",
+    "Lumbering"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "32mm",
+    "weapons": [
+     "HMG"
+    ],
+    "movement": [
+     {
+      "label": "Lumbering",
+      "adv": "4\"",
+      "run": "8\""
+     },
+     {
+      "label": "Not Lumbering",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "6+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Augmented",
+      "text": ""
+     },
+     {
+      "name": "Computational Systems",
+      "text": ""
+     },
+     {
+      "name": "Fearless",
+      "text": ""
+     },
+     {
+      "name": "Friend?",
+      "text": "'B for Bertie' may also be taken as a Hero in a United States force."
+     },
+     {
+      "name": "Hard to Kill",
+      "text": ""
+     },
+     {
+      "name": "In the Nick of Time",
+      "text": "When Outflanking, 'B for Bertie' automatically passes the Order Test for coming onto the board"
+     },
+     {
+      "name": "Infiltrator",
+      "text": ""
+     },
+     {
+      "name": "Large",
+      "text": ""
+     },
+     {
+      "name": "Lone Wanderer",
+      "text": "'B for Bertie' may never be issued Orders from a Snap to Action! ability."
+     },
+     {
+      "name": "Lumbering",
+      "text": "'B for Bertie' has a movement rate of 4\" on an Advance Order and 8\" on a Run Order."
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "Protection Subroutine. When a friendly infantry unit within Line of Sight of 'B for Bertie' is the target of a ranged attack, Bertie may use this Rift Enhancement immediately after that attack has been resolved. 'B for Bertie' may immediately execute an Advance Order, but may only fire at the enemy unit which made the shooting attack. Bertie does not require an Order Dice to do this, and may use this Rift Enhancement even if it already has an Order Die. If this enhancement is used, exhaust 'B for Bertie's' Rift Die after it has executed this Advance Order.",
+     "surging": "Lose the Lumbering special rule.",
+     "exhausted": "May not be issued Run Orders. HQ Teams",
+     "note": ""
+    },
+    "hero_stats": {
+     "Luck": 3
+    }
+   }
+  },
+  {
+   "id": "british-company-commander-officer",
+   "name": "Company Commander - Officer",
+   "unit_type": "Company Commander",
+   "category": "company_commander",
+   "composition": "1 Officer Inexperienced: 42",
+   "cost": {
+    "inexperienced": 42,
+    "regular": 60,
+    "veteran": 78
+   },
+   "model_count": 1,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "hero_stat",
+     "desc": "Guts",
+     "cost": 10,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "hero_stat",
+     "desc": "Rift Mastery",
+     "cost": 15,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers with Pistols",
+     "cost": {
+      "inexperienced": 6,
+      "regular": 9,
+      "veteran": 12
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Assault Rifle",
+     "cost": 7,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "PRIAMs",
+     "cost": 5,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-company-commander-officer-in-galahad-heavy-armour",
+   "name": "Company Commander - Officer In Galahad Heavy Armour",
+   "unit_type": "Company Commander",
+   "category": "company_commander",
+   "composition": "1 Officer in Grade 1 Galahad Heavy Powered Armour Regular: 80",
+   "cost": {
+    "regular": 80,
+    "veteran": 98
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Heavy"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "hero_stat",
+     "desc": "Guts",
+     "cost": 10,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "hero_stat",
+     "desc": "Rift Mastery",
+     "cost": 15,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers in Grade",
+     "cost": {
+      "regular": 30,
+      "veteran": 33
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "PRIAMs",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Stubborn",
+     "cost": 1,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Tough Fighters",
+     "cost": 1,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "LMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "5+",
+     "veteran": "6+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Heavy",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": "Only If Armed With Heavy Tesla Rifle"
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-platoon-commander-officer",
+   "name": "Platoon Commander - Officer",
+   "unit_type": "Platoon Commander",
+   "category": "platoon_commander",
+   "composition": "1 Officer Inexperienced: 21",
+   "cost": {
+    "inexperienced": 21,
+    "regular": 30,
+    "veteran": 39
+   },
+   "model_count": 1,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "hero_stat",
+     "desc": "Guts",
+     "cost": 10,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "hero_stat",
+     "desc": "Rift Mastery",
+     "cost": 15,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers armed with Pistols",
+     "cost": {
+      "inexperienced": 6,
+      "regular": 9,
+      "veteran": 12
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Assault Rifle",
+     "cost": 7,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "PRIAMs",
+     "cost": 5,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-platoon-commander-officer-in-galahad-heavy-armour",
+   "name": "Platoon Commander - Officer In Galahad Heavy Armour",
+   "unit_type": "Platoon Commander",
+   "category": "platoon_commander",
+   "composition": "1 Officer in Grade 1 Galahad Heavy Powered Armour Regular: 50",
+   "cost": {
+    "regular": 50,
+    "veteran": 59
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Heavy"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "hero_stat",
+     "desc": "Guts",
+     "cost": 10,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "hero_stat",
+     "desc": "Rift Mastery",
+     "cost": 15,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers in Grade",
+     "cost": {
+      "regular": 30,
+      "veteran": 33
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "PRIAMs",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Stubborn",
+     "cost": 1,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Tough Fighters",
+     "cost": 1,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "LMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "5+",
+     "veteran": "6+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Heavy",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": "Only If Armed With Heavy Tesla Rifle"
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-mk-iic-automated-director",
+   "name": "MK IIC Automated Director",
+   "unit_type": "Platoon Commander 110",
+   "category": "platoon_commander",
+   "composition": "1 Mk II Heavy Automaton REQUISITION POINTS",
+   "cost": {
+    "fixed": 110
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Augmented",
+    "Automated Director",
+    "Computational Systems",
+    "Data Transmission",
+    "Fearless",
+    "Hard to Kill",
+    "Large",
+    "Lumbering",
+    "Wide Formation"
+   ],
+   "rift_dice": 2,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Mk II Heavy Automated Infantry armed with Light Automatic Cannons",
+     "cost": {
+      "flat": 63
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "vehicle_add",
+     "desc": "Add Close Combat Blades to Light Automatic Cannons, gaining",
+     "cost": 1,
+     "per_model": false,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Light Automatic Cannon With Heavy Automatic Cannon",
+     "cost": 10,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Light Automatic Cannon with M21 Light Tesla Cannon",
+     "cost": 20,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "40mm",
+    "weapons": [
+     "M21 Light Tesla Cannon"
+    ],
+    "movement": [
+     {
+      "label": "Lumbering",
+      "adv": "4\"",
+      "run": "8\""
+     },
+     {
+      "label": "Not Lumbering",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "7+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Augmented",
+      "text": ""
+     },
+     {
+      "name": "Automated Director",
+      "text": "A Mk IIC Automated Director does not confer a Morale bonus to friendly troops. When using the Snap to Action! ability, a Mk IIC Automated Director may only issue Orders to friendly units with the Computational Systems special rule."
+     },
+     {
+      "name": "Computational Systems",
+      "text": ""
+     },
+     {
+      "name": "Data Transmission",
+      "text": "Friendly units within 6\" of a Mk IIC Automated Director unit lose the First Off the Line special rule whilst both they and the Mk IIC Automated Director have an Active or Surging Rift Die."
+     },
+     {
+      "name": "Fearless",
+      "text": ""
+     },
+     {
+      "name": "Hard to Kill",
+      "text": ""
+     },
+     {
+      "name": "Large",
+      "text": ""
+     },
+     {
+      "name": "Lumbering",
+      "text": "A Mk IIC Automated Director has a movement rate of 4\" on an Advance Order and 8\" on a Run Order."
+     },
+     {
+      "name": "Wide Formation",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 2,
+     "enhancement": "Command Relay. When a Mk IIC Automated Director uses the Snap to Action! ability, it may use this enhancement. The Automated Director may issue Orders to up to two units with the Computational Systems special rule anywhere on the table, rather than within 6\". If this Rift Enhancement is used, exhaust one of the Automated Director's Rift Dice after it has executed its own Order.",
+     "surging": "Lose the Lumbering special rule. When using the Snap to Action! ability, the Automated Director may issue Orders to up to 3 friendly units.",
+     "exhausted": "May not be issued Run Orders. May not use the Snap to Action! ability.",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-medic",
+   "name": "Medic",
+   "unit_type": "Medic",
+   "category": "medic",
+   "composition": "1 Medic 30",
+   "cost": {
+    "fixed": 30
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Medic"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers armed with Pistols",
+     "cost": {
+      "flat": 12
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": "additional soldiers only"
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": "additional soldiers only"
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Assault Rifle",
+     "cost": 7,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": "additional soldiers only"
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "5+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Medic",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-artillery-forward-observer",
+   "name": "Artillery Forward Observer",
+   "unit_type": "Forward Observer",
+   "category": "forward_observer",
+   "composition": "1 Artillery Forward Observer Regular: 75",
+   "cost": {
+    "regular": 75,
+    "veteran": 90
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Infiltrator"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers armed with Pistols",
+     "cost": {
+      "regular": 9,
+      "veteran": 12
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Assault Rifle",
+     "cost": 7,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Infiltrator",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-air-force-forward-observer",
+   "name": "Air Force Forward Observer",
+   "unit_type": "Forward Observer",
+   "category": "forward_observer",
+   "composition": "1 Air Force Forward Observer Regular: 75",
+   "cost": {
+    "regular": 75,
+    "veteran": 90
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Infiltrator"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers armed with Pistols",
+     "cost": {
+      "regular": 9,
+      "veteran": 12
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Assault Rifle",
+     "cost": 7,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Infiltrator",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-rifle-squad",
+   "name": "Rifle Squad",
+   "unit_type": "Basic Infantry",
+   "category": "infantry_basic",
+   "composition": "1 NCO and 4 Soldiers REQUISITION POINTS",
+   "cost": {
+    "inexperienced": 35,
+    "regular": 50,
+    "veteran": 65
+   },
+   "model_count": 5,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers",
+     "cost": {
+      "inexperienced": 7,
+      "regular": 10,
+      "veteran": 13
+     },
+     "per_model": true,
+     "limit": {
+      "n": 7,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Rifle with SMG",
+     "cost": 4,
+     "per_model": true,
+     "limit": {
+      "n": 12,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Rifle with Assault Rifle",
+     "cost": 6,
+     "per_model": true,
+     "limit": {
+      "n": 12,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Upgrade Rifle with the ability to fire Rifle Grenades",
+     "cost": 6,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Rifle with LMG",
+     "cost": 15,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Rifle with Infantry Flamethrower",
+     "cost": 30,
+     "per_model": true,
+     "limit": {
+      "n": 1,
+      "scope": "squad"
+     },
+     "condition": "only if engineers option taken"
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "PRIAMs",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Stubborn",
+     "cost": 1,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Engineers",
+     "cost": 1,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Rifle"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-galahad-armoured-infantry-squad",
+   "name": "Galahad Armoured Infantry Squad",
+   "unit_type": "Advanced Infantry",
+   "category": "infantry_advanced",
+   "composition": "1 NCO and 3 Soldiers in Grade 1 Heavy Powered Armour REQUISITION POINTS",
+   "cost": {
+    "regular": 120,
+    "veteran": 132
+   },
+   "model_count": 4,
+   "special_rules": [
+    "Heavy"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers in Grade",
+     "cost": {
+      "regular": 30,
+      "veteran": 33
+     },
+     "per_model": true,
+     "limit": {
+      "n": 6,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "PRIAMs",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Engineers",
+     "cost": 1,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Stubborn",
+     "cost": 1,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Tough Fighters",
+     "cost": 1,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "LMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "5+",
+     "veteran": "6+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Heavy",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-italian-bersaglieri-squad",
+   "name": "Italian Bersaglieri Squad",
+   "unit_type": "Advanced Infantry 136",
+   "category": "infantry_advanced",
+   "composition": "1 NCO and 3 Soldiers in Grade 1 Heavy Powered Armour REQUISITION POINTS",
+   "cost": {
+    "fixed": 136
+   },
+   "model_count": 4,
+   "special_rules": [
+    "Heavy",
+    "Tough Fighters"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers in Grade",
+     "cost": {
+      "flat": 34
+     },
+     "per_model": true,
+     "limit": {
+      "n": 4,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "LMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "6+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Heavy",
+      "text": ""
+     },
+     {
+      "name": "Tough Fighters",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-mk-i-automated-infantry",
+   "name": "MK I Automated Infantry",
+   "unit_type": "Specialist Infantry 175",
+   "category": "infantry_specialist",
+   "composition": "5 Mk I Automatons REQUISITION POINTS",
+   "cost": {
+    "fixed": 175
+   },
+   "model_count": 5,
+   "special_rules": [
+    "Augmented",
+    "Computational Systems",
+    "Fearless",
+    "First Off the Line",
+    "Large",
+    "Lumbering"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Mk I Automated Infantry",
+     "cost": {
+      "flat": 35
+     },
+     "per_model": true,
+     "limit": {
+      "n": 5,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "Replace MMGs with HMGs",
+     "cost": 10,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "32mm",
+    "weapons": [
+     "MMG"
+    ],
+    "movement": [
+     {
+      "label": "Lumbering",
+      "adv": "4\"",
+      "run": "8\""
+     },
+     {
+      "label": "Not Lumbering",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "6+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Augmented",
+      "text": ""
+     },
+     {
+      "name": "Computational Systems",
+      "text": ""
+     },
+     {
+      "name": "Fearless",
+      "text": ""
+     },
+     {
+      "name": "First Off the Line",
+      "text": "Mk I Automated Infantry suffer a –1 ‘to hit’ modifier when shooting."
+     },
+     {
+      "name": "Large",
+      "text": ""
+     },
+     {
+      "name": "Lumbering",
+      "text": "Mk I Automated Infantry have a movement rate of 4\" on an Advance Order and 8\" on a Run Order."
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "High Voltage! When executing a Run Order, a Mk I Automated Infantry Squad may use this Active Rift Enhancement. The unit gains the Deadly (2) and Fast special rules (and loses Lumbering) for the duration of the Run Order. Exhaust the unit’s Rift Die after resolving the Run Order. Note that if locked in Close Quarters, the Rift Die will exhaust after the second round of Close Quarters is resolved.",
+     "surging": "Lose the Lumbering special rule.",
+     "exhausted": "May not be issued Run Orders.",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-mk-ii-heavy-automated-infantry",
+   "name": "MK II Heavy Automated Infantry",
+   "unit_type": "Specialist Infantry 126",
+   "category": "infantry_specialist",
+   "composition": "2 Mk II Heavy Automatons REQUISITION POINTS",
+   "cost": {
+    "fixed": 126
+   },
+   "model_count": 2,
+   "special_rules": [
+    "Augmented",
+    "Computational Systems",
+    "Data Transmission",
+    "Fearless",
+    "Hard to Kill",
+    "Large",
+    "Lumbering",
+    "Wide Formation"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Mk II Heavy Automated Infantry",
+     "cost": {
+      "flat": 63
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "vehicle_add",
+     "desc": "Add Close Combat Blades to Light Automatic Cannons, gaining",
+     "cost": 3,
+     "per_model": false,
+     "limit": {
+      "n": 4,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Light Automatic Cannon with Heavy Automatic Cannon",
+     "cost": 10,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Light Automatic Cannon with M21 Light Tesla Cannon",
+     "cost": 20,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "40mm",
+    "weapons": [
+     "Light Automatic Cannon"
+    ],
+    "movement": [
+     {
+      "label": "Lumbering",
+      "adv": "4\"",
+      "run": "8\""
+     },
+     {
+      "label": "Not Lumbering",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "7+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Augmented",
+      "text": ""
+     },
+     {
+      "name": "Computational Systems",
+      "text": ""
+     },
+     {
+      "name": "Data Transmission",
+      "text": "Friendly units within 6\" of a Mk II Heavy Automated Infantry unit lose the First Off the Line special rule whilst both they and the Mk II Heavy Automated Infantry Unit have an Active or Surging Rift Die."
+     },
+     {
+      "name": "Fearless",
+      "text": ""
+     },
+     {
+      "name": "Hard to Kill",
+      "text": ""
+     },
+     {
+      "name": "Large",
+      "text": ""
+     },
+     {
+      "name": "Lumbering",
+      "text": "Mk II Heavy Automated Infantry have a movement rate of 4\" on an Advance Order and 8\" on a Run Order."
+     },
+     {
+      "name": "Wide Formation",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "Co-ordinated Strike! When executing a Fire or Advance Order, a Mk II Heavy Automated Infantry Squad may ignore friendly units for determining a Line of Fire. Note that they still require a Line of Sight to their target. If this Enhancement is used, exhaust one of the unit’s Rift Dice after they have executed their Order.",
+     "surging": "Lose the Lumbering special rule.",
+     "exhausted": "May not be issued Run Orders.",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-british-grenadiers",
+   "name": "British Grenadiers",
+   "unit_type": "Specialist Infantry 95",
+   "category": "infantry_specialist",
+   "composition": "1 NCO & 4 Grenadiers REQUISITION POINTS",
+   "cost": {
+    "fixed": 95
+   },
+   "model_count": 5,
+   "special_rules": [
+    "Only Human",
+    "Stubborn"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Grenadiers",
+     "cost": {
+      "flat": 19
+     },
+     "per_model": true,
+     "limit": {
+      "n": 5,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Assault Rifle with Heavy Tesla Rifle",
+     "cost": 4,
+     "per_model": true,
+     "limit": {
+      "n": 1,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Upgrade Assault Rifle with the ability to fire Rifle Grenades",
+     "cost": 6,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Assault Rifle"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "5+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Only Human",
+      "text": "Unlike other Rift units, a British Grenadiers Squad can benefit from the presence of a nearby Medic."
+     },
+     {
+      "name": "Stubborn",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": "Only If Armed With Heavy Tesla Rifle"
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-cerberus-squad",
+   "name": "Cerberus Squad",
+   "unit_type": "Specialist Infantry 107",
+   "category": "infantry_specialist",
+   "composition": "1 Handler & 3 War Dogs REQUISITION POINTS",
+   "cost": {
+    "fixed": 107
+   },
+   "model_count": 4,
+   "special_rules": [
+    "Alert",
+    "Fast",
+    "Fearless",
+    "Tough Fighters (War Dogs only)"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Handlers with Pistols",
+     "cost": {
+      "flat": 26
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "add_models",
+     "desc": "Additional War Dogs",
+     "cost": {
+      "flat": 27
+     },
+     "per_model": true,
+     "limit": null,
+     "quality_locked": true
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Handler – Pistol",
+     "War Dogs – Teeth (+1 Pen at Close Quarters)"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "8\"",
+      "run": "16\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "6+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Alert",
+      "text": "Enemy Infiltrators may not deploy within 18\" of any force that includes a Cerberus Squad."
+     },
+     {
+      "name": "Fast",
+      "text": ""
+     },
+     {
+      "name": "Fearless",
+      "text": ""
+     },
+     {
+      "name": "Tough Fighters (War Dogs only)",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-mmg-team",
+   "name": "MMG Team",
+   "unit_type": "Machine Gun Team",
+   "category": "machine_gun_team",
+   "composition": "3 Soldiers Inexperienced: 35",
+   "cost": {
+    "inexperienced": 35,
+    "regular": 50,
+    "veteran": 65
+   },
+   "model_count": 3,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Medium Machine Gun"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-hmg-team",
+   "name": "HMG Team",
+   "unit_type": "Machine Gun Team",
+   "category": "machine_gun_team",
+   "composition": "4 Soldiers Inexperienced: 49",
+   "cost": {
+    "inexperienced": 49,
+    "regular": 70,
+    "veteran": 91
+   },
+   "model_count": 4,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Heavy Machine Gun"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-automated-mobile-platform-lancer",
+   "name": "Automated Mobile Platform ‘Lancer’",
+   "unit_type": "Machine Gun Team",
+   "category": "machine_gun_team",
+   "composition": "1 Automated Mobile Platform 99",
+   "cost": {
+    "fixed": 99
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Augmented",
+    "Bulky",
+    "Computational Systems",
+    "Fearless",
+    "First Off the Line",
+    "Flak",
+    "Hard to Kill"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "32mm",
+    "weapons": [
+     "3x Heavy Machine Guns"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "6+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Augmented",
+      "text": ""
+     },
+     {
+      "name": "Bulky",
+      "text": "Automated Mobile Platforms may not be mounted in Transports."
+     },
+     {
+      "name": "Computational Systems",
+      "text": ""
+     },
+     {
+      "name": "Fearless",
+      "text": ""
+     },
+     {
+      "name": "First Off the Line",
+      "text": "Automated Mobile Platforms suffer a –1 ‘to hit’ modifier when shooting."
+     },
+     {
+      "name": "Flak",
+      "text": ""
+     },
+     {
+      "name": "Hard to Kill",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "Storm of Lead. When executing a Fire Order, a Lancer may increase the Shots value of each of its HMGs by +1. Exhaust the Lancer’s Rift Die after resolving the Fire Order.",
+     "surging": "Gains the Fast special rule.",
+     "exhausted": "May not be issued Run Orders.",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-piat-team",
+   "name": "PIAT Team",
+   "unit_type": "Anti-tank Team",
+   "category": "anti_tank_team",
+   "composition": "2 Soldiers Inexperienced: 28",
+   "cost": {
+    "inexperienced": 28,
+    "regular": 40,
+    "veteran": 52
+   },
+   "model_count": 2,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x PIAT"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-super-bazooka-team",
+   "name": "Super Bazooka Team",
+   "unit_type": "Anti-tank Team",
+   "category": "anti_tank_team",
+   "composition": "2x Soldiers Inexperienced: 56",
+   "cost": {
+    "inexperienced": 56,
+    "regular": 80,
+    "veteran": 104
+   },
+   "model_count": 1,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Super Bazooka"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-automated-mobile-platform-hunter",
+   "name": "Automated Mobile Platform ‘Hunter’",
+   "unit_type": "Anti-tank Team",
+   "category": "anti_tank_team",
+   "composition": "1 Automated Mobile Platform 84",
+   "cost": {
+    "fixed": 84
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Augmented",
+    "Bulky",
+    "Computational Systems",
+    "Fearless",
+    "First Off the Line",
+    "Hard to Kill"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "32mm",
+    "weapons": [
+     "1x Light Anti-tank Gun"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "6+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Augmented",
+      "text": ""
+     },
+     {
+      "name": "Bulky",
+      "text": "Automated Mobile Platforms may not be mounted in Transports."
+     },
+     {
+      "name": "Computational Systems",
+      "text": ""
+     },
+     {
+      "name": "Fearless",
+      "text": ""
+     },
+     {
+      "name": "First Off the Line",
+      "text": "Automated Mobile Platforms suffer a –1 ‘to hit’ modifier when shooting."
+     },
+     {
+      "name": "Hard to Kill",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "High Velocity Round. When executing a Fire Order, a Hunter may fire its Light Anti-tank Gun as if it were a Medium Anti-tank Gun. Exhaust the Hunter’s Rift Die after resolving the Fire Order.",
+     "surging": "Gains the Fast special rule.",
+     "exhausted": "May not be issued Run Orders.",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-sniper-team",
+   "name": "Sniper Team",
+   "unit_type": "Sniper Team",
+   "category": "sniper_team",
+   "composition": "2 Soldiers Regular: 52",
+   "cost": {
+    "regular": 52,
+    "veteran": 67
+   },
+   "model_count": 2,
+   "special_rules": [
+    "Infiltrator",
+    "Sniper"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "weapon_swap",
+     "desc": "Replace the Team Leader’s Rifle with an Anti-tank Rifle",
+     "cost": 15,
+     "per_model": true,
+     "limit": null,
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace the Assistant's Pistol with a Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": null,
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace the Assistant's Pistol with an SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": null,
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace the Assistant's Pistol with an Assault Rifle",
+     "cost": 7,
+     "per_model": true,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Team Leader – Rifle & Pistol",
+     "Assistant – Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Infiltrator",
+      "text": ""
+     },
+     {
+      "name": "Sniper",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-light-mortar-team",
+   "name": "Light Mortar Team",
+   "unit_type": "Light Mortar Team",
+   "category": "light_mortar_team",
+   "composition": "2 Soldiers Inexperienced: 21",
+   "cost": {
+    "inexperienced": 21,
+    "regular": 30,
+    "veteran": 39
+   },
+   "model_count": 2,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Light Mortar"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6”",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-medium-mortar-team",
+   "name": "Medium Mortar Team",
+   "unit_type": "Mortar Team",
+   "category": "mortar_team",
+   "composition": "3 Soldiers Inexperienced: 32",
+   "cost": {
+    "inexperienced": 32,
+    "regular": 45,
+    "veteran": 59
+   },
+   "model_count": 3,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Medium Mortar"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-heavy-mortar-team",
+   "name": "Heavy Mortar Team",
+   "unit_type": "Mortar Team",
+   "category": "mortar_team",
+   "composition": "4 Soldiers Inexperienced: 42",
+   "cost": {
+    "inexperienced": 42,
+    "regular": 60,
+    "veteran": 78
+   },
+   "model_count": 4,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Heavy Mortar"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-automated-mobile-platform-bombardier",
+   "name": "Automated Mobile Platform ‘Bombardier’",
+   "unit_type": "Mortar Team",
+   "category": "mortar_team",
+   "composition": "1 Automated Mobile Platform 84",
+   "cost": {
+    "fixed": 84
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Augmented",
+    "Bulky",
+    "Computational Systems",
+    "Fearless",
+    "First Off the Line",
+    "Hard to Kill"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "32mm",
+    "weapons": [
+     "1x Light Howitzer"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "6+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Augmented",
+      "text": ""
+     },
+     {
+      "name": "Bulky",
+      "text": "Automated Mobile Platforms may not be mounted in Transports."
+     },
+     {
+      "name": "Computational Systems",
+      "text": ""
+     },
+     {
+      "name": "Fearless",
+      "text": ""
+     },
+     {
+      "name": "First Off the Line",
+      "text": "Automated Mobile Platforms suffer a –1 ‘to hit’ modifier when shooting."
+     },
+     {
+      "name": "Hard to Kill",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "Corrosive Shell. When executing a Fire Order, a Bombardier may use this Enhancement to have its Light Howitzer gain the Rift Weapon and Corrosive (D3) special rules for this attack. Exhaust the Bombardier’s Rift Die before any to hit rolls are made, as normal for Rift Weapons.",
+     "surging": "Gains the Fast special rule.",
+     "exhausted": "May not be issued Run Orders.",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-flamethrower-team",
+   "name": "Flamethrower Team",
+   "unit_type": "Flamethrower Team",
+   "category": "flamethrower_team",
+   "composition": "2 Soldiers Regular: 50",
+   "cost": {
+    "regular": 50,
+    "veteran": 65
+   },
+   "model_count": 2,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Leader – Infantry Flamethrower",
+     "Assistant – Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-light-artillery-team",
+   "name": "Light Artillery Team",
+   "unit_type": "Field Artillery",
+   "category": "field_artillery",
+   "composition": "3 Soldiers Inexperienced: 32",
+   "cost": {
+    "inexperienced": 32,
+    "regular": 45,
+    "veteran": 59
+   },
+   "model_count": 3,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Gun Shield",
+     "cost": 5,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Light Howitzer"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "6\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-medium-artillery-team",
+   "name": "Medium Artillery Team",
+   "unit_type": "Field Artillery",
+   "category": "field_artillery",
+   "composition": "4 Soldiers Inexperienced: 60",
+   "cost": {
+    "inexperienced": 60,
+    "regular": 85,
+    "veteran": 111
+   },
+   "model_count": 4,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Gun Shield",
+     "cost": 5,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Medium Howitzer"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "6\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-heavy-artillery-team",
+   "name": "Heavy Artillery Team",
+   "unit_type": "Field Artillery",
+   "category": "field_artillery",
+   "composition": "5 Soldiers Inexperienced: 95",
+   "cost": {
+    "inexperienced": 95,
+    "regular": 135,
+    "veteran": 176
+   },
+   "model_count": 5,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Gun Shield",
+     "cost": 5,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Heavy Howitzer"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "N/A"
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-light-anti-tank-gun-team",
+   "name": "Light Anti-Tank Gun Team",
+   "unit_type": "Anti-tank Gun",
+   "category": "anti_tank_gun",
+   "composition": "3 Soldiers Inexperienced: 35",
+   "cost": {
+    "inexperienced": 35,
+    "regular": 50,
+    "veteran": 65
+   },
+   "model_count": 3,
+   "special_rules": [
+    "Gun Shield"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Light Anti-tank Gun"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "6\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Gun Shield",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-medium-anti-tank-gun-team",
+   "name": "Medium Anti-Tank Gun Team",
+   "unit_type": "Anti-tank Gun",
+   "category": "anti_tank_gun",
+   "composition": "3 Soldiers Inexperienced: 49",
+   "cost": {
+    "inexperienced": 49,
+    "regular": 70,
+    "veteran": 91
+   },
+   "model_count": 3,
+   "special_rules": [
+    "Gun Shield"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Medium Anti-tank Gun"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "6\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Gun Shield",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-heavy-anti-tank-gun-team",
+   "name": "Heavy Anti-Tank Gun Team",
+   "unit_type": "Anti-tank Gun",
+   "category": "anti_tank_gun",
+   "composition": "4 Soldiers Inexperienced: 70",
+   "cost": {
+    "inexperienced": 70,
+    "regular": 100,
+    "veteran": 130
+   },
+   "model_count": 4,
+   "special_rules": [
+    "Gun Shield"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Heavy Anti-tank Gun"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "N/A"
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Gun Shield",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-super-heavy-anti-tank-gun-team",
+   "name": "Super-Heavy Anti-Tank Gun Team",
+   "unit_type": "Anti-tank Gun",
+   "category": "anti_tank_gun",
+   "composition": "5 Soldiers Inexperienced: 98",
+   "cost": {
+    "inexperienced": 98,
+    "regular": 140,
+    "veteran": 182
+   },
+   "model_count": 5,
+   "special_rules": [
+    "Gun Shield"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Super-heavy Anti-tank Gun"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "N/A"
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Gun Shield",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-m17-tesla-cannon-team",
+   "name": "M17 Tesla Cannon Team",
+   "unit_type": "Anti-tank Gun",
+   "category": "anti_tank_gun",
+   "composition": "3 Soldiers Inexperienced: 88",
+   "cost": {
+    "inexperienced": 88,
+    "regular": 125,
+    "veteran": 163
+   },
+   "model_count": 3,
+   "special_rules": [],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Gun Shield",
+     "cost": 5,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x M17 Tesla Cannon – Counts as Heavy Artillery for the purposes of being moved by its crew"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "N/A"
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-guardian-mk-i-light-walker",
+   "name": "Guardian MK I Light Walker",
+   "unit_type": "Light Walker (2 Legs)",
+   "category": "armoured_walker",
+   "composition": null,
+   "cost": {
+    "regular": 105,
+    "veteran": 126
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Single-crew Walker",
+    "Two-legged"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add an Infantry Flamethrower, mounted to the Left Arm",
+     "cost": 30,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "Left Arm",
+     "Right Arm mounting an MMG (Arm-mounted MMGs do not halve their Shots value for being mounted on a Vehicle)",
+     "1x Forward-facing HMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "8+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Single-crew Walker",
+      "text": ""
+     },
+     {
+      "name": "Two-legged",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-jackal-mk-i-light-jump-walker",
+   "name": "Jackal MK I Light Jump Walker",
+   "unit_type": "Light Walker (2 Legs)",
+   "category": "armoured_walker",
+   "composition": null,
+   "cost": {
+    "regular": 105,
+    "veteran": 126
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Jump",
+    "Single-crew Walker",
+    "Two-legged"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add an Infantry Flamethrower, mounted to the Left Arm",
+     "cost": 30,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "Left Arm",
+     "Right Arm mounting an MMG (Arm-mounted MMGs do not halve their Shots value for being mounted on a Vehicle)"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "8+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Jump",
+      "text": ""
+     },
+     {
+      "name": "Single-crew Walker",
+      "text": ""
+     },
+     {
+      "name": "Two-legged",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-mudskipper-mk-i-jump-walker",
+   "name": "Mudskipper MK I Jump Walker",
+   "unit_type": "Medium Walker (2 Legs)",
+   "category": "armoured_walker",
+   "composition": null,
+   "cost": {
+    "regular": 290,
+    "veteran": 348
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Jump",
+    "Two-legged"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Arm-mounted HMG with Arm-mounted Bazooka",
+     "cost": 5,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "Left and Right Arms each mounting an HMG (Arm-mounted HMGs do not halve their Shots value for being mounted on a Vehicle)",
+     "2x Forward-facing Light Automatic Cannons (Must be fired at the same target)",
+     "1x Hull-mounted, Forward-facing MMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "9+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Jump",
+      "text": ""
+     },
+     {
+      "name": "Two-legged",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-percival-medium-assault-walker",
+   "name": "Percival Medium Assault Walker",
+   "unit_type": "Medium Walker (2 Legs)",
+   "category": "armoured_walker",
+   "composition": null,
+   "cost": {
+    "fixed": 388
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Computational Systems",
+    "Reinforced Front Armour",
+    "Two-legged"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1x Hull-mounted M17 Tesla Cannon",
+     "Forward-facing Medium Rocket System (The Medium Rocket System is mounted across both Arms; a Percival may not make Close Quarters attacks with its Arms)"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "9+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Computational Systems",
+      "text": ""
+     },
+     {
+      "name": "Reinforced Front Armour",
+      "text": ""
+     },
+     {
+      "name": "Two-legged",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-hornet-medium-support-walker",
+   "name": "Hornet Medium Support Walker",
+   "unit_type": "Medium Walker (2 Legs)",
+   "category": "armoured_walker",
+   "composition": null,
+   "cost": {
+    "regular": 235,
+    "veteran": 282
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Two-legged"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1x Hull-mounted Heavy Automatic Cannon",
+     "4x Hull-mounted HMGs",
+     "Left and Right Arms"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "9+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Two-legged",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-merlin-heavy-walker",
+   "name": "Merlin Heavy Walker",
+   "unit_type": "Heavy Walker (2 Legs)",
+   "category": "armoured_walker",
+   "composition": null,
+   "cost": {
+    "fixed": 438
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Computational Systems",
+    "Improved HE",
+    "Two-legged"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1x Forward-facing Heavy Anti-tank Gun"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 9\"",
+      "run": "9\"–18\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "10+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Computational Systems",
+      "text": ""
+     },
+     {
+      "name": "Improved HE",
+      "text": "Instead of HE (2\"), the Heavy Anti-Tank Gun has HE (3\")."
+     },
+     {
+      "name": "Two-legged",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "Guinevere. When any Vehicle Damage result other than ‘Knocked Out’ is rolled against a Merlin, it may exhaust a Rift Die to ignore the result. It still receives the Pin Marker(s) for being successfully hit.",
+     "surging": "Automatically passes any Order Test.",
+     "exhausted": "Must pass an Order Test to carry out an Order, even if not Pinned. Vehicles",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-cromwell-t-cruiser-tank",
+   "name": "Cromwell-T Cruiser Tank",
+   "unit_type": "Medium Tank",
+   "category": "tank",
+   "composition": null,
+   "cost": {
+    "inexperienced": 216,
+    "regular": 270,
+    "veteran": 324
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Fast"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Turret-mounted M17 Tesla Cannon with Medium Anti-tank Gun and Co-axial MMG",
+     "cost": -40,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Turret-mounted M17 Tesla Cannon with Medium Howitzer and Co-axial MMG",
+     "cost": -35,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    },
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Pintle-mounted MMG or a Pintle-mounted HMG",
+     "cost": 15,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1x Turret-mounted M17 Tesla Cannon",
+     "1x Forward-facing, Hull-mounted MMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "9+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Fast",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": "Only If Armed With M17 Tesla Cannon"
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-churchill-meteor-tank",
+   "name": "Churchill Meteor Tank",
+   "unit_type": "Super-heavy Tank",
+   "category": "tank",
+   "composition": null,
+   "cost": {
+    "inexperienced": 364,
+    "regular": 455,
+    "veteran": 546
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Improved HE",
+    "Meteor Launcher",
+    "Slow"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Turret-mounted Medium Anti-tank gun and Co-axial MMG with Light Howitzer and",
+     "cost": -35,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Forward-facing MMG with Vehicle Flamethrower",
+     "cost": 40,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1x Turret-mounted Medium Anti-tank Gun and Co-axial MMG",
+     "1x Turret-mounted Meteor Launcher",
+     "1x Forward-facing, Hull-mounted MMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 6\"",
+      "run": "6\"–12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "11+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Improved HE",
+      "text": "Instead of HE (1\"), the Medium Anti-Tank Gun has HE (2\")."
+     },
+     {
+      "name": "Meteor Launcher",
+      "text": "The Churchill’s Meteor Launcher has the Howitzer special rule. When firing indirectly, it has a minimum range of 36\" and a a maximum range of 72\"."
+     },
+     {
+      "name": "Slow",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-m17-tesla-cannon-emplacement",
+   "name": "M17 Tesla Cannon Emplacement",
+   "unit_type": "Medium Emplacement (Counts as Medium Tank)",
+   "category": "tank",
+   "composition": null,
+   "cost": {
+    "inexperienced": 168,
+    "regular": 210,
+    "veteran": 252
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Armoured All Round",
+    "Emplacement"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1x Turret-mounted M17 Tesla Cannon"
+    ],
+    "movement": [
+     {
+      "label": "Veteran: 252",
+      "adv": "N/A",
+      "run": "N/A"
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "9+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Armoured All Round",
+      "text": ""
+     },
+     {
+      "name": "Emplacement",
+      "text": "The M17 Tesla Cannon Emplacement starts the game with an Immobilised result. In scenarios that do not normally allow units to start on the table, place this unit within 6\" of your DZE."
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-automated-carrier",
+   "name": "Automated Carrier",
+   "unit_type": "Anti-aircraft Vehicle (Armoured Car)",
+   "category": "armoured_car",
+   "composition": "Anti-aircraft Vehicle REQUISITION POINTS",
+   "cost": {
+    "fixed": 158
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Automated Crew",
+    "Computational Systems",
+    "Fast",
+    "Flak",
+    "First Off the Line",
+    "Turn on the Spot"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "Turret-mounted Twin Light Automatic Cannons"
+    ],
+    "movement": [
+     {
+      "label": "Whilst Fast",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     },
+     {
+      "label": "Otherwise",
+      "adv": "Up to 9\"",
+      "run": "9\"–18\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "7+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Automated Crew",
+      "text": "An Automated Carrier can never be Pinned and automatically passes any Morale Check it is called upon to make."
+     },
+     {
+      "name": "Computational Systems",
+      "text": ""
+     },
+     {
+      "name": "Fast",
+      "text": ""
+     },
+     {
+      "name": "Flak",
+      "text": ""
+     },
+     {
+      "name": "First Off the Line",
+      "text": "Automated Carriers suffer a –1 ‘to hit’ modifier when shooting."
+     },
+     {
+      "name": "Turn on the Spot",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "Firing Solution. When executing a Fire or Advance Order, the Automated Carrier can gain a +1 modifier to its 'to hit' rolls. If it does, exhaust the Automated Carrier's Rift Die after resolving the Order.",
+     "surging": "Gains the Recce special rule.",
+     "exhausted": "Loses the Fast special rule. May not be issued Run Orders.",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-humber-armoured-car-mk-vii",
+   "name": "Humber Armoured Car MK VII",
+   "unit_type": "Armoured Car",
+   "category": "armoured_car",
+   "composition": null,
+   "cost": {
+    "inexperienced": 96,
+    "regular": 120,
+    "veteran": 144
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Computational Systems",
+    "Recce"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Turret-mounted Twin Light Automatic Cannons with Light Automatic Cannon and",
+     "cost": -25,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Turret-mounted Twin Light Automatic Cannons with Light Anti-tank Gun and",
+     "cost": -5,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "Turret-mounted Twin Light Automatic Cannons"
+    ],
+    "movement": [
+     {
+      "label": "Veteran: 144",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "7+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Computational Systems",
+      "text": "Only if taken as Veteran and armed with Twin Light Automatic Cannons"
+     },
+     {
+      "name": "Recce",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-bren-carrier",
+   "name": "Bren Carrier",
+   "unit_type": "Transport Vehicle",
+   "category": "transport",
+   "composition": null,
+   "cost": {
+    "inexperienced": 40,
+    "regular": 50,
+    "veteran": 60
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Open-topped",
+    "Turn on the Spot"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Pintle-mounted LMG with 360-degree arc of fire",
+     "cost": 10,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Forward-facing LMG with Anti-tank Rifle",
+     "cost": 10,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1x Forward-facing, Hull-mounted LMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 9\"",
+      "run": "9\"–18\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "7+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Open-topped",
+      "text": ""
+     },
+     {
+      "name": "Turn on the Spot",
+      "text": "Not applicable whilst towing"
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-bedford-qlt-troop-transport",
+   "name": "Bedford QLT Troop Transport",
+   "unit_type": "Transport Vehicle",
+   "category": "transport",
+   "composition": null,
+   "cost": {
+    "inexperienced": 35,
+    "regular": 44,
+    "veteran": 53
+   },
+   "model_count": 1,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Pintle-mounted LMG with 360-degree firing arc",
+     "cost": 15,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "None"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "6+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "british-jeep",
+   "name": "Jeep",
+   "unit_type": "Transport Vehicle",
+   "category": "transport",
+   "composition": null,
+   "cost": {
+    "inexperienced": 14,
+    "regular": 18,
+    "veteran": 22
+   },
+   "model_count": 1,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "None"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "6+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  }
+ ]
+}

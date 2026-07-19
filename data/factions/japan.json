@@ -1,0 +1,2934 @@
+{
+ "id": "japan",
+ "name": "Empire of Japan",
+ "army_special_rules": [
+  {
+   "name": "Death Before Dishonour",
+   "text": "All Empire of Japan Infantry and Artillery units have the Fanatics special rule, and automatically pass Morale Checks for being assaulted by enemy Vehicles. Furthermore, Empire of Japan units may re-roll failed Order Tests when attempting to Assault."
+  },
+  {
+   "name": "From Nowhere",
+   "text": "Empire of Japan Infantry units on Ambush may Ambush Charge enemies that move within 12\", rather than the usual 6\". This still counts as a Surprise Charge. If the Ambush Charge goes over Rough Ground or Obstacles, or the ambushing unit begins in Rough Ground, the Ambush Charge distance is reduced to the Advance rate of the assaulting unit."
+  },
+  {
+   "name": "Shadow Work",
+   "text": "If deemed to be in Cover from enemy shooting, Empire of Japan units on Ambush Orders improve their Cover Save by +1."
+  },
+  {
+   "name": "Secrets of Iwo Jima",
+   "text": "Empire of Japan Rift units attempting an Outflanking Manoeuvre may be ordered onto the table from Turn 2 onwards, rather than from Turn 3 onwards, entering the table from any point on the owning player's DZE or the left/right edge of the table (as written down during deployment). Furthermore, Japanese Rift units attempting an Outflanking Manoeuvre do not suffer the -1 modifier to the Order Test for moving onto the table from Reserve."
+  }
+ ],
+ "special_platoons": [],
+ "company_commander_allowed": 1,
+ "units": [
+  {
+   "id": "japan-company-commander-officer",
+   "name": "Company Commander - Officer",
+   "unit_type": "Company Commander",
+   "category": "company_commander",
+   "composition": "1 Officer Inexperienced: 42",
+   "cost": {
+    "inexperienced": 42,
+    "regular": 60,
+    "veteran": 78
+   },
+   "model_count": 1,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "hero_stat",
+     "desc": "Guts",
+     "cost": 10,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "hero_stat",
+     "desc": "Luck",
+     "cost": 15,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers with Pistols",
+     "cost": {
+      "inexperienced": 6,
+      "regular": 9,
+      "veteran": 12
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+     "cost": 5,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-company-commander-officer-in-battle-frame-heavy-armour",
+   "name": "Company Commander - Officer In Battle-Frame Heavy Armour",
+   "unit_type": "Company Commander",
+   "category": "company_commander",
+   "composition": "1 Officer in Grade 1 Heavy Powered Armour 87",
+   "cost": {
+    "fixed": 87
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Heavy"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "hero_stat",
+     "desc": "Guts",
+     "cost": 10,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "hero_stat",
+     "desc": "Luck",
+     "cost": 15,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers in Battle-Frame Grade",
+     "cost": {
+      "flat": 22
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace SMG with LMG",
+     "cost": 11,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "SMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "6+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Heavy",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-company-commander-officer-in-assault-frame-heavy-armour",
+   "name": "Company Commander - Officer In Assault-Frame Heavy Armour",
+   "unit_type": "Company Commander",
+   "category": "company_commander",
+   "composition": "1 Officer in Grade 1 Heavy Powered Armour 91",
+   "cost": {
+    "fixed": 91
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Deadly (2)",
+    "Heavy"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "hero_stat",
+     "desc": "Guts",
+     "cost": 10,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "hero_stat",
+     "desc": "Luck",
+     "cost": 15,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers in Assault-Frame Grade",
+     "cost": {
+      "flat": 26
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace SMG with LMG",
+     "cost": 11,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "SMG, Combat Blade (+1 Pen at Close Quarters)"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "6+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Deadly (2)",
+      "text": ""
+     },
+     {
+      "name": "Heavy",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-platoon-commander-officer",
+   "name": "Platoon Commander - Officer",
+   "unit_type": "Platoon Commander",
+   "category": "platoon_commander",
+   "composition": "1 Officer Inexperienced: 21",
+   "cost": {
+    "inexperienced": 21,
+    "regular": 30,
+    "veteran": 39
+   },
+   "model_count": 1,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "hero_stat",
+     "desc": "Guts",
+     "cost": 10,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "hero_stat",
+     "desc": "Luck",
+     "cost": 15,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers armed with Pistols",
+     "cost": {
+      "inexperienced": 6,
+      "regular": 9,
+      "veteran": 12
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+     "cost": 5,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-platoon-commander-officer-in-battle-frame-heavy-armour",
+   "name": "Platoon Commander - Officer In Battle-Frame Heavy Armour",
+   "unit_type": "Platoon Commander",
+   "category": "platoon_commander",
+   "composition": "1 Officer in Grade 1 Heavy Powered Armour 48",
+   "cost": {
+    "fixed": 48
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Heavy"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "hero_stat",
+     "desc": "Guts",
+     "cost": 10,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "hero_stat",
+     "desc": "Luck",
+     "cost": 15,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers in Battle-Frame Grade",
+     "cost": {
+      "flat": 22
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace SMG with LMG",
+     "cost": 11,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "SMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "6+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Heavy",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-platoon-commander-officer-in-assault-frame-heavy-armour",
+   "name": "Platoon Commander - Officer In Assault-Frame Heavy Armour",
+   "unit_type": "Platoon Commander",
+   "category": "platoon_commander",
+   "composition": "1 Officer in Grade 1 Heavy Powered Armour 52",
+   "cost": {
+    "fixed": 52
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Deadly (2)",
+    "Heavy"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "hero_stat",
+     "desc": "Guts",
+     "cost": 10,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "hero_stat",
+     "desc": "Luck",
+     "cost": 15,
+     "per_model": false,
+     "limit": {
+      "n": 1,
+      "scope": "Officer"
+     }
+    },
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers in Assault-Frame Grade",
+     "cost": {
+      "flat": 26
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace SMG with LMG",
+     "cost": 11,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "SMG, Combat Blade (+1 Pen at Close Quarters)"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "6+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Deadly (2)",
+      "text": ""
+     },
+     {
+      "name": "Heavy",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-medic",
+   "name": "Medic",
+   "unit_type": "Medic",
+   "category": "medic",
+   "composition": "1 Medic Regular: 23",
+   "cost": {
+    "regular": 23,
+    "veteran": 30
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Medic"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers armed with Pistols",
+     "cost": {
+      "regular": 9,
+      "veteran": 12
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": "additional soldiers only"
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": "additional soldiers only"
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Medic",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-artillery-forward-observer",
+   "name": "Artillery Forward Observer",
+   "unit_type": "Forward Observer",
+   "category": "forward_observer",
+   "composition": "1 Artillery Forward Observer Regular: 75",
+   "cost": {
+    "regular": 75,
+    "veteran": 90
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Infiltrator"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers armed with Pistols",
+     "cost": {
+      "regular": 9,
+      "veteran": 12
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Infiltrator",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-air-force-forward-observer",
+   "name": "Air Force Forward Observer",
+   "unit_type": "Forward Observer",
+   "category": "forward_observer",
+   "composition": "1 Air Force Forward Observer Regular: 75",
+   "cost": {
+    "regular": 75,
+    "veteran": 90
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Infiltrator"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers armed with Pistols",
+     "cost": {
+      "regular": 9,
+      "veteran": 12
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Infiltrator",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-kempeitai-inspirational-officer",
+   "name": "Kempeitai Inspirational Officer",
+   "unit_type": "Inspirational Officer (see below)",
+   "category": "platoon_commander",
+   "composition": "1 Inspirational Officer Inexperienced: 21",
+   "cost": {
+    "inexperienced": 21,
+    "regular": 30,
+    "veteran": 39
+   },
+   "model_count": 1,
+   "special_rules": [
+    "HQ Choice",
+    "Strict Discipline"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers armed with Pistols",
+     "cost": {
+      "inexperienced": 6,
+      "regular": 9,
+      "veteran": 12
+     },
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Pistol with SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": {
+      "n": 3,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "HQ Choice",
+      "text": "An Assault Platoon may include 0–1 Kempeitai Inspirational Officer."
+     },
+     {
+      "name": "Strict Discipline",
+      "text": "Friendly units within 6\" of a Kempeitai Officer may re-roll failed Order Tests. Furthermore, when a friendly Empire of Japan unit within 6\" of a Kempeitai Officer rolls for the Green special rule, it may re-roll the D6."
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-imperial-japanese-infantry-squad",
+   "name": "Imperial Japanese Infantry Squad",
+   "unit_type": "Basic Infantry",
+   "category": "infantry_basic",
+   "composition": "1 NCO and 6 Soldiers REQUISITION POINTS",
+   "cost": {
+    "inexperienced": 49,
+    "regular": 70,
+    "veteran": 91
+   },
+   "model_count": 7,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers",
+     "cost": {
+      "inexperienced": 7,
+      "regular": 10,
+      "veteran": 13
+     },
+     "per_model": true,
+     "limit": {
+      "n": 5,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Rifle with SMG",
+     "cost": 4,
+     "per_model": true,
+     "limit": {
+      "n": 12,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Upgrade Rifle with the ability to fire Rifle Grenades",
+     "cost": 6,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Rifle with LMG",
+     "cost": 15,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Rifle with Light Mortar",
+     "cost": 20,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Rifle with Infantry Flamethrower",
+     "cost": 30,
+     "per_model": true,
+     "limit": {
+      "n": 1,
+      "scope": "squad"
+     },
+     "condition": "only if engineers option taken"
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Tough Fighters (Veteran squads only)",
+     "cost": 1,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Engineers",
+     "cost": 1,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Rifle"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-imperial-japanese-shiboru-rifle-squad",
+   "name": "Imperial Japanese Shiboru Rifle Squad",
+   "unit_type": "Basic Infantry 161",
+   "category": "infantry_basic",
+   "composition": "1 NCO and 6 Soldiers REQUISITION POINTS",
+   "cost": {
+    "fixed": 161
+   },
+   "model_count": 7,
+   "special_rules": [
+    "Only Human"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers",
+     "cost": {
+      "flat": 23
+     },
+     "per_model": true,
+     "limit": {
+      "n": 5,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Tough Fighters",
+     "cost": 1,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Engineers",
+     "cost": 1,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Type 10 Shiboru Rifle"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "5+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Only Human",
+      "text": "Unlike other Rift units, a Shiboru Rifle Squad can benefit from the presence of a nearby Medic."
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-battle-frame-armoured-infantry-squad",
+   "name": "Battle-Frame Armoured Infantry Squad",
+   "unit_type": "Advanced Infantry 110",
+   "category": "infantry_advanced",
+   "composition": "1 NCO and 4 Soldiers in Grade 1 Heavy Powered Armour REQUISITION POINTS",
+   "cost": {
+    "fixed": 110
+   },
+   "model_count": 5,
+   "special_rules": [
+    "Heavy"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers in Battle-frame Grade",
+     "cost": {
+      "flat": 22
+     },
+     "per_model": true,
+     "limit": {
+      "n": 5,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace SMG with LMG",
+     "cost": 11,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace SMG with Panzerschreck",
+     "cost": 66,
+     "per_model": true,
+     "limit": {
+      "n": 1,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "Replace SMGs with Type 10 Shiboru Rifles",
+     "cost": 6,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "SMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "6+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Heavy",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": "Only If Type 10 Shiboru Rifles Taken"
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-assault-frame-armoured-infantry-squad",
+   "name": "Assault-Frame Armoured Infantry Squad",
+   "unit_type": "Advanced Infantry 130",
+   "category": "infantry_advanced",
+   "composition": "1 NCO and 4 Soldiers in Grade 1 Heavy Powered Armour REQUISITION POINTS",
+   "cost": {
+    "fixed": 130
+   },
+   "model_count": 5,
+   "special_rules": [
+    "Deadly (2)",
+    "Heavy"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Soldiers in Assault-Frame Grade",
+     "cost": {
+      "flat": 26
+     },
+     "per_model": true,
+     "limit": {
+      "n": 5,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace SMG with LMG",
+     "cost": 11,
+     "per_model": true,
+     "limit": {
+      "n": 2,
+      "scope": "squad"
+     },
+     "condition": null
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "Replace SMGs with Type 10 Shiboru Rifles",
+     "cost": 6,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "SMG, Combat Blade (+1 Pen at Close Quarters)"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "6+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Deadly (2)",
+      "text": ""
+     },
+     {
+      "name": "Heavy",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": "Only If Type 10 Shiboru Rifles Taken"
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-shibito-squad",
+   "name": "Shibito Squad",
+   "unit_type": "Specialist Infantry 114",
+   "category": "infantry_specialist",
+   "composition": "6 Shibito REQUISITION POINTS",
+   "cost": {
+    "fixed": 114
+   },
+   "model_count": 6,
+   "special_rules": [
+    "Fearless",
+    "Horror",
+    "Infiltrator",
+    "Limited Intelligence",
+    "Tough Fighters"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Shibito",
+     "cost": {
+      "flat": 19
+     },
+     "per_model": true,
+     "limit": {
+      "n": 6,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Fists"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "5+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Fearless",
+      "text": ""
+     },
+     {
+      "name": "Horror",
+      "text": ""
+     },
+     {
+      "name": "Infiltrator",
+      "text": ""
+     },
+     {
+      "name": "Limited Intelligence",
+      "text": "Shibito may never capture, control, or pick up Objectives (including Intelligence Markers) in scenarios that use them. Their presence still prevents enemy units from capturing or controlling Objectives if within 3\"."
+     },
+     {
+      "name": "Tough Fighters",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "The Dead Rise – Again! At any time, the squad can opt to exhaust a Rift Die to return D6 Shibito models to the unit previously removed as casualties. Returning models must be able to be placed in formation with the unit and not within 1\" of an enemy unit – note that this means that the ability may not be used whilst the Shibito unit is engaged in Close Quarters combat. Models which cannot be placed are lost. A Shibito unit may not exceed its starting number of models using this ability.",
+     "surging": "Gain Fast special rule.",
+     "exhausted": "May not be given Run Orders, including for the purposes of making an Assault.",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-ghost-attack-squad",
+   "name": "Ghost Attack Squad",
+   "unit_type": "Specialist Infantry 160",
+   "category": "infantry_specialist",
+   "composition": "1 NCO and 4 Ghost Attack Soldiers REQUISITION POINTS",
+   "cost": {
+    "fixed": 160
+   },
+   "model_count": 5,
+   "special_rules": [
+    "Fast",
+    "Fieldcraft",
+    "Hard to Kill",
+    "Horror",
+    "Infiltrator"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [
+    {
+     "type": "add_models",
+     "desc": "Additional Ghost Attack Soldiers",
+     "cost": {
+      "flat": 32
+     },
+     "per_model": true,
+     "limit": {
+      "n": 5,
+      "scope": "squad"
+     },
+     "quality_locked": true
+    }
+   ],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "Yoroi-kumi Anti Tank Launchers (Count as RPG-1s)",
+     "cost": 5,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    },
+    {
+     "type": "unit_upgrade",
+     "desc": "Engineers",
+     "cost": 1,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Type 10 Shiboru Rifle"
+    ],
+    "movement": [
+     {
+      "label": "Whilst Fast",
+      "adv": "8\"",
+      "run": "16\""
+     },
+     {
+      "label": "Otherwise",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "5+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Fast",
+      "text": ""
+     },
+     {
+      "name": "Fieldcraft",
+      "text": ""
+     },
+     {
+      "name": "Hard to Kill",
+      "text": ""
+     },
+     {
+      "name": "Horror",
+      "text": ""
+     },
+     {
+      "name": "Infiltrator",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "Bon Odori (Spirit Dance). After executing an Advance, Run, or Fire Order a Ghost Attack Squad may exhaust one of its Rift Dice to remove itself from the battlefield (retaining its Order Die, Rift Dice, and any Pin Markers). If it does so it must make a Morale Check. If the Morale Check is failed, the unit is destroyed. If the Morale Check is passed, then the Ghost Attack Squad may set up again anywhere on the table that is at least 12” from any enemy unit, and at least 6” from any Objective (including Intelligence Markers, enemy Bases etc.). A Ghost Attack Squad may use this enhancement whilst locked in Close Quarters.",
+     "surging": "Gain Deadly (2) special rule.",
+     "exhausted": "Lose Fast and Fieldcraft special rules.",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-mmg-team",
+   "name": "MMG Team",
+   "unit_type": "Machine Gun Team",
+   "category": "machine_gun_team",
+   "composition": "3 Soldiers Inexperienced: 35",
+   "cost": {
+    "inexperienced": 35,
+    "regular": 50,
+    "veteran": 65
+   },
+   "model_count": 3,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Medium Machine Gun"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-anti-tank-rifle-team",
+   "name": "Anti-Tank Rifle Team",
+   "unit_type": "Anti-tank Team",
+   "category": "anti_tank_team",
+   "composition": "2 Soldiers Inexperienced: 18",
+   "cost": {
+    "inexperienced": 18,
+    "regular": 25,
+    "veteran": 33
+   },
+   "model_count": 2,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Anti-tank Rifle"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-battle-frame-anti-tank-team",
+   "name": "Battle-Frame Anti-Tank Team",
+   "unit_type": "Anti-tank Team",
+   "category": "anti_tank_team",
+   "composition": "2 Soldiers in Grade 1 Heavy Powered Armour 110",
+   "cost": {
+    "fixed": 110
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Heavy"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "weapon_swap",
+     "desc": "Replace SMG with LMG",
+     "cost": 11,
+     "per_model": true,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1 Soldier with Panzerschreck",
+     "1 Soldier with SMG"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "6+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Heavy",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-sniper-team",
+   "name": "Sniper Team",
+   "unit_type": "Sniper Team",
+   "category": "sniper_team",
+   "composition": "2 Soldiers Regular: 52",
+   "cost": {
+    "regular": 52,
+    "veteran": 67
+   },
+   "model_count": 2,
+   "special_rules": [
+    "Infiltrator",
+    "Sniper"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "weapon_swap",
+     "desc": "Replace the Team Leader’s Rifle with a Type 10 Shiboru Rifle",
+     "cost": 10,
+     "per_model": true,
+     "limit": null,
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace the Assistant's Pistol with a Rifle",
+     "cost": 1,
+     "per_model": true,
+     "limit": null,
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace the Assistant's Pistol with an SMG",
+     "cost": 5,
+     "per_model": true,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "Team Leader – Rifle & Pistol",
+     "Assistant – Pistol"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6\"",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Infiltrator",
+      "text": ""
+     },
+     {
+      "name": "Sniper",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": "Only If Any Type 10 Shiboru Rifles Taken"
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-light-mortar-team",
+   "name": "Light Mortar Team",
+   "unit_type": "Light Mortar Team",
+   "category": "light_mortar_team",
+   "composition": "2 Soldiers Inexperienced: 21",
+   "cost": {
+    "inexperienced": 21,
+    "regular": 30,
+    "veteran": 39
+   },
+   "model_count": 2,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Light Mortar"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6”",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-medium-mortar-team",
+   "name": "Medium Mortar Team",
+   "unit_type": "Mortar Team",
+   "category": "mortar_team",
+   "composition": "3 Soldiers Inexperienced: 32",
+   "cost": {
+    "inexperienced": 32,
+    "regular": 45,
+    "veteran": 59
+   },
+   "model_count": 3,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Medium Mortar"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-heavy-mortar-team",
+   "name": "Heavy Mortar Team",
+   "unit_type": "Mortar Team",
+   "category": "mortar_team",
+   "composition": "4 Soldiers Inexperienced: 42",
+   "cost": {
+    "inexperienced": 42,
+    "regular": 60,
+    "veteran": 78
+   },
+   "model_count": 4,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Heavy Mortar"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-flamethrower-team",
+   "name": "Flamethrower Team",
+   "unit_type": "Team Leader – Infantry Flamethrower",
+   "category": "flamethrower_team",
+   "composition": "2 Soldiers Regular: 50",
+   "cost": {
+    "regular": 50,
+    "veteran": 65
+   },
+   "model_count": 2,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [
+    {
+     "type": "unit_upgrade",
+     "desc": "Anti-tank Grenades",
+     "cost": 2,
+     "per_model": true
+    }
+   ],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Infantry Flamethrower"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "6”",
+      "run": "12\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-light-artillery-team",
+   "name": "Light Artillery Team",
+   "unit_type": "Field Artillery",
+   "category": "field_artillery",
+   "composition": "3 Soldiers Inexperienced: 32",
+   "cost": {
+    "inexperienced": 32,
+    "regular": 45,
+    "veteran": 59
+   },
+   "model_count": 3,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Gun Shield",
+     "cost": 5,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Light Howitzer"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "6\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-medium-artillery-team",
+   "name": "Medium Artillery Team",
+   "unit_type": "Field Artillery",
+   "category": "field_artillery",
+   "composition": "4 Soldiers Inexperienced: 60",
+   "cost": {
+    "inexperienced": 60,
+    "regular": 85,
+    "veteran": 111
+   },
+   "model_count": 4,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Gun Shield",
+     "cost": 5,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Medium Howitzer"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "6\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-heavy-artillery-team",
+   "name": "Heavy Artillery Team",
+   "unit_type": "Field Artillery",
+   "category": "field_artillery",
+   "composition": "5 Soldiers Inexperienced: 95",
+   "cost": {
+    "inexperienced": 95,
+    "regular": 135,
+    "veteran": 176
+   },
+   "model_count": 5,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Gun Shield",
+     "cost": 5,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Heavy Howitzer"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "N/A"
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-light-anti-tank-gun-team",
+   "name": "Light Anti-Tank Gun Team",
+   "unit_type": "Anti-tank Gun",
+   "category": "anti_tank_gun",
+   "composition": "3 Soldiers Inexperienced: 35",
+   "cost": {
+    "inexperienced": 35,
+    "regular": 50,
+    "veteran": 65
+   },
+   "model_count": 3,
+   "special_rules": [
+    "Gun Shield"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Light Anti-tank Gun"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "6\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Gun Shield",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-medium-anti-tank-gun-team",
+   "name": "Medium Anti-Tank Gun Team",
+   "unit_type": "Anti-tank Gun",
+   "category": "anti_tank_gun",
+   "composition": "3 Soldiers Inexperienced: 49",
+   "cost": {
+    "inexperienced": 49,
+    "regular": 70,
+    "veteran": 91
+   },
+   "model_count": 3,
+   "special_rules": [
+    "Gun Shield"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": "25mm",
+    "weapons": [
+     "1x Medium Anti-tank Gun"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Rotate",
+      "run": "6\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "inexperienced": "3+",
+     "regular": "4+",
+     "veteran": "5+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Gun Shield",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-type-6-ke-ho-light-walker",
+   "name": "Type 6 KE-HO Light Walker",
+   "unit_type": "Light Walker (4 Legs)",
+   "category": "armoured_walker",
+   "composition": null,
+   "cost": {
+    "regular": 95,
+    "veteran": 114
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Multi-legged",
+    "Recce"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "2x Forward-facing, Hull-mounted MMGs"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "8+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Multi-legged",
+      "text": ""
+     },
+     {
+      "name": "Recce",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-type-6-kai-ke-ho-light-walker",
+   "name": "Type 6-KAI KE-HO Light Walker",
+   "unit_type": "Light Walker (4 Legs)",
+   "category": "armoured_walker",
+   "composition": null,
+   "cost": {
+    "regular": 145,
+    "veteran": 174
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Multi-Legged",
+    "Recce"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Forward-facing Light Anti-tank Gun with Type 61 Light Shiboru Cannon",
+     "cost": 80,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1x Forward-facing Light Anti-tank Gun",
+     "2x Forward-facing, Hull-mounted MMGs"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "8+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Multi-Legged",
+      "text": ""
+     },
+     {
+      "name": "Recce",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": "Only If Armed With Type 61 Light Shiboru Cannon"
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-type-7-sasori-light-walker",
+   "name": "Type 7 Sasori Light Walker",
+   "unit_type": "Light Walker (4 Legs)",
+   "category": "armoured_walker",
+   "composition": null,
+   "cost": {
+    "regular": 235,
+    "veteran": 282
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Multi-Legged",
+    "Recce"
+   ],
+   "rift_dice": 1,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1x Forward-facing Type 61 Light Shiboru Cannon",
+     "2x Forward-facing, Hull-mounted MMGs",
+     "Left and Right Arms"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "8+"
+    },
+    "morale": {
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Multi-Legged",
+      "text": ""
+     },
+     {
+      "name": "Recce",
+      "text": ""
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": ""
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-inago-medium-battle-walker",
+   "name": "Inago Medium Battle Walker",
+   "unit_type": "Medium Walker (2 Legs)",
+   "category": "armoured_walker",
+   "composition": null,
+   "cost": {
+    "fixed": 294
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Two-legged"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Forward-facing Medium Anti-Tank Gun with Light Rocket System",
+     "cost": -40,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "2x Forward-facing, Light Automatic Cannons",
+     "1x Forward-facing Medium Anti-tank Gun",
+     "Left and Right Arms"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "fixed"
+    ],
+    "damage": {
+     "fixed": "9+"
+    },
+    "morale": {
+     "fixed": "10"
+    },
+    "rules": [
+     {
+      "name": "Two-legged",
+      "text": ""
+     }
+    ],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-type-97-kai-shiboru-chi-ha-light-tank",
+   "name": "Type 97-KAI Shiboru Chi-Ha Light Tank",
+   "unit_type": "Light Tank",
+   "category": "tank",
+   "composition": null,
+   "cost": {
+    "inexperienced": 172,
+    "regular": 215,
+    "veteran": 258
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Rear-facing Turret Mounted Machine Gun"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Turret-mounted Type 61 Light Shiboru Cannon with Type 99 Shiboru Cannon and",
+     "cost": 25,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    },
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Turret-mounted Type 61 Light Shiboru Cannon with Medium Anti-Tank Gun",
+     "cost": -60,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1x Turret-mounted Type 61 Light Shiboru Cannon"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 9\"",
+      "run": "9\"–18\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "8+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Rear-facing Turret Mounted Machine Gun",
+      "text": "In a single Game Turn, the Rear-facing MMG may only fire into the opposite Arc of Fire to the turret’s main or Co-axial weapon."
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": "Only If Armed With Type 61 Light Shiboru Cannon Or Type 99 Shiboru Cannon"
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-type-3-kai-shiboru-chi-nu-medium-tank",
+   "name": "Type 3-KAI Shiboru Chi-Nu Medium Tank",
+   "unit_type": "Medium Tank",
+   "category": "tank",
+   "composition": null,
+   "cost": {
+    "inexperienced": 220,
+    "regular": 275,
+    "veteran": 330
+   },
+   "model_count": 1,
+   "special_rules": [
+    "Rear-facing Turret Mounted Machine Gun"
+   ],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "weapon_swap",
+     "desc": "Replace Turret-mounted Type 99 Shiboru Cannon with Medium Anti-Tank Gun",
+     "cost": -80,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "1x Turret-mounted Type 99 Shiboru Cannon"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 9\"",
+      "run": "9\"–18\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "9+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [
+     {
+      "name": "Rear-facing Turret Mounted Machine Gun",
+      "text": "In a single Game Turn, the Rear-facing MMG may only fire into the opposite Arc of Fire to the turret’s main or Co-axial weapon."
+     }
+    ],
+    "rift": {
+     "dice": 1,
+     "enhancement": "",
+     "surging": "",
+     "exhausted": "",
+     "note": "Only If Armed With Type 99 Shiboru Cannon"
+    },
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-truck",
+   "name": "Truck",
+   "unit_type": "Transport Vehicle",
+   "category": "transport",
+   "composition": null,
+   "cost": {
+    "inexperienced": 22,
+    "regular": 27,
+    "veteran": 32
+   },
+   "model_count": 1,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [
+    {
+     "type": "vehicle_add",
+     "desc": "Add a Forward-facing Pintle-mounted LMG",
+     "cost": 15,
+     "per_model": false,
+     "limit": null,
+     "condition": null
+    }
+   ],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "None"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "6+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  },
+  {
+   "id": "japan-type-95-kurogane-scout-car",
+   "name": "Type 95 Kurogane Scout Car",
+   "unit_type": "Transport Vehicle",
+   "category": "transport",
+   "composition": null,
+   "cost": {
+    "inexperienced": 15,
+    "regular": 19,
+    "veteran": 23
+   },
+   "model_count": 1,
+   "special_rules": [],
+   "rift_dice": 0,
+   "photo": "",
+   "options": [],
+   "upgrades": [],
+   "stats": {
+    "base_size": null,
+    "weapons": [
+     "None"
+    ],
+    "movement": [
+     {
+      "label": "",
+      "adv": "Up to 12\"",
+      "run": "12\"–24\""
+     }
+    ],
+    "quality": [
+     "inexperienced",
+     "regular",
+     "veteran"
+    ],
+    "damage": {
+     "all": "6+"
+    },
+    "morale": {
+     "inexperienced": "8",
+     "regular": "9",
+     "veteran": "10"
+    },
+    "rules": [],
+    "rift": null,
+    "hero_stats": {}
+   }
+  }
+ ]
+}
