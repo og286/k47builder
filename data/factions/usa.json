@@ -1,0 +1,4489 @@
+{
+  "id": "usa",
+  "name": "United States",
+  "army_special_rules": [
+    {
+      "name": "The Arsenal of Democracy",
+      "text": "United States units firing any weapon that has multiple Shots may re-roll one failed 'to hit' roll per weapon type."
+    },
+    {
+      "name": "Death From Above",
+      "text": "Infantry units do not suffer the usual –1 Morale penalty for entering play from Reserve using the Flight special rule. United States Vehicle units likewise ignore that penalty when using the Jump special rule."
+    },
+    {
+      "name": "Tough As Nails",
+      "text": "All United States Platoon and Company Commanders start the game with an additional point of Guts. Units from the Heroes section of the Army List do not benefit."
+    },
+    {
+      "name": "Tesla's Gift",
+      "text": "When a Rift Die is drawn, rolled, and assigned to a unit armed with any weapon with the Tesla Arc special rule (including because it was assigned an Order Die and had no Rift Die), you may re-roll the result."
+    }
+  ],
+  "special_platoons": [
+    {
+      "id": "firefly",
+      "name": "Firefly Platoon",
+      "faction": "usa",
+      "counts_as_assault": true,
+      "slots": [
+        {
+          "role": "Firefly Platoon Commander",
+          "min": 1,
+          "max": 1,
+          "match": "name",
+          "names": [
+            "Platoon Commander - Firefly Officer",
+            "Roberta Wells - Firefly Hero"
+          ]
+        },
+        {
+          "role": "Firefly Squads",
+          "min": 2,
+          "max": 2,
+          "match": "name",
+          "names": [
+            "Firefly Airborne Squad",
+            "Paracadutisti Firefly Airborne Squad"
+          ]
+        },
+        {
+          "role": "M2A5 Linebacker Jump Walker",
+          "min": 1,
+          "max": 1,
+          "match": "name",
+          "names": [
+            "M2A5 Linebacker Jump Walker"
+          ]
+        },
+        {
+          "role": "Firefly Forward Observer",
+          "min": 0,
+          "max": 1,
+          "match": "name",
+          "names": [
+            "Firefly Artillery Forward Observer",
+            "Firefly Air Force Forward Observer"
+          ]
+        },
+        {
+          "role": "Firefly Medic",
+          "min": 0,
+          "max": 1,
+          "match": "name",
+          "names": [
+            "Firefly Medic"
+          ]
+        },
+        {
+          "role": "Firefly Squads",
+          "min": 0,
+          "max": 2,
+          "match": "name",
+          "names": [
+            "Firefly Airborne Squad",
+            "Paracadutisti Firefly Airborne Squad"
+          ]
+        },
+        {
+          "role": "Firefly Flamethrower Teams",
+          "min": 0,
+          "max": 2,
+          "match": "name",
+          "names": [
+            "Firefly Flamethrower Team"
+          ]
+        },
+        {
+          "role": "M5A5 Jackal Light Jump Walkers",
+          "min": 0,
+          "max": 3,
+          "match": "name",
+          "names": [
+            "M5A5 Jackal Light Jump Walker"
+          ]
+        },
+        {
+          "role": "M2A1 Mudskipper Jump Walkers",
+          "min": 0,
+          "max": 3,
+          "match": "name",
+          "names": [
+            "M2A1 Mudskipper Jump Walker"
+          ]
+        },
+        {
+          "role": "M2A5 Linebacker Jump Walkers",
+          "min": 0,
+          "max": 2,
+          "match": "name",
+          "names": [
+            "M2A5 Linebacker Jump Walker"
+          ]
+        }
+      ],
+      "notes": [
+        "Once per Game Turn, you may re-roll the result of a Regroup in Hell! for one of the units in this Platoon.",
+        "At the start of the game, before Deployment, nominate a unit from this Platoon. When it deploys from Reserve using Flight or Jump, enemy units that have yet to receive an Order and are within 12\" may not react by opening fire. If that unit has the Regroup in Hell! Rift Enhancement, it may use it to move again after deploying from Reserve using the Flight rule."
+      ]
+    }
+  ],
+  "company_commander_allowed": 1,
+  "units": [
+    {
+      "id": "usa-slammer-samuels",
+      "name": "Slammer Samuels",
+      "unit_type": "Hero (May be used as a Company Commander) 158",
+      "category": "company_commander",
+      "composition": "1 Heroic Officer REQUISITION POINTS",
+      "cost": {
+        "fixed": 158
+      },
+      "special_rules": [
+        "Fast",
+        "Heavy"
+      ],
+      "rift_dice": 2,
+      "photo": "images/slammer-samuels.jpg",
+      "options": [],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "Heavy Tesla Rifle, Tesla Gauntlet"
+        ],
+        "movement": [
+          {
+            "label": "Whilst Fast",
+            "adv": "8\"",
+            "run": "16\""
+          },
+          {
+            "label": "Otherwise",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "fixed"
+        ],
+        "damage": {
+          "fixed": "6+"
+        },
+        "morale": {
+          "fixed": "10"
+        },
+        "rules": [
+          {
+            "name": "Fast",
+            "text": ""
+          },
+          {
+            "name": "Heavy",
+            "text": ""
+          }
+        ],
+        "rift": {
+          "dice": 2,
+          "enhancement": "Tesla Gauntlet. In Close Quarters combat, before any dice are rolled, Samuels can use his Tesla Gauntlet to gain a +D6 Pen modifier to any damage rolls he makes. He also gains the Tank Hunters special rule. If the result of the first round of Close Quarters is a draw, Samuels retains these benefits for the second round of fighting. If Samuels uses the Tesla Gauntlet enhancement exhaust one of his Rift Dice after that Close Quarters sequence is resolved (i.e., before another Order Die is drawn after two rounds of Close Quarters, if Samuels finds himself locked in combat).",
+          "surging": "Gain Deadly (2) special rule.",
+          "exhausted": "Lose Fast special rule.",
+          "note": ""
+        },
+        "hero_stats": {
+          "Guts": 3,
+          "Rift Mastery": 1,
+          "Luck": 1
+        }
+      }
+    },
+    {
+      "id": "usa-roberta-wells-firefly-hero",
+      "name": "Roberta Wells - Firefly Hero",
+      "unit_type": "Hero (May be used as a Platoon Commander, Firefly Platoon only) 135",
+      "category": "platoon_commander",
+      "composition": "1 Heroic Officer in Grade 1 Powered Armour with Gravitic Jump Pack REQUISITION POINTS",
+      "cost": {
+        "fixed": 135
+      },
+      "special_rules": [
+        "Flight",
+        "Heavy",
+        "Resourceful"
+      ],
+      "rift_dice": 3,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "Heavy Tesla Rifle"
+        ],
+        "movement": [
+          {
+            "label": "Using Flight",
+            "adv": "12\"",
+            "run": "18\""
+          },
+          {
+            "label": "Not using Flight",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "fixed"
+        ],
+        "damage": {
+          "fixed": "6+"
+        },
+        "morale": {
+          "fixed": "10"
+        },
+        "rules": [
+          {
+            "name": "Flight",
+            "text": ""
+          },
+          {
+            "name": "Heavy",
+            "text": ""
+          },
+          {
+            "name": "Resourceful",
+            "text": "Roberta Wells always takes any  Order Test she is required to make at her unmodified Morale Value."
+          }
+        ],
+        "rift": {
+          "dice": 3,
+          "enhancement": "Rift Science. At any time whilst executing an Order Roberta Wells may change the facing of an Active Rift Die of a friendly unit within 12\" and within her Line of Sight to Surging, or an Exhausted Rift Die of a friendly unit within 12\" and within her Line of Sight to Active. If the Rift Science Enhancement is used, exhaust one her Rift Dice after she has completed her Order. Rift Research. At any time whilst executing an Order, Roberta Wells may change the facing of an enemy Rift unit’s Rift Die to any side. The chosen unit must be within 12\" of Roberta Wells and within her Line of Sight. If she uses this enhancement, exhaust one of her Rift Dice after she has completed her Order. Regroup in Hell! When executing an Advance or Run Order Roberta Wells can opt to take an additional 2D6\" move after resolving her shooting or Close Quarters combat. This additional move uses the Flight special rule with the exception that Roberta Wells must land in Open Ground. If this Enhancement is used, exhaust one of her Rift Dice after she has completed her additional move.",
+          "surging": "None.",
+          "exhausted": "Lose Flight special rule.",
+          "note": ""
+        },
+        "hero_stats": {
+          "Guts": 1,
+          "Rift Mastery": 1,
+          "Luck": 2
+        }
+      }
+    },
+    {
+      "id": "usa-roberta-einstein-wells-scientific-advisor-1945",
+      "name": "Roberta ‘Einstein’ Wells (Scientific Advisor, 1945)",
+      "unit_type": "Hero 68",
+      "category": "hero",
+      "composition": "Roberta Wells REQUISITION POINTS",
+      "cost": {
+        "fixed": 68
+      },
+      "special_rules": [
+        "Fieldcraft",
+        "Independent",
+        "Infiltrator",
+        "Resourceful"
+      ],
+      "rift_dice": 2,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "Assault Rifle"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "fixed"
+        ],
+        "damage": {
+          "fixed": "5+"
+        },
+        "morale": {
+          "fixed": "10"
+        },
+        "rules": [
+          {
+            "name": "Fieldcraft",
+            "text": ""
+          },
+          {
+            "name": "Independent",
+            "text": "Roberta Wells may never be assigned an  Order by means of a Snap to Action!, nor does she benefit"
+          },
+          {
+            "name": "Infiltrator",
+            "text": ""
+          },
+          {
+            "name": "Resourceful",
+            "text": "Roberta Wells always takes any Order Test she is required to make at her unmodified Morale Value."
+          }
+        ],
+        "rift": {
+          "dice": 2,
+          "enhancement": "Rift Research. At any time whilst executing an Order, Roberta Wells may change the facing of an enemy Rift unit’s Rift Die to any side. The chosen unit must be within 12” of Roberta Wells and within her Line of Sight. If she uses this enhancement, exhaust one of her Rift Dice after she has completed her Order.",
+          "surging": "None.",
+          "exhausted": "Lose Fieldcraft. Gain Lumbering special rule – Reduced to a movement rate of 4\" on an Advance Order and 8\" on a Run Order. HQ Teams",
+          "note": ""
+        },
+        "hero_stats": {
+          "Guts": 1,
+          "Rift Mastery": 1,
+          "Luck": 1
+        }
+      }
+    },
+    {
+      "id": "usa-company-commander-officer",
+      "name": "Company Commander - Officer",
+      "unit_type": "Company Commander",
+      "category": "company_commander",
+      "composition": "1 Officer Inexperienced: 42",
+      "cost": {
+        "inexperienced": 42,
+        "regular": 60,
+        "veteran": 78
+      },
+      "special_rules": [],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "hero_stat",
+          "desc": "Guts",
+          "cost": 10,
+          "per_model": false,
+          "limit": {
+            "n": 1,
+            "scope": "Officer"
+          }
+        },
+        {
+          "type": "hero_stat",
+          "desc": "Luck",
+          "cost": 15,
+          "per_model": false,
+          "limit": {
+            "n": 1,
+            "scope": "Officer"
+          }
+        },
+        {
+          "type": "add_models",
+          "desc": "Additional Soldiers with Pistols",
+          "cost": {
+            "inexperienced": 6,
+            "regular": 9,
+            "veteran": 12
+          },
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "quality_locked": true
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Pistol with Rifle",
+          "cost": 1,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Pistol with SMG",
+          "cost": 5,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Pistol with Assault Rifle",
+          "cost": 7,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        }
+      ],
+      "upgrades": [
+        {
+          "type": "unit_upgrade",
+          "desc": "ATRDs",
+          "cost": 5,
+          "per_model": true
+        }
+      ],
+      "model_count": 1,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "Pistol"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "inexperienced": "3+",
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-company-commander-officer-in-heavy-armour",
+      "name": "Company Commander - Officer In Heavy Armour",
+      "unit_type": "Company Commander",
+      "category": "company_commander",
+      "composition": "1 Officer in Grade 1 Heavy Powered Armour Regular: 80",
+      "cost": {
+        "regular": 80,
+        "veteran": 98
+      },
+      "special_rules": [
+        "Heavy"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "hero_stat",
+          "desc": "Guts",
+          "cost": 10,
+          "per_model": false,
+          "limit": {
+            "n": 1,
+            "scope": "Officer"
+          }
+        },
+        {
+          "type": "hero_stat",
+          "desc": "Luck",
+          "cost": 15,
+          "per_model": false,
+          "limit": {
+            "n": 1,
+            "scope": "Officer"
+          }
+        },
+        {
+          "type": "add_models",
+          "desc": "Additional Soldiers in Grade",
+          "cost": {
+            "regular": 30,
+            "veteran": 33
+          },
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "quality_locked": true
+        }
+      ],
+      "upgrades": [
+        {
+          "type": "unit_upgrade",
+          "desc": "ATRDs",
+          "cost": 5,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Anti-tank Grenades",
+          "cost": 2,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Stubborn",
+          "cost": 1,
+          "per_model": true
+        }
+      ],
+      "model_count": 1,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "LMG"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "regular": "5+",
+          "veteran": "6+"
+        },
+        "morale": {
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Heavy",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-company-commander-firefly-officer",
+      "name": "Company Commander - Firefly Officer",
+      "unit_type": "Company Commander",
+      "category": "company_commander",
+      "composition": "1 Officer with Gravitic Jump Pack 92",
+      "cost": {
+        "fixed": 92
+      },
+      "special_rules": [
+        "Flight",
+        "Only Human"
+      ],
+      "rift_dice": 1,
+      "photo": "",
+      "options": [
+        {
+          "type": "hero_stat",
+          "desc": "Guts",
+          "cost": 10,
+          "per_model": false,
+          "limit": {
+            "n": 1,
+            "scope": "Officer"
+          }
+        },
+        {
+          "type": "hero_stat",
+          "desc": "Luck",
+          "cost": 15,
+          "per_model": false,
+          "limit": {
+            "n": 1,
+            "scope": "Officer"
+          }
+        },
+        {
+          "type": "add_models",
+          "desc": "Additional Fireflies armed with Thompson M1X1/2s",
+          "cost": {
+            "flat": 27
+          },
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "quality_locked": true
+        }
+      ],
+      "upgrades": [
+        {
+          "type": "unit_upgrade",
+          "desc": "ATRDs",
+          "cost": 5,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Anti-tank Grenades",
+          "cost": 2,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Stubborn",
+          "cost": 1,
+          "per_model": true
+        }
+      ],
+      "model_count": 1,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "Thompson M1X1/2"
+        ],
+        "movement": [
+          {
+            "label": "Using Flight",
+            "adv": "12\"",
+            "run": "18\""
+          },
+          {
+            "label": "Not using Flight",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "fixed"
+        ],
+        "damage": {
+          "fixed": "5+"
+        },
+        "morale": {
+          "fixed": "10"
+        },
+        "rules": [
+          {
+            "name": "Flight",
+            "text": ""
+          },
+          {
+            "name": "Only Human",
+            "text": "Unlike other Rift units, a Firefly Officer can benefit from the presence of a nearby Medic."
+          }
+        ],
+        "rift": {
+          "dice": 1,
+          "enhancement": "Regroup in Hell! When executing an Advance or Run Order a Firefly Officer and any accompanying Fireflies can opt to take an additional 2D6” move after resolving their shooting or Close Quarters combat. This additional move uses the Flight special rule with the exception that the Firefly unit must land in Open Ground. If this Enhancement is used, exhaust the unit’s Rift Die after it has completed its additional move.",
+          "surging": "None.",
+          "exhausted": "Lose Flight special rule.",
+          "note": ""
+        },
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-platoon-commander-officer",
+      "name": "Platoon Commander - Officer",
+      "unit_type": "Platoon Commander",
+      "category": "platoon_commander",
+      "composition": "1 Officer Inexperienced: 21",
+      "cost": {
+        "inexperienced": 21,
+        "regular": 30,
+        "veteran": 39
+      },
+      "special_rules": [],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "hero_stat",
+          "desc": "Guts",
+          "cost": 10,
+          "per_model": false,
+          "limit": {
+            "n": 1,
+            "scope": "Officer"
+          }
+        },
+        {
+          "type": "hero_stat",
+          "desc": "Luck",
+          "cost": 15,
+          "per_model": false,
+          "limit": {
+            "n": 1,
+            "scope": "Officer"
+          }
+        },
+        {
+          "type": "add_models",
+          "desc": "Additional Soldiers armed with Pistols",
+          "cost": {
+            "inexperienced": 6,
+            "regular": 9,
+            "veteran": 12
+          },
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "quality_locked": true
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Pistol with Rifle",
+          "cost": 1,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Pistol with SMG",
+          "cost": 5,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Pistol with Assault Rifle",
+          "cost": 7,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        }
+      ],
+      "upgrades": [
+        {
+          "type": "unit_upgrade",
+          "desc": "ATRDs",
+          "cost": 5,
+          "per_model": true
+        }
+      ],
+      "model_count": 1,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "Pistol"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "inexperienced": "3+",
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-platoon-commander-officer-in-heavy-armour",
+      "name": "Platoon Commander - Officer In Heavy Armour",
+      "unit_type": "Platoon Commander",
+      "category": "platoon_commander",
+      "composition": "1 Officer in Grade 1 Heavy Powered Armour Regular: 50",
+      "cost": {
+        "regular": 50,
+        "veteran": 59
+      },
+      "special_rules": [
+        "Heavy"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "hero_stat",
+          "desc": "Guts",
+          "cost": 10,
+          "per_model": false,
+          "limit": {
+            "n": 1,
+            "scope": "Officer"
+          }
+        },
+        {
+          "type": "hero_stat",
+          "desc": "Luck",
+          "cost": 15,
+          "per_model": false,
+          "limit": {
+            "n": 1,
+            "scope": "Officer"
+          }
+        },
+        {
+          "type": "add_models",
+          "desc": "Additional Soldiers in Grade",
+          "cost": {
+            "regular": 30,
+            "veteran": 33
+          },
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "quality_locked": true
+        }
+      ],
+      "upgrades": [
+        {
+          "type": "unit_upgrade",
+          "desc": "ATRDs",
+          "cost": 5,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Anti-tank Grenades",
+          "cost": 2,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Stubborn",
+          "cost": 1,
+          "per_model": true
+        }
+      ],
+      "model_count": 1,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "LMG"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "regular": "5+",
+          "veteran": "6+"
+        },
+        "morale": {
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Heavy",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-platoon-commander-firefly-officer",
+      "name": "Platoon Commander - Firefly Officer",
+      "unit_type": "Platoon Commander",
+      "category": "platoon_commander",
+      "composition": "1 Officer with Gravitic Jump Pack 52",
+      "cost": {
+        "fixed": 52
+      },
+      "special_rules": [
+        "Flight",
+        "Only Human"
+      ],
+      "rift_dice": 1,
+      "photo": "",
+      "options": [
+        {
+          "type": "hero_stat",
+          "desc": "Guts",
+          "cost": 10,
+          "per_model": false,
+          "limit": {
+            "n": 1,
+            "scope": "Officer"
+          }
+        },
+        {
+          "type": "hero_stat",
+          "desc": "Luck",
+          "cost": 15,
+          "per_model": false,
+          "limit": {
+            "n": 1,
+            "scope": "Officer"
+          }
+        },
+        {
+          "type": "add_models",
+          "desc": "Additional Fireflies armed with Thompson M1X1/2s",
+          "cost": {
+            "flat": 27
+          },
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "quality_locked": true
+        }
+      ],
+      "upgrades": [
+        {
+          "type": "unit_upgrade",
+          "desc": "ATRDs",
+          "cost": 5,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Anti-tank Grenades",
+          "cost": 2,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Stubborn",
+          "cost": 1,
+          "per_model": true
+        }
+      ],
+      "model_count": 1,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "Thompson M1X1/2"
+        ],
+        "movement": [
+          {
+            "label": "Using Flight",
+            "adv": "12\"",
+            "run": "18\""
+          },
+          {
+            "label": "Not using Flight",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "fixed"
+        ],
+        "damage": {
+          "fixed": "5+"
+        },
+        "morale": {
+          "fixed": "10"
+        },
+        "rules": [
+          {
+            "name": "Flight",
+            "text": ""
+          },
+          {
+            "name": "Only Human",
+            "text": "Unlike other Rift units, a Firefly Officer can benefit from the presence of a nearby Medic."
+          }
+        ],
+        "rift": {
+          "dice": 1,
+          "enhancement": "Regroup in Hell! When executing an Advance or Run Order a Firefly Officer and any accompanying Fireflies can opt to take an additional 2D6” move after resolving their shooting or Close Quarters combat. This additional move uses the Flight special rule with the exception that the Firefly unit must land in Open Ground. If this Enhancement is used, exhaust the unit’s Rift Die after it has completed its additional move.",
+          "surging": "None.",
+          "exhausted": "Lose Flight special rule.",
+          "note": ""
+        },
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-medic",
+      "name": "Medic",
+      "unit_type": "Medic",
+      "category": "medic",
+      "composition": "1 Medic Regular: 23",
+      "cost": {
+        "regular": 23,
+        "veteran": 30
+      },
+      "special_rules": [
+        "Medic"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "add_models",
+          "desc": "Additional Soldiers armed with Pistols",
+          "cost": {
+            "regular": 9,
+            "veteran": 12
+          },
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "quality_locked": true
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Pistol with Rifle",
+          "cost": 1,
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "condition": "additional soldiers only"
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Pistol with SMG",
+          "cost": 5,
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "condition": "additional soldiers only"
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Pistol with Assault Rifle",
+          "cost": 7,
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "condition": "additional soldiers only"
+        }
+      ],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "Pistol"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Medic",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-firefly-medic",
+      "name": "Firefly Medic",
+      "unit_type": "Medic",
+      "category": "medic",
+      "composition": "1 Medic with Gravitic Jump Pack 44",
+      "cost": {
+        "fixed": 44
+      },
+      "special_rules": [
+        "Flight",
+        "Medic",
+        "Only Human"
+      ],
+      "rift_dice": 1,
+      "photo": "",
+      "options": [
+        {
+          "type": "add_models",
+          "desc": "Additional Fireflies armed with Thompson M1X1/2s",
+          "cost": {
+            "flat": 27
+          },
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "quality_locked": true
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Thompson M1X1/2 with SMG",
+          "cost": -4,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Thompson M1X1/2 with Automatic Rifle",
+          "cost": -2,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        }
+      ],
+      "upgrades": [
+        {
+          "type": "unit_upgrade",
+          "desc": "Stubborn",
+          "cost": 1,
+          "per_model": true
+        }
+      ],
+      "model_count": 1,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "Thompson M1X1/2"
+        ],
+        "movement": [
+          {
+            "label": "Using Flight",
+            "adv": "12\"",
+            "run": "18\""
+          },
+          {
+            "label": "Not using Flight",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "fixed"
+        ],
+        "damage": {
+          "fixed": "5+"
+        },
+        "morale": {
+          "fixed": "10"
+        },
+        "rules": [
+          {
+            "name": "Flight",
+            "text": ""
+          },
+          {
+            "name": "Medic",
+            "text": ""
+          },
+          {
+            "name": "Only Human",
+            "text": "Unlike other Rift units, a Firefly Medic can benefit from the Medic rule."
+          }
+        ],
+        "rift": {
+          "dice": 1,
+          "enhancement": "Regroup in Hell! When executing an Advance or Run Order a Firefly Medic and any accompanying Fireflies can opt to take an additional 2D6\" move after resolving their shooting or Close Quarters combat. This additional move uses the Flight special rule with the exception that the Firefly unit must land in Open Ground. If this Enhancement is used, exhaust the unit’s Rift Die after it has completed its additional move.",
+          "surging": "None.",
+          "exhausted": "Lose Flight special rule.",
+          "note": ""
+        },
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-artillery-forward-observer",
+      "name": "Artillery Forward Observer",
+      "unit_type": "Forward Observer",
+      "category": "forward_observer",
+      "composition": "1 Artillery Forward Observer Regular: 75",
+      "cost": {
+        "regular": 75,
+        "veteran": 90
+      },
+      "special_rules": [
+        "Infiltrator",
+        "Modern Communications"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "add_models",
+          "desc": "Additional Soldiers armed with Pistols",
+          "cost": {
+            "regular": 9,
+            "veteran": 12
+          },
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "quality_locked": true
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Pistol with Rifle",
+          "cost": 1,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Pistol with SMG",
+          "cost": 5,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Pistol with Assault Rifle",
+          "cost": 7,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        }
+      ],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "Pistol"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Infiltrator",
+            "text": ""
+          },
+          {
+            "name": "Modern Communications",
+            "text": "US Artillery Forward Observers may re-roll the D6 when they roll on the Artillery Barrage Chart."
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-firefly-artillery-forward-observer",
+      "name": "Firefly Artillery Forward Observer",
+      "unit_type": "Forward Observer",
+      "category": "forward_observer",
+      "composition": "1 Artillery Forward Observer with Gravitic Jump Pack 104",
+      "cost": {
+        "fixed": 104
+      },
+      "special_rules": [
+        "Flight",
+        "Infiltrator",
+        "Modern Communications",
+        "Only Human"
+      ],
+      "rift_dice": 1,
+      "photo": "",
+      "options": [
+        {
+          "type": "add_models",
+          "desc": "Additional Fireflies armed with Thompson M1X1/2s",
+          "cost": {
+            "flat": 27
+          },
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "quality_locked": true
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Thompson M1X1/2 with SMG",
+          "cost": -4,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Thompson M1X1/2 with Automatic Rifle",
+          "cost": -2,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        }
+      ],
+      "upgrades": [
+        {
+          "type": "unit_upgrade",
+          "desc": "ATRDs",
+          "cost": 5,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Anti-tank Grenades",
+          "cost": 2,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Stubborn",
+          "cost": 1,
+          "per_model": true
+        }
+      ],
+      "model_count": 1,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "Thompson M1X1/2"
+        ],
+        "movement": [
+          {
+            "label": "Using Flight",
+            "adv": "12\"",
+            "run": "18\""
+          },
+          {
+            "label": "Not using Flight",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "fixed"
+        ],
+        "damage": {
+          "fixed": "5+"
+        },
+        "morale": {
+          "fixed": "10"
+        },
+        "rules": [
+          {
+            "name": "Flight",
+            "text": ""
+          },
+          {
+            "name": "Infiltrator",
+            "text": ""
+          },
+          {
+            "name": "Modern Communications",
+            "text": "US Firefly Artillery Forward Observers may re-roll the D6 when they roll on the Artillery Barrage Chart."
+          },
+          {
+            "name": "Only Human",
+            "text": "Unlike other Rift units, a Firefly Forward Observer can benefit from the presence of a nearby Medic."
+          }
+        ],
+        "rift": {
+          "dice": 1,
+          "enhancement": "Regroup in Hell! When executing an Advance or Run Order, or after calling in an Artillery Barrage by way of a Fire Order, a Firefly Forward Observer and any accompanying Fireflies can opt to take an additional 2D6\" move after resolving their shooting or Close Quarters combat. This additional move uses the Flight special rule with the exception that the Firefly unit must land in Open Ground. If this Enhancement is used, exhaust the unit’s Rift Die after it has completed its additional move.",
+          "surging": "None.",
+          "exhausted": "Lose Flight special rule.",
+          "note": ""
+        },
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-air-force-forward-observer",
+      "name": "Air Force Forward Observer",
+      "unit_type": "Forward Observer",
+      "category": "forward_observer",
+      "composition": "1 Air Force Forward Observer Regular: 75",
+      "cost": {
+        "regular": 75,
+        "veteran": 90
+      },
+      "special_rules": [
+        "Infiltrator",
+        "Modern Communications"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "add_models",
+          "desc": "Additional Soldiers armed with Pistols",
+          "cost": {
+            "regular": 9,
+            "veteran": 12
+          },
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "quality_locked": true
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Pistol with Rifle",
+          "cost": 1,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Pistol with SMG",
+          "cost": 5,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Pistol with Assault Rifle",
+          "cost": 7,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        }
+      ],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "Pistol"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Infiltrator",
+            "text": ""
+          },
+          {
+            "name": "Modern Communications",
+            "text": "US Air Force Forward Observers may re-roll the D6 when they roll on the Air Strike Chart."
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-firefly-air-force-forward-observer",
+      "name": "Firefly Air Force Forward Observer",
+      "unit_type": "Forward Observer",
+      "category": "forward_observer",
+      "composition": "1 Air Force Forward Observer with Gravitic Jump Pack 104",
+      "cost": {
+        "fixed": 104
+      },
+      "special_rules": [
+        "Flight",
+        "Infiltrator",
+        "Modern Communications",
+        "Only Human"
+      ],
+      "rift_dice": 1,
+      "photo": "",
+      "options": [
+        {
+          "type": "add_models",
+          "desc": "Additional Fireflies armed with Thompson M1X1/2s",
+          "cost": {
+            "flat": 27
+          },
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "quality_locked": true
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Thompson M1X1/2 with SMG",
+          "cost": -4,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Thompson M1X1/2 with Automatic Rifle",
+          "cost": -2,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        }
+      ],
+      "upgrades": [
+        {
+          "type": "unit_upgrade",
+          "desc": "ATRDs",
+          "cost": 5,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Anti-tank Grenades",
+          "cost": 2,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Stubborn",
+          "cost": 1,
+          "per_model": true
+        }
+      ],
+      "model_count": 1,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "Thompson M1X1/2"
+        ],
+        "movement": [
+          {
+            "label": "Using Flight",
+            "adv": "12\"",
+            "run": "18\""
+          },
+          {
+            "label": "Not using Flight",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "fixed"
+        ],
+        "damage": {
+          "fixed": "5+"
+        },
+        "morale": {
+          "fixed": "10"
+        },
+        "rules": [
+          {
+            "name": "Flight",
+            "text": ""
+          },
+          {
+            "name": "Infiltrator",
+            "text": ""
+          },
+          {
+            "name": "Modern Communications",
+            "text": "US Firefly Air Force Forward Observers may re-roll the D6 when they roll on the Air Strike Chart."
+          },
+          {
+            "name": "Only Human",
+            "text": "Unlike other Rift units, a Firefly Forward Observer can benefit from the presence of a nearby Medic."
+          }
+        ],
+        "rift": {
+          "dice": 1,
+          "enhancement": "Regroup in Hell! When executing an Advance or Run Order, or after calling in an Air Strike by way of a Fire Order, a Firefly Forward Observer and any accompanying Fireflies can opt to take an additional 2D6\" move after resolving their shooting or Close Quarters combat. This additional move uses the Flight special rule with the exception that the Firefly unit must land in Open Ground. If this Enhancement is used, exhaust the unit’s Rift Die after it has completed its additional move.",
+          "surging": "None.",
+          "exhausted": "Lose Flight special rule.",
+          "note": ""
+        },
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-rifle-squad",
+      "name": "Rifle Squad",
+      "unit_type": "Basic Infantry",
+      "category": "infantry_basic",
+      "composition": "1 NCO and 5 Soldiers REQUISITION POINTS",
+      "cost": {
+        "inexperienced": 42,
+        "regular": 60,
+        "veteran": 78
+      },
+      "special_rules": [],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "add_models",
+          "desc": "Additional Soldiers",
+          "cost": {
+            "inexperienced": 7,
+            "regular": 10,
+            "veteran": 13
+          },
+          "per_model": true,
+          "limit": {
+            "n": 6,
+            "scope": "squad"
+          },
+          "quality_locked": true
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Rifle with SMG",
+          "cost": 4,
+          "per_model": true,
+          "limit": {
+            "n": 12,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Rifle with Assault Rifle",
+          "cost": 6,
+          "per_model": true,
+          "limit": {
+            "n": 12,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Rifle with Automatic Rifle",
+          "cost": 6,
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Upgrade Rifle with the ability to fire Rifle Grenades",
+          "cost": 6,
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Rifle with LMG",
+          "cost": 15,
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Rifle with Infantry Flamethrower",
+          "cost": 30,
+          "per_model": true,
+          "limit": {
+            "n": 1,
+            "scope": "squad"
+          },
+          "condition": "only if engineers option taken"
+        }
+      ],
+      "upgrades": [
+        {
+          "type": "unit_upgrade",
+          "desc": "ATRDs",
+          "cost": 5,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Anti-tank Grenades",
+          "cost": 2,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Stubborn",
+          "cost": 1,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Engineers",
+          "cost": 1,
+          "per_model": true
+        }
+      ],
+      "model_count": 6,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "Rifle"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "inexperienced": "3+",
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-us-heavy-infantry-squad",
+      "name": "US Heavy Infantry Squad",
+      "unit_type": "Advanced Infantry",
+      "category": "infantry_advanced",
+      "composition": "1 NCO and 2 Soldiers in Grade 1 Heavy Powered Armour REQUISITION POINTS",
+      "cost": {
+        "regular": 90,
+        "veteran": 99
+      },
+      "special_rules": [
+        "Heavy"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "add_models",
+          "desc": "Additional Soldiers in Grade",
+          "cost": {
+            "regular": 30,
+            "veteran": 33
+          },
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "quality_locked": true
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace LMG with Super Bazooka",
+          "cost": 55,
+          "per_model": true,
+          "limit": {
+            "n": 1,
+            "scope": "squad"
+          },
+          "condition": null
+        }
+      ],
+      "upgrades": [
+        {
+          "type": "unit_upgrade",
+          "desc": "ATRDs",
+          "cost": 5,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Anti-tank Grenades",
+          "cost": 2,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Stubborn",
+          "cost": 1,
+          "per_model": true
+        }
+      ],
+      "model_count": 3,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "LMG"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "regular": "5+",
+          "veteran": "6+"
+        },
+        "morale": {
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Heavy",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-firefly-airborne-squad",
+      "name": "Firefly Airborne Squad",
+      "unit_type": "Specialist Infantry 162",
+      "category": "infantry_specialist",
+      "composition": "1 NCO and 5 Fireflies REQUISITION POINTS",
+      "cost": {
+        "fixed": 162
+      },
+      "special_rules": [
+        "Flight",
+        "Only Human"
+      ],
+      "rift_dice": 1,
+      "photo": "",
+      "options": [
+        {
+          "type": "add_models",
+          "desc": "Additional Fireflies",
+          "cost": {
+            "flat": 27
+          },
+          "per_model": true,
+          "limit": {
+            "n": 6,
+            "scope": "squad"
+          },
+          "quality_locked": true
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Thompson M1X1/2 with SMG",
+          "cost": -4,
+          "per_model": true,
+          "limit": {
+            "n": 12,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Thompson M1X1/2 with Automatic Rifle",
+          "cost": -2,
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Thompson M1X1/2 with Infantry Flamethrower",
+          "cost": 22,
+          "per_model": true,
+          "limit": {
+            "n": 1,
+            "scope": "squad"
+          },
+          "condition": null
+        }
+      ],
+      "upgrades": [
+        {
+          "type": "unit_upgrade",
+          "desc": "ATRDs",
+          "cost": 5,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Anti-tank Grenades",
+          "cost": 2,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Stubborn",
+          "cost": 1,
+          "per_model": true
+        }
+      ],
+      "model_count": 6,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "Thompson M1X1/2"
+        ],
+        "movement": [
+          {
+            "label": "Using Flight",
+            "adv": "12\"",
+            "run": "18\""
+          },
+          {
+            "label": "Not using Flight",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "fixed"
+        ],
+        "damage": {
+          "fixed": "5+"
+        },
+        "morale": {
+          "fixed": "10"
+        },
+        "rules": [
+          {
+            "name": "Flight",
+            "text": ""
+          },
+          {
+            "name": "Only Human",
+            "text": "Unlike other Rift units, a Firefly Airborne Squad can benefit from the presence of a nearby Medic."
+          }
+        ],
+        "rift": {
+          "dice": 1,
+          "enhancement": "Regroup in Hell! When executing an Advance or Run Order a Firefly squad can opt to take an additional 2D6\" move after resolving their shooting or Close Quarters combat. This additional move uses the Flight special rule with the exception that the Firefly unit must land in Open Ground. If this Enhancement is used, exhaust the unit’s Rift Die after it has completed its additional move.",
+          "surging": "None.",
+          "exhausted": "Lose Flight special rule.",
+          "note": ""
+        },
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-paracadutisti-firefly-airborne-squad",
+      "name": "Paracadutisti Firefly Airborne Squad",
+      "unit_type": "Specialist Infantry 120",
+      "category": "infantry_specialist",
+      "composition": "1 NCO and 4 Paracadutisti Fireflies REQUISITION POINTS",
+      "cost": {
+        "fixed": 120
+      },
+      "special_rules": [
+        "Flight",
+        "Only Human",
+        "Stubborn"
+      ],
+      "rift_dice": 1,
+      "photo": "",
+      "options": [
+        {
+          "type": "add_models",
+          "desc": "Additional Paracadutisti Fireflies",
+          "cost": {
+            "flat": 24
+          },
+          "per_model": true,
+          "limit": {
+            "n": 5,
+            "scope": "squad"
+          },
+          "quality_locked": true
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace SMG with Grenade Launcher",
+          "cost": 22,
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "condition": null
+        }
+      ],
+      "upgrades": [
+        {
+          "type": "unit_upgrade",
+          "desc": "Anti-tank Grenades",
+          "cost": 2,
+          "per_model": true
+        }
+      ],
+      "model_count": 5,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "SMG"
+        ],
+        "movement": [
+          {
+            "label": "Using Flight",
+            "adv": "12\"",
+            "run": "18\""
+          },
+          {
+            "label": "Not using Flight",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "fixed"
+        ],
+        "damage": {
+          "fixed": "5+"
+        },
+        "morale": {
+          "fixed": "10"
+        },
+        "rules": [
+          {
+            "name": "Flight",
+            "text": ""
+          },
+          {
+            "name": "Only Human",
+            "text": "Unlike other Rift units, a Paracadutisti Firefly Airborne Squad can benefit from the presence of a nearby Medic."
+          },
+          {
+            "name": "Stubborn",
+            "text": ""
+          }
+        ],
+        "rift": {
+          "dice": 1,
+          "enhancement": "Regroup in Hell! When executing an Advance or Run Order a Firefly squad can opt to take an additional 2D6\" move after resolving their shooting or Close Quarters combat. This additional move uses the Flight special rule with the exception that the Firefly unit must land in Open Ground. If this Enhancement is used, exhaust the unit’s Rift Die after it has completed its additional move.",
+          "surging": "None.",
+          "exhausted": "Lose Flight special rule.",
+          "note": ""
+        },
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-paragon-squad",
+      "name": "Paragon Squad",
+      "unit_type": "Heroic Specialist Infantry 84",
+      "category": "infantry_specialist",
+      "composition": "1 Paragon NCO and 2 Paragons REQUISITION POINTS",
+      "cost": {
+        "fixed": 84
+      },
+      "special_rules": [
+        "Fast",
+        "Heavy",
+        "Infiltrator",
+        "Tank Hunters"
+      ],
+      "rift_dice": 1,
+      "photo": "",
+      "options": [
+        {
+          "type": "add_models",
+          "desc": "Additional Paragons",
+          "cost": {
+            "flat": 28
+          },
+          "per_model": true,
+          "limit": {
+            "n": 3,
+            "scope": "squad"
+          },
+          "quality_locked": true
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace SMG with Heavy Tesla Rifle",
+          "cost": 6,
+          "per_model": true,
+          "limit": {
+            "n": 2,
+            "scope": "squad"
+          },
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace SMG with Infantry Flamethrower",
+          "cost": 26,
+          "per_model": true,
+          "limit": {
+            "n": 1,
+            "scope": "squad"
+          },
+          "condition": null
+        }
+      ],
+      "upgrades": [
+        {
+          "type": "unit_upgrade",
+          "desc": "ATRDs",
+          "cost": 5,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Fanatics",
+          "cost": 2,
+          "per_model": true
+        },
+        {
+          "type": "unit_upgrade",
+          "desc": "Engineers",
+          "cost": 1,
+          "per_model": true
+        }
+      ],
+      "model_count": 3,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "SMG"
+        ],
+        "movement": [
+          {
+            "label": "Whilst Fast",
+            "adv": "8\"",
+            "run": "16\""
+          },
+          {
+            "label": "Otherwise",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "fixed"
+        ],
+        "damage": {
+          "fixed": "6+"
+        },
+        "morale": {
+          "fixed": "10"
+        },
+        "rules": [
+          {
+            "name": "Fast",
+            "text": ""
+          },
+          {
+            "name": "Heavy",
+            "text": ""
+          },
+          {
+            "name": "Infiltrator",
+            "text": ""
+          },
+          {
+            "name": "Tank Hunters",
+            "text": ""
+          }
+        ],
+        "rift": {
+          "dice": 1,
+          "enhancement": "Gung Ho! Once per Game Turn, when issued an Order a Paragon Squad can immediately generate a point of Guts. Any model in the unit may spend Guts points as if they were a Hero. Any unused Guts points persist from turn to turn. If the Paragon Squad uses its Gung Ho! ability exhaust one of the unit’s Rift Die after the squad has completed its Order.",
+          "surging": "Gain Fearless special rule.",
+          "exhausted": "Lose Fast special rule.",
+          "note": ""
+        },
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-mmg-team",
+      "name": "MMG Team",
+      "unit_type": "Machine Gun Team",
+      "category": "machine_gun_team",
+      "composition": "3 Soldiers Inexperienced: 35",
+      "cost": {
+        "inexperienced": 35,
+        "regular": 50,
+        "veteran": 65
+      },
+      "special_rules": [],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 3,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "1x Medium Machine Gun"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Rotate",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "inexperienced": "3+",
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-hmg-team",
+      "name": "HMG Team",
+      "unit_type": "Machine Gun Team",
+      "category": "machine_gun_team",
+      "composition": "4 Soldiers Inexperienced: 49",
+      "cost": {
+        "inexperienced": 49,
+        "regular": 70,
+        "veteran": 91
+      },
+      "special_rules": [],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 4,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "1x Heavy Machine Gun"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Rotate",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "inexperienced": "3+",
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-bazooka-team",
+      "name": "Bazooka Team",
+      "unit_type": "Anti-tank Team",
+      "category": "anti_tank_team",
+      "composition": "2 Soldiers Inexperienced: 42",
+      "cost": {
+        "inexperienced": 42,
+        "regular": 60,
+        "veteran": 78
+      },
+      "special_rules": [],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 2,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "1x Bazooka"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "inexperienced": "3+",
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-super-bazooka-team",
+      "name": "Super Bazooka Team",
+      "unit_type": "Anti-tank Team",
+      "category": "anti_tank_team",
+      "composition": "2 Soldiers in Grade 1 Heavy Powered Armour Regular: 105",
+      "cost": {
+        "regular": 105,
+        "veteran": 129
+      },
+      "special_rules": [
+        "Heavy"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 2,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "1 Soldier with Super Bazooka",
+          "1 Soldier with LMG"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "regular": "5+",
+          "veteran": "6+"
+        },
+        "morale": {
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Heavy",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-sniper-team",
+      "name": "Sniper Team",
+      "unit_type": "Sniper Team",
+      "category": "sniper_team",
+      "composition": "2 Soldiers Regular: 52",
+      "cost": {
+        "regular": 52,
+        "veteran": 67
+      },
+      "special_rules": [
+        "Infiltrator",
+        "Sniper"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "weapon_swap",
+          "desc": "Replace the Assistant's Pistol with a Rifle",
+          "cost": 1,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace the Assistant's Pistol with an SMG",
+          "cost": 5,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace the Assistant's Pistol with an Assault Rifle",
+          "cost": 7,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        }
+      ],
+      "upgrades": [],
+      "model_count": 2,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "Team Leader – Rifle & Pistol",
+          "Assistant – Pistol"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Infiltrator",
+            "text": ""
+          },
+          {
+            "name": "Sniper",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-light-mortar-team",
+      "name": "Light Mortar Team",
+      "unit_type": "Light Mortar Team",
+      "category": "light_mortar_team",
+      "composition": "3 Soldiers Inexperienced: 25",
+      "cost": {
+        "inexperienced": 25,
+        "regular": 35,
+        "veteran": 46
+      },
+      "special_rules": [],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 3,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "1x Light Mortar"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "6”",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "inexperienced": "3+",
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-medium-mortar-team",
+      "name": "Medium Mortar Team",
+      "unit_type": "Mortar Team",
+      "category": "mortar_team",
+      "composition": "3 Soldiers Inexperienced: 32",
+      "cost": {
+        "inexperienced": 32,
+        "regular": 45,
+        "veteran": 59
+      },
+      "special_rules": [],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 3,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "1x Medium Mortar"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Rotate",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "inexperienced": "3+",
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-heavy-mortar-team",
+      "name": "Heavy Mortar Team",
+      "unit_type": "Mortar Team",
+      "category": "mortar_team",
+      "composition": "4 Soldiers Inexperienced: 42",
+      "cost": {
+        "inexperienced": 42,
+        "regular": 60,
+        "veteran": 78
+      },
+      "special_rules": [],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 4,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "1x Heavy Mortar"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Rotate",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "inexperienced": "3+",
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-flamethrower-team",
+      "name": "Flamethrower Team",
+      "unit_type": "Flamethrower Team",
+      "category": "flamethrower_team",
+      "composition": "2 Soldiers Regular: 50",
+      "cost": {
+        "regular": 50,
+        "veteran": 65
+      },
+      "special_rules": [],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 2,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "Team Leader – Infantry Flamethrower",
+          "Assistant – Pistol"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-firefly-flamethrower-team",
+      "name": "Firefly Flamethrower Team",
+      "unit_type": "Flamethrower Team 77",
+      "category": "flamethrower_team",
+      "composition": "2 Fireflies REQUISITION POINTS",
+      "cost": {
+        "fixed": 77
+      },
+      "special_rules": [
+        "Flight",
+        "Only Human"
+      ],
+      "rift_dice": 1,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 2,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "Team Leader – Infantry Flamethrower",
+          "Assistant – Pistol"
+        ],
+        "movement": [
+          {
+            "label": "Using Flight",
+            "adv": "12\"",
+            "run": "18\""
+          },
+          {
+            "label": "Not using Flight",
+            "adv": "6\"",
+            "run": "12\""
+          }
+        ],
+        "quality": [
+          "fixed"
+        ],
+        "damage": {
+          "fixed": "5+"
+        },
+        "morale": {
+          "fixed": "10"
+        },
+        "rules": [
+          {
+            "name": "Flight",
+            "text": ""
+          },
+          {
+            "name": "Only Human",
+            "text": "Unlike other Rift units, a Firefly Flamethrower Team can benefit from the presence of a nearby Medic."
+          }
+        ],
+        "rift": {
+          "dice": 1,
+          "enhancement": "Controlled Burn. When a hit is scored with the Flamethrower, the Firefly Flamethrower Team may use this Enhancement. If it does, it may re-roll the D6 to determine how many hits are scored against the target unit. If it does, the firing unit suffers D3 Pin Markers, instead of the usual one. Additionally, no test is required to determine if the Flamethrower runs out of fuel – it is considered to have automatically passed. If this Enhancement is used, exhaust the unit’s Rift Die immediately after the shot has been resolved. Regroup in Hell! When executing an Advance or Run Order a Firefly Flamethrower Team can opt to take an additional 2D6\" move after resolving their shooting or Close Quarters combat. This additional move uses the Flight special rule with the exception that the Firefly Flamethrower Team must land in Open Ground. If this Enhancement is used, exhaust the unit’s Rift Die after it has completed its additional move.",
+          "surging": "None.",
+          "exhausted": "Lose Flight special rule.",
+          "note": ""
+        },
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-light-artillery-team",
+      "name": "Light Artillery Team",
+      "unit_type": "Field Artillery",
+      "category": "field_artillery",
+      "composition": "3 Soldiers Inexperienced: 32",
+      "cost": {
+        "inexperienced": 32,
+        "regular": 45,
+        "veteran": 59
+      },
+      "special_rules": [],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "vehicle_add",
+          "desc": "Add a Gun Shield",
+          "cost": 5,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        }
+      ],
+      "upgrades": [],
+      "model_count": 3,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "1x Light Howitzer"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Rotate",
+            "run": "6\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "inexperienced": "3+",
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-medium-artillery-team",
+      "name": "Medium Artillery Team",
+      "unit_type": "Field Artillery",
+      "category": "field_artillery",
+      "composition": "4 Soldiers Inexperienced: 60",
+      "cost": {
+        "inexperienced": 60,
+        "regular": 85,
+        "veteran": 111
+      },
+      "special_rules": [],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "vehicle_add",
+          "desc": "Add a Gun Shield",
+          "cost": 5,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        }
+      ],
+      "upgrades": [],
+      "model_count": 4,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "1x Medium Howitzer"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Rotate",
+            "run": "6\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "inexperienced": "3+",
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-heavy-artillery-team",
+      "name": "Heavy Artillery Team",
+      "unit_type": "Field Artillery",
+      "category": "field_artillery",
+      "composition": "5 Soldiers Inexperienced: 95",
+      "cost": {
+        "inexperienced": 95,
+        "regular": 135,
+        "veteran": 176
+      },
+      "special_rules": [],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "vehicle_add",
+          "desc": "Add a Gun Shield",
+          "cost": 5,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        }
+      ],
+      "upgrades": [],
+      "model_count": 5,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "1x Heavy Howitzer"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Rotate",
+            "run": "N/A"
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "inexperienced": "3+",
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-light-anti-tank-gun-team",
+      "name": "Light Anti-Tank Gun Team",
+      "unit_type": "Anti-tank Gun",
+      "category": "anti_tank_gun",
+      "composition": "3 Soldiers Inexperienced: 35",
+      "cost": {
+        "inexperienced": 35,
+        "regular": 50,
+        "veteran": 65
+      },
+      "special_rules": [
+        "Gun Shield"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 3,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "1x Light Anti-tank Gun"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Rotate",
+            "run": "6\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "inexperienced": "3+",
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Gun Shield",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-medium-anti-tank-gun-team",
+      "name": "Medium Anti-Tank Gun Team",
+      "unit_type": "Anti-tank Gun",
+      "category": "anti_tank_gun",
+      "composition": "3 Soldiers Inexperienced: 49",
+      "cost": {
+        "inexperienced": 49,
+        "regular": 70,
+        "veteran": 91
+      },
+      "special_rules": [
+        "Gun Shield"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 3,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "1x Medium Anti-tank Gun"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Rotate",
+            "run": "6\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "inexperienced": "3+",
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Gun Shield",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-heavy-anti-tank-gun-team",
+      "name": "Heavy Anti-Tank Gun Team",
+      "unit_type": "Anti-tank Gun",
+      "category": "anti_tank_gun",
+      "composition": "4 Soldiers Inexperienced: 70",
+      "cost": {
+        "inexperienced": 70,
+        "regular": 100,
+        "veteran": 130
+      },
+      "special_rules": [
+        "Gun Shield"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 4,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "1x Heavy Anti-tank Gun"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Rotate",
+            "run": "N/A"
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "inexperienced": "3+",
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Gun Shield",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-super-heavy-anti-tank-gun-team",
+      "name": "Super-Heavy Anti-Tank Gun Team",
+      "unit_type": "Anti-tank Gun",
+      "category": "anti_tank_gun",
+      "composition": "5 Soldiers Inexperienced: 98",
+      "cost": {
+        "inexperienced": 98,
+        "regular": 140,
+        "veteran": 182
+      },
+      "special_rules": [
+        "Gun Shield"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 5,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "1x Super-heavy Anti-tank Gun"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Rotate",
+            "run": "N/A"
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "inexperienced": "3+",
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Gun Shield",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-m17-tesla-cannon-team",
+      "name": "M17 Tesla Cannon Team",
+      "unit_type": "Anti-tank Gun",
+      "category": "anti_tank_gun",
+      "composition": "3 Soldiers Inexperienced: 88",
+      "cost": {
+        "inexperienced": 88,
+        "regular": 125,
+        "veteran": 163
+      },
+      "special_rules": [],
+      "rift_dice": 1,
+      "photo": "",
+      "options": [
+        {
+          "type": "vehicle_add",
+          "desc": "Add a Gun Shield",
+          "cost": 5,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        }
+      ],
+      "upgrades": [],
+      "model_count": 3,
+      "stats": {
+        "base_size": "25mm",
+        "weapons": [
+          "1x M17 Tesla Cannon – Counts as Heavy Artillery for the purposes of being moved by its crew"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Rotate",
+            "run": "N/A"
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "inexperienced": "3+",
+          "regular": "4+",
+          "veteran": "5+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [],
+        "rift": {
+          "dice": 1,
+          "enhancement": "",
+          "surging": "",
+          "exhausted": "",
+          "note": ""
+        },
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-m3a2-pondskater-scout-walker",
+      "name": "M3A2 Pondskater Scout Walker",
+      "unit_type": "Scout Walker (2 Legs)",
+      "category": "armoured_walker",
+      "composition": null,
+      "cost": {
+        "regular": 80,
+        "veteran": 96
+      },
+      "special_rules": [
+        "Amphibious",
+        "Open-topped",
+        "Recce",
+        "Two-legged"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "vehicle_add",
+          "desc": "Add a second HMG on the same Pintle mount",
+          "cost": 20,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        }
+      ],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": null,
+        "weapons": [
+          "1x Pintle-mounted HMG with a 360-degree arc of fire",
+          "1x Forward-facing, Hull-mounted MMG"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Up to 12\"",
+            "run": "12\"–24\""
+          }
+        ],
+        "quality": [
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "all": "7+"
+        },
+        "morale": {
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Amphibious",
+            "text": ""
+          },
+          {
+            "name": "Open-topped",
+            "text": ""
+          },
+          {
+            "name": "Recce",
+            "text": ""
+          },
+          {
+            "name": "Two-legged",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-m3a5-pondskater-scout-walker",
+      "name": "M3A5 Pondskater Scout Walker",
+      "unit_type": "Scout Walker (2 Legs)",
+      "category": "armoured_walker",
+      "composition": null,
+      "cost": {
+        "regular": 110,
+        "veteran": 132
+      },
+      "special_rules": [
+        "Amphibious",
+        "Improved HE",
+        "Open-topped",
+        "Two-legged"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": null,
+        "weapons": [
+          "1x Forward-facing Light Anti-tank Gun",
+          "1x Forward-facing, Hull-mounted MMG"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Up to 12\"",
+            "run": "12\"–24\""
+          }
+        ],
+        "quality": [
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "all": "7+"
+        },
+        "morale": {
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Amphibious",
+            "text": ""
+          },
+          {
+            "name": "Improved HE",
+            "text": "Instead of HE (1\"), the Light Anti-Tank Gun has HE (2\")."
+          },
+          {
+            "name": "Open-topped",
+            "text": ""
+          },
+          {
+            "name": "Two-legged",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-m5a2-coyote-light-walker",
+      "name": "M5A2 Coyote Light Walker",
+      "unit_type": "Light Walker (2 Legs)",
+      "category": "armoured_walker",
+      "composition": null,
+      "cost": {
+        "regular": 105,
+        "veteran": 126
+      },
+      "special_rules": [
+        "Single-crew Walker",
+        "Two-legged"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": null,
+        "weapons": [
+          "Left Arm",
+          "Right Arm mounting an MMG (Arm-mounted MMGs do not halve their",
+          "Shots value for being mounted on a Vehicle)",
+          "1x Forward-facing HMG"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Up to 12\"",
+            "run": "12\"–24\""
+          }
+        ],
+        "quality": [
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "all": "8+"
+        },
+        "morale": {
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Single-crew Walker",
+            "text": ""
+          },
+          {
+            "name": "Two-legged",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-m5a5-jackal-light-jump-walker",
+      "name": "M5A5 Jackal Light Jump Walker",
+      "unit_type": "Light Walker (2 Legs)",
+      "category": "armoured_walker",
+      "composition": null,
+      "cost": {
+        "regular": 105,
+        "veteran": 126
+      },
+      "special_rules": [
+        "Jump",
+        "Single-crew Walker",
+        "Two-legged"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "vehicle_add",
+          "desc": "Add an Infantry Flamethrower, mounted to the Left Arm",
+          "cost": 30,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        }
+      ],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": null,
+        "weapons": [
+          "Left Arm",
+          "Right Arm mounting an MMG (Arm-mounted MMGs do not halve their",
+          "Shots value for being mounted on a Vehicle)"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Up to 12\"",
+            "run": "12\"–24\""
+          }
+        ],
+        "quality": [
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "all": "8+"
+        },
+        "morale": {
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Jump",
+            "text": ""
+          },
+          {
+            "name": "Single-crew Walker",
+            "text": ""
+          },
+          {
+            "name": "Two-legged",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-m2a1-mudskipper-jump-walker",
+      "name": "M2A1 Mudskipper Jump Walker",
+      "unit_type": "Medium Walker (2 Legs)",
+      "category": "armoured_walker",
+      "composition": null,
+      "cost": {
+        "regular": 290,
+        "veteran": 348
+      },
+      "special_rules": [
+        "Jump",
+        "Two-legged"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Arm-mounted HMG with Arm-mounted Bazooka",
+          "cost": 5,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        }
+      ],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": null,
+        "weapons": [
+          "Left and Right Arms each mounting an HMG (Arm-mounted HMGs do not",
+          "halve their Shots value for being mounted on a Vehicle)",
+          "2 x Forward-facing Light Automatic Cannons (Must be fired at the same target)",
+          "1 x Forward-facing, Hull-mounted MMG"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Up to 12\"",
+            "run": "12\"–24\""
+          }
+        ],
+        "quality": [
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "all": "9+"
+        },
+        "morale": {
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Jump",
+            "text": ""
+          },
+          {
+            "name": "Two-legged",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-m2a5-linebacker-jump-walker",
+      "name": "M2A5 Linebacker Jump Walker",
+      "unit_type": "Medium Walker (2 Legs)",
+      "category": "armoured_walker",
+      "composition": null,
+      "cost": {
+        "regular": 328,
+        "veteran": 394
+      },
+      "special_rules": [
+        "Jump",
+        "Reinforced Front Armour",
+        "Two-legged"
+      ],
+      "rift_dice": 1,
+      "photo": "",
+      "options": [
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Arm-mounted Twin HMGs with Twin Light Automatic Cannons Free",
+          "cost": 0,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Arm-mounted Twin HMGs with Twin Super Bazookas",
+          "cost": 60,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Hull-mounted Twin MMGs with an Infantry Flamethrower",
+          "cost": 10,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        }
+      ],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": null,
+        "weapons": [
+          "1x Arm mounting an M21 Light Tesla Cannon",
+          "1x Arm mounting Twin HMGs (Arm-mounted HMGs do not halve their",
+          "Shots value for being mounted on a Vehicle)",
+          "Forward-facing, Hull-mounted Twin MMGs"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Up to 12\"",
+            "run": "12\"–24\""
+          }
+        ],
+        "quality": [
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "all": "9+"
+        },
+        "morale": {
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Jump",
+            "text": ""
+          },
+          {
+            "name": "Reinforced Front Armour",
+            "text": ""
+          },
+          {
+            "name": "Two-legged",
+            "text": ""
+          }
+        ],
+        "rift": {
+          "dice": 1,
+          "enhancement": "",
+          "surging": "",
+          "exhausted": "",
+          "note": ""
+        },
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-m8a1-grizzly-medium-assault-walker",
+      "name": "M8A1 Grizzly Medium Assault Walker",
+      "unit_type": "Medium Walker (2 Legs)",
+      "category": "armoured_walker",
+      "composition": null,
+      "cost": {
+        "regular": 225,
+        "veteran": 270
+      },
+      "special_rules": [
+        "Improved HE",
+        "Two-legged"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": null,
+        "weapons": [
+          "1x Hull-mounted Medium Anti-tank Gun",
+          "1x Pintle-mounted HMG",
+          "Left and Right Arms"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Up to 12\"",
+            "run": "12\"–24\""
+          }
+        ],
+        "quality": [
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "all": "9+"
+        },
+        "morale": {
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Improved HE",
+            "text": "Instead of HE (1\"), the Medium Anti-Tank Gun has HE (2\")."
+          },
+          {
+            "name": "Two-legged",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-m8a4-bruin-medium-support-walker",
+      "name": "M8A4 Bruin Medium Support Walker",
+      "unit_type": "Medium Walker (2 Legs)",
+      "category": "armoured_walker",
+      "composition": null,
+      "cost": {
+        "regular": 275,
+        "veteran": 330
+      },
+      "special_rules": [
+        "Improved HE",
+        "Two-legged"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": null,
+        "weapons": [
+          "1x Hull-mounted Medium Anti-tank Gun",
+          "1x Pintle-Mounted HMG",
+          "Forward-facing Medium Rocket System (The Medium Rocket System is mounted across both Arms;",
+          "a Bruin may not make Close Quarters attacks with its Arms)"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Up to 12\"",
+            "run": "12\"–24\""
+          }
+        ],
+        "quality": [
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "all": "9+"
+        },
+        "morale": {
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Improved HE",
+            "text": "Instead of HE (1\"), the Medium Anti-Tank Gun has HE (2\")."
+          },
+          {
+            "name": "Two-legged",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-m9a2-kodiak-close-assault-walker",
+      "name": "M9A2 Kodiak Close Assault Walker",
+      "unit_type": "Medium Walker (2 Legs)",
+      "category": "armoured_walker",
+      "composition": null,
+      "cost": {
+        "regular": 335,
+        "veteran": 402
+      },
+      "special_rules": [
+        "Two-legged"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": null,
+        "weapons": [
+          "Left and Right Arms each mounting a Light Automatic Cannon and Twin",
+          "HMGs (Arm-mounted HMGs do not halve their Shots value for being mounted",
+          "on a Vehicle; a Kodiak may not make Close Quarters attacks with its Arms)"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Up to 12\"",
+            "run": "12\"–24\""
+          }
+        ],
+        "quality": [
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "all": "9+"
+        },
+        "morale": {
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Two-legged",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-m3a4-t-stuart-light-tank",
+      "name": "M3A4(T) Stuart Light Tank",
+      "unit_type": "Light Tank",
+      "category": "tank",
+      "composition": null,
+      "cost": {
+        "inexperienced": 104,
+        "regular": 130
+      },
+      "special_rules": [
+        "Vulnerable"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Turret-mounted M21 Light Tesla Cannon with Light Anti-tank Gun & Co-axial MMG Free",
+          "cost": 0,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        },
+        {
+          "type": "vehicle_add",
+          "desc": "Add a Pintle-mounted MMG",
+          "cost": 15,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        }
+      ],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": null,
+        "weapons": [
+          "1x Turret-mounted M21 Light Tesla Cannon",
+          "1x Forward-facing, Hull-mounted MMG"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Up to 9\"",
+            "run": "9\"–18\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular"
+        ],
+        "damage": {
+          "all": "8+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9"
+        },
+        "rules": [
+          {
+            "name": "Vulnerable",
+            "text": "All shots from weapons with a Pen value against the sides or rear of an M3 Stuart benefit from an additional +1 Penetration modifier."
+          }
+        ],
+        "rift": {
+          "dice": 1,
+          "enhancement": "",
+          "surging": "",
+          "exhausted": "",
+          "note": "Only If Armed With M21 Light Tesla Cannon"
+        },
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-m5a2-t-stuart-light-tank",
+      "name": "M5A2(T) Stuart Light Tank",
+      "unit_type": "Light Tank",
+      "category": "tank",
+      "composition": null,
+      "cost": {
+        "inexperienced": 112,
+        "regular": 140,
+        "veteran": 178
+      },
+      "special_rules": [
+        "Gyro-Stabilisers"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Turret-mounted M21 Light Tesla Cannon with Light Anti-tank Gun & Co-axial MMG Free",
+          "cost": 0,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        },
+        {
+          "type": "vehicle_add",
+          "desc": "Add a Pintle-mounted MMG or a Pintle-mounted HMG",
+          "cost": 15,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        }
+      ],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": null,
+        "weapons": [
+          "1x Turret-mounted M21 Light Tesla Cannon",
+          "1x Forward-facing, Hull-mounted MMG"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Up to 9\"",
+            "run": "9\"–18\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "all": "8+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Gyro-Stabilisers",
+            "text": "If taken as Veteran, the M21 Light Tesla Cannon / Light Anti-tank Gun does not suffer a –1 to hit penalty for moving and shooting."
+          }
+        ],
+        "rift": {
+          "dice": 1,
+          "enhancement": "",
+          "surging": "",
+          "exhausted": "",
+          "note": "Only If Armed With M21 Light Tesla Cannon"
+        },
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-m4a9-t-sherman-medium-tank",
+      "name": "M4A9(T) Sherman Medium Tank",
+      "unit_type": "Medium Tank",
+      "category": "tank",
+      "composition": null,
+      "cost": {
+        "inexperienced": 200,
+        "regular": 250,
+        "veteran": 310
+      },
+      "special_rules": [
+        "Gyro-Stabilisers"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Turret-mounted M17 Tesla Cannon with Medium Anti-tank Gun and Co-axial MMG",
+          "cost": -40,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        },
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Turret-mounted M17 Tesla Cannon with Heavy Anti-tank Gun & Co-axial MMG",
+          "cost": -25,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        },
+        {
+          "type": "vehicle_add",
+          "desc": "Add a Pintle-mounted MMG or a Pintle-mounted HMG",
+          "cost": 15,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        }
+      ],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": null,
+        "weapons": [
+          "1x Turret-mounted M17 Tesla Cannon",
+          "1x Forward-facing, Hull-mounted MMG"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Up to 9\"",
+            "run": "9\"–18\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "all": "9+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Gyro-Stabilisers",
+            "text": "If taken as Veteran, the M17 Tesla Cannon / Anti-tank Gun does not suffer a –1 to hit penalty for moving and shooting."
+          }
+        ],
+        "rift": {
+          "dice": 1,
+          "enhancement": "",
+          "surging": "",
+          "exhausted": "",
+          "note": "Only If Armed With M17 Tesla Cannon"
+        },
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-m17-tesla-cannon-emplacement",
+      "name": "M17 Tesla Cannon Emplacement",
+      "unit_type": "Medium Emplacement (Counts as Medium Tank)",
+      "category": "tank",
+      "composition": null,
+      "cost": {
+        "inexperienced": 168,
+        "regular": 210,
+        "veteran": 252
+      },
+      "special_rules": [
+        "Armoured All Round",
+        "Emplacement"
+      ],
+      "rift_dice": 1,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": null,
+        "weapons": [
+          "1x Turret-mounted M17 Tesla Cannon"
+        ],
+        "movement": [
+          {
+            "label": "Veteran: 252",
+            "adv": "N/A",
+            "run": "N/A"
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "all": "9+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Armoured All Round",
+            "text": ""
+          },
+          {
+            "name": "Emplacement",
+            "text": "The M17 Tesla Cannon Emplacement starts the game with an Immobilised result. In scenarios that do not normally allow units to start on the table, place this unit within 6\" of your DZE."
+          }
+        ],
+        "rift": {
+          "dice": 1,
+          "enhancement": "",
+          "surging": "",
+          "exhausted": "",
+          "note": ""
+        },
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-m8a3-t-scout-car",
+      "name": "M8A3(T) Scout Car",
+      "unit_type": "Armoured Car",
+      "category": "armoured_car",
+      "composition": null,
+      "cost": {
+        "inexperienced": 88,
+        "regular": 110,
+        "veteran": 132
+      },
+      "special_rules": [],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "weapon_swap",
+          "desc": "Replace Turret-mounted M21 Light Tesla Cannon with Light Anti-tank Gun & Co-axial MMG",
+          "cost": -10,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        },
+        {
+          "type": "vehicle_add",
+          "desc": "Add a Pintle-mounted MMG or a Pintle-mounted HMG",
+          "cost": 15,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        }
+      ],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": null,
+        "weapons": [
+          "1x Turret-mounted M21 Light Tesla Cannon"
+        ],
+        "movement": [
+          {
+            "label": "Veteran: 132",
+            "adv": "Up to 12\"",
+            "run": "12\"–24\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "all": "7+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [],
+        "rift": {
+          "dice": 1,
+          "enhancement": "",
+          "surging": "",
+          "exhausted": "",
+          "note": "Only If Armed With M21 Light Tesla Cannon"
+        },
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-m3-half-track",
+      "name": "M3 Half-Track",
+      "unit_type": "Transport Vehicle",
+      "category": "transport",
+      "composition": null,
+      "cost": {
+        "inexperienced": 62,
+        "regular": 77,
+        "veteran": 92
+      },
+      "special_rules": [
+        "Open-topped"
+      ],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "vehicle_add",
+          "desc": "Add up to 3 Pintle-mounted MMGs (left arc, right arc, and rear)",
+          "cost": 15,
+          "per_model": false,
+          "limit": {
+            "n": 3,
+            "scope": "vehicle"
+          },
+          "condition": null
+        }
+      ],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": null,
+        "weapons": [
+          "1x Pintle-mounted HMG (covering the Forward Arc)"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Up to 9\"",
+            "run": "9\"–18\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "all": "7+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [
+          {
+            "name": "Open-topped",
+            "text": ""
+          }
+        ],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-studebaker-us6",
+      "name": "Studebaker Us6",
+      "unit_type": "Transport Vehicle",
+      "category": "transport",
+      "composition": null,
+      "cost": {
+        "inexperienced": 26,
+        "regular": 33,
+        "veteran": 40
+      },
+      "special_rules": [],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [
+        {
+          "type": "vehicle_add",
+          "desc": "Add a Forward-facing Pintle-mounted LMG",
+          "cost": 10,
+          "per_model": false,
+          "limit": null,
+          "condition": null
+        }
+      ],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": null,
+        "weapons": [
+          "None"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Up to 12\"",
+            "run": "12\"–24\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "all": "6+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [],
+        "rift": null,
+        "hero_stats": {}
+      }
+    },
+    {
+      "id": "usa-jeep",
+      "name": "Jeep",
+      "unit_type": "Transport Vehicle",
+      "category": "transport",
+      "composition": null,
+      "cost": {
+        "inexperienced": 14,
+        "regular": 18,
+        "veteran": 22
+      },
+      "special_rules": [],
+      "rift_dice": 0,
+      "photo": "",
+      "options": [],
+      "upgrades": [],
+      "model_count": 1,
+      "stats": {
+        "base_size": null,
+        "weapons": [
+          "None"
+        ],
+        "movement": [
+          {
+            "label": "",
+            "adv": "Up to 12\"",
+            "run": "12\"–24\""
+          }
+        ],
+        "quality": [
+          "inexperienced",
+          "regular",
+          "veteran"
+        ],
+        "damage": {
+          "all": "6+"
+        },
+        "morale": {
+          "inexperienced": "8",
+          "regular": "9",
+          "veteran": "10"
+        },
+        "rules": [],
+        "rift": null,
+        "hero_stats": {}
+      }
+    }
+  ]
+}

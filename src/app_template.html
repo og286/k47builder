@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Konflikt '47 Army Builder</title>
+<style>
+  /* ===== THEME PALETTES ===== */
+  :root{  /* default: MILITARY (parchment, olive-green accent) */
+    --bg:#e4d8b9;--panel:#efe6ce;--panel2:#ddcea3;--panel3:#f3ead0;--chipbg:#e6dab9;
+    --thumbbg:#d9caa1;--symbg:#ddcea3;--optbg:#e8ddbe;--statbg:#e9dfc1;
+    --riftbg:#e8e4c4;--riftbd:#b0a878;--popbg:#f4ecd4;
+    --line:#b09d75;--ink:#2c2415;--dim:#6d5d40;
+    --accent:#55692b;--accent2:#7a4a24;--ok:#4c7636;--bad:#9c3222;--warn:#8a5a12;
+    --btntext:#f5eed4;--selbg:rgba(85,105,43,.18);--shadow:rgba(60,45,20,.3);
+    --topbar:linear-gradient(180deg,#d9c89e,#cfbc8c);--headbar:linear-gradient(180deg,#d7c69c,#cdba8a);
+    --tablehead:#ddcea3;--menubd:#2c2415;--framebd:#cdba8a;--headborder:var(--ink);
+    --msgbadbg:#f0d3ca;--msgbadbd:#b06450;--msgbadtx:#7a2c1c;--msgokbg:#dce7c8;--msgokbd:#7d9a55;--msgoktx:#3d5a1f;
+    --paper:radial-gradient(circle at 18% 12%,rgba(120,95,50,.07),transparent 42%),radial-gradient(circle at 82% 65%,rgba(120,95,50,.06),transparent 46%),repeating-linear-gradient(0deg,rgba(150,120,70,.03) 0 2px,transparent 2px 4px);
+    --barbed:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='22'%20height='6'%3E%3Cpath%20d='M0%203H22M9%20.5L13%205.5M13%20.5L9%205.5'%20stroke='%2355692b'%20stroke-width='.9'%20fill='none'/%3E%3C/svg%3E");
+  }
+  :root[data-theme="modern"]{  /* MODERN (dark, gold accent) */
+    --bg:#14171c;--panel:#1d222b;--panel2:#242b36;--panel3:#242b36;--chipbg:#171b22;
+    --thumbbg:#0d1015;--symbg:#0d1015;--optbg:#1a1f28;--statbg:#12161d;
+    --riftbg:#161a26;--riftbd:#2b3350;--popbg:#0f1420;
+    --line:#2f3846;--ink:#e7ecf3;--dim:#9aa7b8;
+    --accent:#c8a35a;--accent2:#6f97c9;--ok:#5bbf7a;--bad:#e06666;--warn:#e0b64d;
+    --btntext:#20160a;--selbg:rgba(200,163,90,.18);--shadow:rgba(0,0,0,.5);
+    --topbar:linear-gradient(180deg,#1b2029,#161a21);--headbar:linear-gradient(180deg,#2a313d,#222932);
+    --tablehead:#242b36;--menubd:#2f3846;--framebd:#2f3846;--headborder:var(--line);
+    --msgbadbg:#3a1f1f;--msgbadbd:#6b3030;--msgbadtx:#f2b8b8;--msgokbg:#1f3a29;--msgokbd:#306b45;--msgoktx:#bff2cd;
+    --paper:none;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;color:var(--ink);font-size:15px;line-height:1.4;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--paper),var(--bg);}
+  header{position:sticky;top:0;z-index:30;background:var(--topbar);
+    border-bottom:2px solid var(--headborder);padding:10px 14px;box-shadow:0 2px 6px var(--shadow)}
+  .wrap{max-width:980px;margin:0 auto;padding:14px}
+  .brand{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .spacer{flex:1 1 auto}
+  .themepick{display:inline-flex;gap:5px}
+  .swatch{width:22px;height:22px;padding:0;border-radius:4px;border:1px solid var(--line);cursor:pointer}
+  .swatch.mil{background:#55692b}.swatch.mod{background:#c8a35a}
+  .swatch.active{outline:2px solid var(--ink);outline-offset:1px;border-color:var(--ink)}
+  #playBtn{border-color:var(--accent);color:var(--accent);font-weight:700}
+  body.play #playBtn{background:var(--accent);color:var(--btntext)}
+  body.play .bar,body.play .addbar,body.play .addctrl,body.play .reqstrip,body.play .buildonly{display:none!important}
+  body.play .rolecap{padding-top:6px}
+  .brand h1{font-size:17px;margin:0;letter-spacing:1px;text-transform:uppercase}
+  .brand .tag{color:var(--accent);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1.5px}
+  .bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px}
+  .bar label{color:var(--dim);font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+  input,select,button{font:inherit;color:var(--ink);background:var(--panel3);
+    border:1px solid var(--line);border-radius:6px;padding:7px 10px}
+  input[type=number]{width:92px}input[type=text]{min-width:150px}
+  button{cursor:pointer}button:hover{border-color:var(--accent)}
+  button.primary{background:var(--accent);color:var(--btntext);border-color:var(--accent);font-weight:700}
+  button.ghost{background:transparent}button.danger{color:var(--bad)}
+  .stat{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+  .stat .pill{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 12px;min-width:104px}
+  .stat .pill .k{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+  .stat .pill .v{font-size:20px;font-weight:700;margin-top:2px}
+  .v.over{color:var(--bad)}.v.ok{color:var(--ok)}
+  .platoon{background:var(--panel);border:1px solid var(--line);border-radius:8px;margin:14px 0;box-shadow:0 1px 4px var(--shadow)}
+  .platoon>.head{display:flex;align-items:center;justify-content:space-between;gap:8px;
+    padding:10px 12px;background:var(--headbar);border-bottom:2px solid var(--headborder);flex-wrap:wrap;border-radius:8px 8px 0 0}
+  .platoon>.head .title{font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--ink)}
+  .platoon>.head .sub{color:var(--dim);font-size:12px}
+  .armyhead{text-transform:uppercase;letter-spacing:1px}
+  .badge{font-size:11px;padding:2px 7px;border-radius:4px;border:1px solid var(--line);color:var(--dim)}
+  .factionsel{background:var(--accent);color:var(--btntext);border:1px solid var(--accent);font-weight:700;
+    border-radius:5px;padding:3px 12px;font-size:13px;cursor:pointer;text-transform:uppercase;letter-spacing:.5px}
+  .badge.assault{color:var(--accent);border-color:var(--accent)}
+  .reqstrip{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;border-bottom:1px solid var(--line)}
+  .reqchip{display:inline-flex;align-items:center;font-size:11px;padding:3px 8px;border-radius:4px;border:1px solid var(--line);color:var(--dim);background:var(--chipbg)}
+  .reqchip b{color:var(--ink);font-weight:700}
+  .reqchip.done{border-color:var(--ok)}.reqchip.done b{color:var(--ok)}
+  .reqchip.unmet{border-color:var(--warn);color:var(--warn)}.reqchip.unmet b{color:var(--warn)}
+  .reqchip.opt{opacity:.85}
+  .rolecap{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--dim);padding:4px 8px 0}
+  .pltnotes{padding:8px 12px;border-bottom:1px solid var(--line);background:var(--chipbg)}
+  .pltnotes h4{margin:0 0 5px;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--accent2)}
+  .pnote{font-size:12px;line-height:1.5;margin:4px 0;padding-left:12px;position:relative}
+  .pnote::before{content:"›";position:absolute;left:0;color:var(--accent)}
+  .addctrl .addlabel{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--accent);margin-bottom:6px;font-weight:700}
+  .addctrl .rolesel{min-width:200px;flex:0 0 auto}
+  .slot{padding:8px 12px;border-bottom:1px solid var(--line)}.slot:last-child{border-bottom:none}
+  .slot .srow{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+  .slot .role{font-size:13px}.slot .req{font-size:11px;color:var(--dim)}
+  .slot .req.unmet{color:var(--warn)}.slot .note{font-size:11px;color:var(--dim);font-style:italic}
+  .unitrow{background:var(--panel3);border:1px solid var(--line);border-radius:6px;margin:6px 0;overflow:hidden}
+  .unitrow .main{display:flex;align-items:center;gap:10px;padding:6px 8px}
+  .thumb{width:44px;height:44px;border-radius:5px;object-fit:cover;flex:none;background:var(--thumbbg);border:1px solid var(--line)}
+  .ph{display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:9px;text-align:center}
+  .thumb.sym{background:var(--symbg);color:var(--ink)}
+  .uicon{display:inline-block;vertical-align:middle}
+  .phicon{width:78%;height:78%}
+  .chipicon{width:20px;height:14px;margin-right:2px;opacity:.9}
+  .headicon{width:24px;height:16px;margin-right:5px;color:var(--accent);vertical-align:-2px}
+  .un{flex:1;min-width:0}.un .nm{font-weight:700;font-size:14px}.un .meta{color:var(--dim);font-size:11px}
+  .cost{font-weight:700;color:var(--accent);white-space:nowrap}
+  .iconbtn{background:transparent;border:1px solid var(--line);border-radius:5px;padding:4px 8px;font-size:12px}
+  .rift{color:var(--accent2)}
+  .optpanel{border-top:1px dashed var(--line);padding:8px 10px;background:var(--optbg)}
+  .optgrp{margin:6px 0}.optgrp h4{margin:0 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--dim)}
+  .optrow{display:flex;align-items:center;gap:8px;justify-content:space-between;padding:3px 0;flex-wrap:wrap}
+  .optrow .lbl{font-size:13px;flex:1;min-width:140px}
+  .optrow .lbl .c{color:var(--dim);font-size:11px}
+  .optrow.disabled{opacity:.45}
+  .stepper{display:flex;align-items:center;gap:6px}
+  .stepper button{width:26px;height:26px;padding:0;border-radius:5px}
+  .stepper .n{min-width:22px;text-align:center}
+  .chk{width:18px;height:18px}
+  .qsel{max-width:150px}
+  .picker{position:relative;flex:1;min-width:150px}
+  .picker>.sel{display:flex;align-items:center;gap:8px;width:100%;text-align:left;padding:6px 8px}
+  .picker .selph{width:30px;height:30px;border-radius:5px}
+  .picker .cap{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px}
+  .menu{position:absolute;z-index:40;top:calc(100% + 4px);left:0;right:0;max-height:320px;overflow:auto;
+    background:var(--panel);border:1px solid var(--menubd);border-radius:6px;box-shadow:0 10px 26px var(--shadow)}
+  .mrow{display:flex;align-items:center;gap:8px;padding:6px 8px;cursor:pointer;border-bottom:1px solid var(--line)}
+  .mrow:hover{background:var(--chipbg)}.mrow:last-child{border-bottom:none}
+  .mrow .thumb{width:34px;height:34px}
+  .mrow .info{flex:1;min-width:0}.mrow .info .n{font-size:13px;font-weight:700}
+  .mrow .info .s{font-size:11px;color:var(--dim)}
+  .mrow .pc{color:var(--accent);font-weight:700;font-size:13px}
+  .statpanel{border-top:1px dashed var(--line);padding:10px;background:var(--statbg)}
+  .statheadline{display:flex;flex-wrap:wrap;align-items:center;gap:10px;background:var(--chipbg);
+    border:1px solid var(--accent);border-radius:6px;padding:8px 10px;margin-bottom:8px}
+  .statheadline .qtag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;
+    color:var(--btntext);background:var(--accent);border-radius:4px;padding:2px 9px}
+  .statheadline .hlv{font-size:14px}.statheadline .hlv b{color:var(--dim);font-size:10px;
+    text-transform:uppercase;letter-spacing:.5px;margin-right:3px}
+  .alltiers .tierlbl{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--dim);margin-bottom:3px}
+  .stattable th.sel,.stattable td.sel{background:var(--selbg);color:var(--ink);font-weight:700}
+  .stattable{width:100%;border-collapse:collapse;margin-bottom:8px;font-size:13px}
+  .stattable th,.stattable td{border:1px solid var(--line);padding:4px 8px;text-align:center}
+  .stattable th{background:var(--tablehead);color:var(--dim);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+  .stattable td.rl{text-align:left;color:var(--dim)}
+  .statmeta{font-size:12px;color:var(--ink);margin:2px 0 8px;line-height:1.6}
+  .statmeta b{color:var(--dim);font-weight:600;text-transform:uppercase;font-size:10px;letter-spacing:.5px;margin-right:4px}
+  .statrules h4,.statrift h4{margin:8px 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--accent)}
+  .srule{font-size:12px;margin:3px 0}.srule .rn{font-weight:700}
+  .rulelegend{margin:6px 0}
+  .herochip{display:inline-block;font-size:12px;font-weight:600;background:var(--chipbg);
+    border:1px solid var(--line);border-radius:4px;padding:2px 10px;margin:2px 4px 2px 0}
+  .armybox{background:var(--panel);border:1px solid var(--line);border-radius:8px;margin:0 0 14px;box-shadow:0 1px 4px var(--shadow)}
+  .armyhead{display:flex;justify-content:space-between;align-items:center;cursor:pointer;
+    padding:10px 12px;font-weight:700;color:var(--accent);border-radius:8px}
+  .armyhead .tw{color:var(--dim);font-weight:400}
+  .armybody{padding:0 12px 10px}
+  .arule{font-size:12px;margin:8px 0;line-height:1.5}
+  .arule .an{font-weight:700;color:var(--ink);display:block}
+  .statrift{background:var(--riftbg);border:1px solid var(--riftbd);border-radius:6px;padding:8px;margin-top:6px}
+  .statrift .rk{color:var(--accent2);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+  .statrift .rt{font-size:12px;margin:2px 0 6px}
+  .mono{font-variant-numeric:tabular-nums}
+  .wpnwrap{margin:6px 0}
+  .wpntable{width:100%;border-collapse:collapse;font-size:12px}
+  .wpntable th,.wpntable td{border:1px solid var(--line);padding:3px 6px;text-align:center}
+  .wpntable th{background:var(--tablehead);color:var(--dim);font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.4px}
+  .wpntable td.rl{text-align:left;font-weight:600}
+  .wpntable td.sp{text-align:left;color:var(--dim);font-size:11px}
+  .wpnote{font-size:12px}.unmatched{color:var(--warn);font-style:italic;font-size:11px}
+  .wpin-wrap{margin-top:3px;display:flex;flex-direction:column;gap:2px}
+  .wpin{font-size:11px;color:var(--accent2)}.wpin b{color:var(--ink)}
+  .wpcue{font-size:11px;color:var(--dim)}
+  .gloss{border-bottom:1px dotted var(--accent);cursor:help}
+  .glosspop{position:fixed;z-index:100;display:none;max-width:280px;background:var(--popbg);
+    border:1px solid var(--menubd);border-radius:6px;padding:8px 10px;
+    box-shadow:0 8px 22px var(--shadow);font-size:12px;line-height:1.45}
+  .glosspop b{display:block;color:var(--accent);margin-bottom:3px}
+  .glosspop span{color:var(--ink)}
+  .thumbwrap{position:relative;display:inline-block;line-height:0;flex:none}
+  img.zoomable{cursor:zoom-in;transition:transform .1s ease}
+  img.zoomable:hover{transform:scale(1.06)}
+  .zoomcue{position:absolute;right:-5px;bottom:-5px;width:17px;height:17px;border-radius:50%;
+    background:var(--accent);color:var(--btntext);font-size:10px;line-height:1;display:flex;align-items:center;
+    justify-content:center;cursor:zoom-in;border:1.5px solid var(--panel);box-shadow:0 1px 3px var(--shadow)}
+  .lightbox{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;
+    background:rgba(20,16,8,.9);padding:18px;cursor:zoom-out;flex-direction:column;gap:10px}
+  .lightbox img{max-width:92vw;max-height:86vh;border-radius:8px;box-shadow:0 12px 44px rgba(0,0,0,.6);border:3px solid var(--framebd)}
+  .lightbox .cap{color:var(--dim);font-size:13px}
+  /* barbed-wire dividers under section headers (shown only in Military theme) */
+  .optgrp h4::after,.statrules h4::after,.statrift h4::after,.pltnotes h4::after{
+    content:"";display:block;height:6px;margin-top:3px;opacity:.75;background:var(--barbed) repeat-x left center}
+  :root[data-theme="modern"] .optgrp h4::after,:root[data-theme="modern"] .statrules h4::after,
+  :root[data-theme="modern"] .statrift h4::after,:root[data-theme="modern"] .pltnotes h4::after{display:none}
+  .msg{border-radius:6px;padding:8px 10px;margin:6px 0;font-size:13px}
+  .msg.bad{background:var(--msgbadbg);border:1px solid var(--msgbadbd);color:var(--msgbadtx)}
+  .msg.ok{background:var(--msgokbg);border:1px solid var(--msgokbd);color:var(--msgoktx)}
+  .empty{color:var(--dim);font-style:italic;padding:20px;text-align:center}
+  .addbar{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+  .foot{color:var(--dim);font-size:11px;text-align:center;margin:24px 0 40px}
+  .modal{position:fixed;inset:0;z-index:150;display:flex;align-items:flex-start;justify-content:center;
+    background:rgba(20,16,8,.55);padding:40px 14px;overflow:auto}
+  .modalcard{background:var(--panel);border:1px solid var(--ink);border-radius:8px;max-width:520px;width:100%;
+    box-shadow:0 12px 40px var(--shadow)}
+  .modalhd{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;
+    background:var(--headbar);border-bottom:2px solid var(--headborder);font-weight:700;text-transform:uppercase;letter-spacing:1px;border-radius:8px 8px 0 0}
+  .liblist{padding:6px 10px;max-height:56vh;overflow:auto}
+  .librow{display:flex;align-items:center;gap:8px;padding:8px 6px;border-bottom:1px solid var(--line)}
+  .librow:last-child{border-bottom:none}
+  .librow .li{flex:1;min-width:0}
+  .librow .li .n{font-weight:700;font-size:14px}
+  .librow .li .m{font-size:11px;color:var(--dim)}
+  .libempty{color:var(--dim);font-style:italic;padding:18px;text-align:center}
+  .modalft{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;padding:10px 14px;border-top:1px solid var(--line)}
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);z-index:250;
+    background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:20px;font-size:13px;font-weight:600;
+    opacity:0;pointer-events:none;transition:opacity .18s,transform .18s;box-shadow:0 4px 16px var(--shadow)}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  .toolswrap{position:relative;display:inline-block}
+  .toolsmenu{position:absolute;right:0;top:calc(100% + 4px);z-index:60;min-width:170px;
+    background:var(--panel);border:1px solid var(--ink);border-radius:6px;overflow:hidden;box-shadow:0 10px 26px var(--shadow)}
+  .toolsmenu button{display:block;width:100%;text-align:left;border:none;border-radius:0;background:transparent;
+    border-bottom:1px solid var(--line);padding:9px 12px}
+  .toolsmenu button:last-child{border-bottom:none}
+  .toolsmenu button:hover{background:var(--chipbg);border-color:var(--line)}
+  .printhead{display:none}
+  @media print{
+    :root{--bg:#fff;--panel:#fff;--panel2:#efefef;--panel3:#fff;--chipbg:#f2f2f2;--thumbbg:#fff;--symbg:#fff;
+      --optbg:#fff;--statbg:#fff;--riftbg:#f5f5f5;--riftbd:#bbb;--popbg:#fff;--line:#999;--ink:#111;--dim:#555;
+      --accent:#333;--accent2:#333;--tablehead:#eee;--shadow:transparent;--framebd:#999;--headborder:#333;
+      --topbar:#fff;--headbar:#efefef;--paper:none;--selbg:#eee;}
+    body{background:#fff}
+    header,.foot,#toast,#libOverlay,.bar,.addbar,.addctrl,.reqstrip,.buildonly,.armyhead .tw{display:none!important}
+    .wrap{max-width:none;padding:0}
+    .platoon,.armybox{break-inside:avoid;page-break-inside:avoid;box-shadow:none;border-color:#999}
+    .statpanel,.wpntable,.stattable{break-inside:avoid;page-break-inside:avoid}
+    .optgrp h4::after,.statrules h4::after,.statrift h4::after,.pltnotes h4::after{display:none}
+    .printhead{display:block;border-bottom:2px solid #111;margin-bottom:10px;padding-bottom:6px}
+    .printhead .pt{font-size:20px;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+    .printhead .pm{font-size:13px;color:#333;margin-top:2px}
+  }
+
+  @media(max-width:560px){.stat .pill{flex:1;min-width:calc(50% - 8px)}.brand h1{font-size:15px}}
+</style>
+</head>
+<body>
+<header><div class="wrap" style="padding:0">
+  <div class="brand"><span class="tag">Konflikt '47</span><h1>Army Builder</h1>
+    <select id="factionSel" class="factionsel" title="Choose faction"></select>
+    <span class="spacer"></span>
+    <span class="themepick" title="Theme">
+      <button class="swatch mil" data-theme="military" title="Military (parchment)"></button>
+      <button class="swatch mod" data-theme="modern" title="Modern (dark)"></button>
+    </span>
+    <button class="ghost" id="playBtn">▶ Play mode</button></div>
+  <div class="bar">
+    <label>List</label><input type="text" id="listName" value="Untitled Force">
+    <label>Game size</label><input type="number" id="gameSize" value="1000" min="0" step="50">
+    <span class="spacer"></span>
+    <div class="toolswrap">
+      <button class="ghost" id="toolsBtn">Tools ▾</button>
+      <div class="toolsmenu" id="toolsMenu" style="display:none">
+        <button id="btnSave">💾 Save</button>
+        <button id="btnLoad">📂 Load…</button>
+        <button id="btnImport">📥 Import from file…</button>
+        <button id="btnExport">📤 Export to file</button>
+        <button id="btnRules">📖 Rules in body: off</button>
+        <button id="btnPrint">🖨 Print / PDF</button>
+        <button id="btnClear" class="danger">✕ Reset</button>
+      </div>
+    </div>
+    <input type="file" id="fileInput" accept="application/json" style="display:none">
+  </div>
+  <div class="stat">
+    <div class="pill"><div class="k">Points</div><div class="v" id="rpTotal">0</div></div>
+    <div class="pill"><div class="k">Cap</div><div class="v" id="rpCap">1000</div></div>
+    <div class="pill"><div class="k">Rift Dice</div><div class="v rift" id="riftTotal">0</div></div>
+    <div class="pill"><div class="k">Models</div><div class="v" id="modelTotal">0</div></div>
+    <div class="pill"><div class="k">Platoons</div><div class="v" id="pltCount">0</div></div>
+  </div>
+</div></header>
+
+<div class="wrap">
+  <div id="printHead" class="printhead"></div>
+  <div id="armyRules"></div>
+  <div id="validation"></div>
+  <div class="platoon">
+    <div class="head"><div><span class="title">Company Commander</span>
+      <div class="sub">Optional. One per force, outside any platoon.</div></div></div>
+    <div class="slot" id="ccSlot"></div>
+  </div>
+  <div id="platoons"></div>
+  <div class="addbar" style="margin-top:12px">
+    <select id="newPlatoonSel"></select>
+    <button class="primary" id="btnAddPlatoon">+ Add Platoon</button>
+  </div>
+  <div class="foot">Advanced build: base costs, additional models, weapon swaps, squad upgrades,
+    hero stat points, and Command-Vehicle upgrades, with per-squad limits and No Mixed Quality enforced.
+    Tap <b>📋</b> on a unit for its stat line, special rules, and Rift enhancement (game aid), or <b>⚙</b> to customise. Data: USA list, JUN 2026.</div>
+</div>
+
+<div id="libOverlay" class="modal" style="display:none">
+  <div class="modalcard">
+    <div class="modalhd"><span>Saved Forces</span><button class="ghost" id="libClose">✕</button></div>
+    <div id="libList" class="liblist"></div>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+
+<script>
+const DATA = /*__DATA__*/ {};
+const QORDER=['inexperienced','regular','veteran'];
+const QLABEL={inexperienced:'Inexperienced',regular:'Regular',veteran:'Veteran',fixed:'Fixed'};
+let faction,unitById,selectors,photos,state,playMode=false,expandRules=false;
+function initFaction(id){
+  faction=DATA.factions.find(f=>f.id===id)||DATA.factions[0];
+  unitById=Object.fromEntries(faction.units.map(u=>[u.id,u]));
+  selectors={};
+  DATA.core_platoons.forEach(p=>selectors[p.id]={...p,kind:'core'});
+  (faction.special_platoons||[]).forEach(p=>selectors[p.id]={...p,kind:'special'});
+  photos=loadJSON('k47_photos_'+faction.id)||{};
+  state=loadJSON('k47_'+faction.id)||freshState();
+}
+function freshState(){return{name:'Untitled Force',gameSize:1000,cc:null,platoons:[]};}
+function loadJSON(k){try{const s=localStorage.getItem(k);return s?JSON.parse(s):null;}catch(e){return null;}}
+function saveJSON(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+function persist(){saveJSON('k47_'+faction.id,state);}
+function photoOf(u){return photos[u.id]||u.photo||'';}
+// NATO-style tactical unit symbols (echo the rulebook force-structure diagrams)
+function unitIcon(cat,cls){
+  const F='<rect x="1.5" y="2.5" width="25" height="15" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/>';
+  const T=t=>`<text x="14" y="14.5" font-size="8.5" font-weight="700" text-anchor="middle" fill="currentColor" font-family="inherit">${t}</text>`;
+  const dots=n=>Array.from({length:n},(_,i)=>`<circle cx="${14+(i-(n-1)/2)*4}" cy="1.4" r="1" fill="currentColor"/>`).join('');
+  let g='';
+  if(cat==='infantry_basic')g='<path d="M1.5 2.5 L26.5 17.5 M26.5 2.5 L1.5 17.5" stroke="currentColor" stroke-width="1.1"/>';
+  else if(cat==='infantry_advanced')g='<path d="M1.5 2.5 L26.5 17.5 M26.5 2.5 L1.5 17.5" stroke="currentColor" stroke-width="1.1"/>'+dots(1);
+  else if(cat==='infantry_specialist')g='<path d="M1.5 2.5 L26.5 17.5 M26.5 2.5 L1.5 17.5" stroke="currentColor" stroke-width="1.1"/>'+dots(2);
+  else if(cat==='platoon_commander'||cat==='company_commander')g=T('HQ');
+  else if(cat==='hero')g='<path d="M14 4 l1.7 3.5 3.9 .5 -2.8 2.7 .7 3.9 -3.5-1.9 -3.5 1.9 .7-3.9 -2.8-2.7 3.9-.5z" fill="currentColor"/>';
+  else if(cat==='medic')g='<path d="M14 5 V15 M9 10 H19" stroke="currentColor" stroke-width="1.7"/>';
+  else if(cat==='forward_observer')g=T('FO');
+  else if(cat==='sniper_team')g='<circle cx="14" cy="10" r="3.6" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M14 4.5 V15.5 M8 10 H20" stroke="currentColor" stroke-width=".9"/>';
+  else if(cat==='anti_tank_team')g=T('AT');
+  else if(cat==='machine_gun_team')g=T('MG');
+  else if(cat==='light_mortar_team'||cat==='mortar_team')g='<circle cx="14" cy="12" r="2" fill="currentColor"/><path d="M14 12 L20 5" stroke="currentColor" stroke-width="1.3"/>';
+  else if(cat==='flamethrower_team')g=T('F');
+  else if(cat==='field_artillery')g='<circle cx="14" cy="10" r="3" fill="currentColor"/>';
+  else if(cat==='anti_tank_gun')g='<circle cx="12" cy="12" r="2.2" fill="currentColor"/><path d="M12 12 L21 5" stroke="currentColor" stroke-width="1.3"/>';
+  else if(cat==='armoured_walker')g=T('W');
+  else if(cat==='tank')g='<ellipse cx="14" cy="10" rx="8" ry="4.3" fill="none" stroke="currentColor" stroke-width="1.3"/>';
+  else if(cat==='tank_destroyer')g=T('TD');
+  else if(cat==='assault_gun')g=T('AG');
+  else if(cat==='armoured_car')g='<ellipse cx="14" cy="9" rx="7.5" ry="3.6" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="9" cy="15" r="1.5" fill="currentColor"/><circle cx="19" cy="15" r="1.5" fill="currentColor"/>';
+  else if(cat==='transport')g='<path d="M5 7 H23 V13 H5 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="9" cy="15.5" r="1.5" fill="currentColor"/><circle cx="19" cy="15.5" r="1.5" fill="currentColor"/>';
+  else g=T('•');
+  return `<svg class="uicon ${cls||''}" viewBox="0 0 28 20">${F}${g}</svg>`;
+}
+// thumbnail markup; zoomImg=true lets the image itself open the lightbox (unit rows),
+// false keeps the image's own click (picker menu = select) and only the 🔍 badge enlarges.
+function thumbHTML(u,zoomImg){
+  const ph=photoOf(u);
+  if(!ph)return `<div class="thumb ph sym">${unitIcon(u.category,'phicon')}</div>`;
+  const nm=(u.name||'').replace(/"/g,'&quot;');
+  return `<span class="thumbwrap"><img class="thumb${zoomImg?' zoomable':''}" src="${ph}"${zoomImg?` data-full="${ph}" data-cap="${nm}"`:''} alt="">`
+    +`<span class="zoomcue" data-full="${ph}" data-cap="${nm}" title="Tap to enlarge">🔍</span></span>`;
+}
+function openLightbox(src,cap){let lb=document.getElementById('lightbox');
+  if(!lb){lb=document.createElement('div');lb.id='lightbox';lb.className='lightbox';
+    lb.innerHTML='<img><div class="cap"></div>';lb.onclick=()=>{lb.style.display='none';};
+    document.body.appendChild(lb);}
+  lb.querySelector('img').src=src;lb.querySelector('.cap').textContent=cap||'';lb.style.display='flex';}
+document.addEventListener('click',e=>{const z=e.target.closest?e.target.closest('[data-full]'):null;
+  if(z){e.stopPropagation();openLightbox(z.getAttribute('data-full'),z.getAttribute('data-cap'));}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){const lb=document.getElementById('lightbox');if(lb)lb.style.display='none';}});
+
+// ---------- cost engine ----------
+function baseCost(u,q){return ('fixed'in u.cost)?u.cost.fixed:(u.cost[q]??0);}
+function qualitiesFor(u){return 'fixed'in u.cost?['fixed']:QORDER.filter(q=>q in u.cost);}
+function addPer(opt,q){return ('flat'in opt.cost)?opt.cost.flat:(opt.cost[q]??0);}
+function addedModels(u,inst){let a=0;(u.options||[]).forEach((o,oi)=>{if(o.type==='add_models')a+=(inst.opts?.[oi]||0);});return a;}
+function instModels(u,inst){return u.model_count+addedModels(u,inst);}
+function optMax(u,inst,o,oi){
+  const models=instModels(u,inst),added=addedModels(u,inst);
+  if(o.type==='add_models')return o.limit?o.limit.n:0;
+  if(o.type==='weapon_swap'){let m=o.limit?o.limit.n:models;m=Math.min(m,models);
+    if(o.condition==='additional soldiers only')m=Math.min(m,added);
+    if(o.condition&&/only if/.test(o.condition))return engineersOn(u,inst)?Math.min(m,models):0;
+    return m;}
+  if(o.type==='vehicle_add')return o.limit?o.limit.n:1;
+  if(o.type==='hero_stat')return o.limit?o.limit.n:1;
+  return 1;
+}
+function engineersOn(u,inst){let on=false;(u.upgrades||[]).forEach((o,ui)=>{if(/engineer/i.test(o.desc)&&inst.ups?.[ui])on=true;});return on;}
+function hasEngineerUpgrade(u){return (u.upgrades||[]).some(up=>/ngineer/i.test(up.desc))||(u.special_rules||[]).some(r=>/engineer/i.test(r));}
+// transport-rule helpers
+const CARRYABLE=new Set(['infantry_basic','infantry_advanced','infantry_specialist','platoon_commander',
+  'medic','forward_observer','sniper_team','anti_tank_team','machine_gun_team','mortar_team',
+  'light_mortar_team','flamethrower_team','field_artillery','anti_tank_gun']);
+const ARTILLERY=new Set(['field_artillery','anti_tank_gun']);
+function isTransportSlot(slot){return (slot.categories||[]).includes('transport');}
+function isFastFlight(u){return (u.special_rules||[]).some(r=>/^(Fast|Flight)$/.test(r));}
+function carryableCount(p){return p.units.filter(i=>CARRYABLE.has(unitById[i.unitId].category)).length;}
+function needsTransportCount(p){return p.units.filter(i=>{const u=unitById[i.unitId];
+  return CARRYABLE.has(u.category)&&!ARTILLERY.has(u.category)&&!isFastFlight(u);}).length;}
+function transportBounds(p){const s=selectors[p.selectorId];
+  return {min:(s.id==='recce'||s.id==='armoured_walker')?needsTransportCount(p):0, max:carryableCount(p)};}
+function isRecceTransport(inst,selectorId){return selectorId==='recce'&&unitById[inst.unitId]?.category==='transport';}
+function instCost(inst,selectorId){
+  const u=unitById[inst.unitId];if(!u)return 0;const q=inst.quality;
+  let c=baseCost(u,q);const models=instModels(u,inst);
+  (u.options||[]).forEach((o,oi)=>{const v=inst.opts?.[oi]||0;if(!v)return;
+    if(o.type==='add_models')c+=v*addPer(o,q);
+    else if(o.type==='weapon_swap')c+=v*(o.cost||0);
+    else if(o.type==='vehicle_add')c+=v*(o.cost||0);
+    else if(o.type==='hero_stat')c+=v*(o.cost||0);});
+  (u.upgrades||[]).forEach((o,ui)=>{if(inst.ups?.[ui])c+=models*(o.cost||0);});
+  if(inst.cmdVehicle)c+=10;
+  if(isRecceTransport(inst,selectorId))c+=10;   // Recce special rule mandatory (+10 each)
+  return c;
+}
+function instRift(inst){return unitById[inst.unitId]?.rift_dice||0;}
+
+// ---------- totals ----------
+function totals(){let rp=0,rift=0,models=0;
+  if(state.cc){rp+=instCost(state.cc,null);rift+=instRift(state.cc);models+=instModels(unitById[state.cc.unitId],state.cc);}
+  state.platoons.forEach(p=>p.units.forEach(i=>{rp+=instCost(i,p.selectorId);rift+=instRift(i);models+=instModels(unitById[i.unitId],i);}));
+  return{rp,rift,models};}
+function assaultCount(){return state.platoons.filter(p=>{const s=selectors[p.selectorId];return s.is_assault||s.counts_as_assault;}).length;}
+// named characters (Heroes) — unique: only one of each per force
+function namedHero(u){return /\bHero\b/i.test(u&&u.unit_type||'');}
+function forceHeroIds(){const ids=new Set();const add=i=>{const u=unitById[i.unitId];if(namedHero(u))ids.add(u.id);};
+  if(state.cc)add(state.cc);state.platoons.forEach(p=>p.units.forEach(add));return ids;}
+function dropTakenHeroes(list){const taken=forceHeroIds();return list.filter(u=>!(namedHero(u)&&taken.has(u.id)));}
+
+// ---------- validation ----------
+function validate(){
+  const errs=[];const nA=assaultCount();
+  if(state.platoons.length){const first=selectors[state.platoons[0].selectorId];
+    if(!(first.is_assault||first.counts_as_assault))errs.push('The first Platoon must be an Assault Platoon (or one that counts as one).');}
+  const byType={};state.platoons.forEach(p=>byType[p.selectorId]=(byType[p.selectorId]||0)+1);
+  Object.entries(byType).forEach(([sid,n])=>{const s=selectors[sid];const isA=s.is_assault||s.counts_as_assault;
+    if(s.kind==='special'&&n>1)errs.push(`Only one ${s.name} may be taken in a force (you have ${n}).`);
+    else if(!isA&&n>nA)errs.push(`${n}× ${s.name} but only ${nA} Assault Platoon${nA===1?'':'s'} (max ${nA} of any non-Assault type).`);});
+  state.platoons.forEach((p,pi)=>{const s=selectors[p.selectorId];
+    s.slots.forEach((slot,si)=>{const c=p.units.filter(u=>u.slot===si).length;
+      if(isTransportSlot(slot)){const b=transportBounds(p);
+        if(c>b.max)errs.push(`${s.name} #${pi+1}: too many Transport Vehicles (${c}/${b.max}; max 1 per Infantry/Artillery unit).`);
+        if(c<b.min)errs.push(`${s.name} #${pi+1}: needs ${b.min} Transport Vehicle${b.min===1?'':'s'} to carry all non-Fast/Flight infantry (has ${c}).`);
+        return;}
+      if(c<slot.min)errs.push(`${s.name} #${pi+1}: needs ${slot.min} ${slot.role} (has ${c}).`);
+      if(slot.max<90&&c>slot.max)errs.push(`${s.name} #${pi+1}: too many ${slot.role} (${c}/${slot.max}).`);});
+    if(s.id==='engineer'){p.units.forEach(i=>{const u=unitById[i.unitId];
+      if(/infantry/.test(u.category)&&!engineersOn(u,i))
+        errs.push(`${s.name} #${pi+1}: ${u.name} must take the Engineers upgrade (⚙ Options).`);});}
+  });
+  const heroCount={};const cH=i=>{const u=unitById[i.unitId];if(namedHero(u))heroCount[u.id]=(heroCount[u.id]||0)+1;};
+  if(state.cc)cH(state.cc);state.platoons.forEach(p=>p.units.forEach(cH));
+  Object.entries(heroCount).forEach(([id,n])=>{if(n>1)errs.push(`${unitById[id].name} is a named character and may only be taken once (you have ${n}).`);});
+  const{rp}=totals();if(rp>state.gameSize)errs.push(`Over the points cap by ${rp-state.gameSize} RP.`);
+  return errs;
+}
+
+// ---------- render ----------
+function render(){
+  document.getElementById('listName').value=state.name;
+  document.getElementById('gameSize').value=state.gameSize;
+  const{rp,rift,models}=totals();const cap=state.gameSize;
+  const rpEl=document.getElementById('rpTotal');rpEl.textContent=rp;rpEl.className='v '+(rp>cap?'over':(rp?'ok':''));
+  document.getElementById('rpCap').textContent=cap;
+  document.getElementById('riftTotal').textContent=rift;
+  document.getElementById('modelTotal').textContent=models;
+  document.getElementById('pltCount').textContent=state.platoons.length;
+
+  renderArmyRules();
+  const ccSlot=document.getElementById('ccSlot');ccSlot.innerHTML='';
+  if(state.cc){ccSlot.appendChild(unitRow(state.cc,null,-1,null,()=>{state.cc=null;commit();}));}
+  else{const bar=document.createElement('div');bar.className='addbar';
+    const pk=picker(dropTakenHeroes(faction.units.filter(u=>u.category==='company_commander')));
+    const btn=btnEl('+ Add',()=>{const v=pk.value();if(!v)return;state.cc=newInst(v);commit();});
+    bar.append(pk.el,btn);ccSlot.appendChild(bar);}
+
+  const host=document.getElementById('platoons');host.innerHTML='';
+  if(!state.platoons.length)host.innerHTML='<div class="platoon"><div class="empty">No platoons yet. Your first must be an Assault Platoon (or the Firefly Platoon, which counts as one).</div></div>';
+  state.platoons.forEach((p,pi)=>host.appendChild(platoonCard(p,pi)));
+
+  const sel=document.getElementById('newPlatoonSel');sel.innerHTML='';const nA=assaultCount();
+  const opts=Object.values(selectors).filter(s=>{const isA=s.is_assault||s.counts_as_assault;
+    if(state.platoons.length===0)return isA;if(isA)return true;
+    return state.platoons.filter(x=>x.selectorId===s.id).length<nA;});
+  opts.forEach(s=>{const o=document.createElement('option');o.value=s.id;o.textContent=s.name+(s.kind==='special'?'  ★':'');sel.appendChild(o);});
+  if(!opts.length){const o=document.createElement('option');o.value='';o.textContent='Add an Assault Platoon first to unlock more';sel.appendChild(o);}
+
+  const vp=document.getElementById('validation');vp.innerHTML='';const errs=validate();
+  if(state.platoons.length){if(errs.length)errs.forEach(e=>{const d=document.createElement('div');d.className='msg bad';d.textContent='⚠ '+e;vp.appendChild(d);});
+    else{const d=document.createElement('div');d.className='msg ok';d.textContent=`✔ Legal force. ${rp} / ${cap} RP · ${rift} Rift Dice · ${models} models.`;vp.appendChild(d);}}
+}
+
+function renderArmyRules(){
+  const host=document.getElementById('armyRules');if(!host)return;host.innerHTML='';
+  const rules=faction.army_special_rules||[];if(!rules.length)return;
+  const stored=loadJSON('k47_armyopen_'+faction.id);const isOpen=stored===null?true:!!stored;
+  const box=document.createElement('div');box.className='armybox';
+  const head=document.createElement('div');head.className='armyhead';
+  head.innerHTML=`<span>${faction.name} — Army Special Rules</span><span class="tw">${isOpen?'▾ hide':'▸ show'}</span>`;
+  head.onclick=()=>{saveJSON('k47_armyopen_'+faction.id,!isOpen);renderArmyRules();};
+  box.appendChild(head);
+  if(isOpen){const body=document.createElement('div');body.className='armybody';
+    rules.forEach(r=>{const nm=typeof r==='string'?r:r.name;const tx=typeof r==='string'?'':(r.text||'');
+      const d=document.createElement('div');d.className='arule';
+      d.innerHTML=`<span class="an">${glossChip(nm)}</span>${tx?glossify(tx):''}`;body.appendChild(d);});
+    box.appendChild(body);}
+  host.appendChild(box);
+}
+
+function newInst(unitId){const u=unitById[unitId];const qs=qualitiesFor(u);
+  return{unitId,quality:qs[qs.length>1?1:0]||'fixed',opts:{},ups:{},cmdVehicle:false};}
+
+function slotBounds(p,slot){
+  if(isTransportSlot(slot)){const b=transportBounds(p);return {min:b.min,max:b.max,dyn:true};}
+  return {min:slot.min,max:slot.max,dyn:false};}
+
+const CATLABEL={infantry_specialist:'Specialist Infantry Squad',infantry_advanced:'Advanced Infantry Squad',
+  infantry_basic:'Basic Infantry Squad',platoon_commander:'Platoon Commander',company_commander:'Company Commander',
+  medic:'Medic',forward_observer:'Forward Observer',sniper_team:'Sniper Team',anti_tank_team:'Anti-tank Team',
+  machine_gun_team:'Machine Gun Team',mortar_team:'Mortar Team',light_mortar_team:'Light Mortar Team',
+  flamethrower_team:'Flamethrower Team',field_artillery:'Field Artillery',anti_tank_gun:'Anti-tank Gun',
+  armoured_walker:'Armoured Walker',tank:'Tank',tank_destroyer:'Tank Destroyer',assault_gun:'Assault Gun',
+  armoured_car:'Armoured Car',transport:'Transport Vehicle'};
+const CAT_ORDER=['platoon_commander','infantry_specialist','infantry_advanced','infantry_basic','medic',
+  'forward_observer','sniper_team','anti_tank_team','machine_gun_team','mortar_team','light_mortar_team',
+  'flamethrower_team','field_artillery','anti_tank_gun','armoured_walker','tank','tank_destroyer',
+  'assault_gun','armoured_car','transport'];
+
+// route a category to the best slot: fill unmet-mandatory slots first, then lowest index with room
+function routeSlot(p,s,cat){
+  const cands=[];
+  s.slots.forEach((slot,si)=>{if(!(slot.categories||[]).includes(cat))return;
+    const c=p.units.filter(u=>u.slot===si).length;const b=slotBounds(p,slot);
+    if(c<b.max)cands.push({si,c,min:b.min});});
+  if(!cands.length)return null;
+  cands.sort((a,b)=>((a.c<a.min)?0:1)-((b.c<b.min)?0:1)||a.si-b.si);
+  return cands[0].si;
+}
+function eligibleByCategory(cat,s){
+  let list=faction.units.filter(u=>u.category===cat);
+  if(s.id==='engineer'&&/infantry/.test(cat))list=list.filter(hasEngineerUpgrade);
+  return dropTakenHeroes(list);
+}
+// build the "Add unit" choices. Core platoons: one choice per unit category (quality-based for infantry).
+// Special platoons (name-matched slots): one choice per slot, as authored.
+function addChoices(p,s){
+  if(s.kind==='special'){
+    return s.slots.map((slot,si)=>{const c=p.units.filter(u=>u.slot===si).length;const b=slotBounds(p,slot);
+      const elig=eligibleUnits(slot,s);return {slot,si,c,b,elig};})
+      .filter(o=>o.elig.length&&(o.b.max>=90||o.c<o.b.max))
+      .map(o=>({key:'slot:'+o.si,elig:o.elig,note:o.slot.note,
+        label:`${o.slot.role}  (${o.c}/${o.b.min}${o.b.min!==o.b.max?'–'+(o.b.max>=90?'∞':o.b.max):''})${o.c<o.b.min?' • needs '+(o.b.min-o.c):''}`,
+        add:uid=>{const inst=newInst(uid);inst.slot=o.si;p.units.push(inst);}}));
+  }
+  const out=[];
+  CAT_ORDER.forEach(cat=>{
+    if(!s.slots.some(slot=>(slot.categories||[]).includes(cat)))return;
+    const si=routeSlot(p,s,cat);if(si==null)return;
+    const elig=eligibleByCategory(cat,s);if(!elig.length)return;
+    const slot=s.slots[si];const c=p.units.filter(u=>u.slot===si).length;const b=slotBounds(p,slot);
+    const hint=c<b.min?' • fills a required slot':'';
+    out.push({key:'cat:'+cat,elig,note:slot.note,label:`${CATLABEL[cat]||cat}${hint}`,
+      add:uid=>{const t=routeSlot(p,s,cat);if(t==null)return;const inst=newInst(uid);inst.slot=t;p.units.push(inst);}});
+  });
+  return out;
+}
+
+function platoonCard(p,pi){
+  const s=selectors[p.selectorId];const el=document.createElement('div');el.className='platoon';
+  const isA=s.is_assault||s.counts_as_assault;
+  let sub=0;p.units.forEach(i=>sub+=instCost(i,p.selectorId));
+  const repOf=slot=>(slot&&slot.categories&&slot.categories[0])||((eligibleUnits(slot,s)[0]||{}).category);
+  const pIcon=unitIcon(repOf(s.slots.find(sl=>sl.min>0)||s.slots[0]),'headicon');
+  el.innerHTML=`<div class="head"><div><span class="title">${pIcon} ${s.name} #${pi+1}</span>
+    <div class="sub">${s.kind==='special'?'Special Platoon':'Core Platoon'} · ${sub} RP</div></div>
+    <div>${isA?'<span class="badge assault">Counts as Assault</span> ':''}
+    <button class="danger ghost buildonly" data-x>Remove</button></div></div>`;
+  el.querySelector('[data-x]').onclick=()=>{state.platoons.splice(pi,1);commit();};
+
+  // compact requirements strip (read-only status of every slot)
+  const reqWrap=document.createElement('div');reqWrap.className='reqstrip';
+  s.slots.forEach((slot,si)=>{
+    const c=p.units.filter(u=>u.slot===si).length;
+    const b=slotBounds(p,slot);const met=c>=b.min&&c<=b.max;
+    const maxTxt=b.max>=90?'∞':b.max;
+    const mand=b.min>0;
+    const chip=document.createElement('span');
+    chip.className='reqchip '+(met?(mand?'done':'opt'):'unmet');
+    chip.innerHTML=`${unitIcon(repOf(slot),'chipicon')} ${slot.role} <b>${c}/${b.min}${b.min!==b.max?'–'+maxTxt:''}</b>`;
+    reqWrap.appendChild(chip);
+  });
+  el.appendChild(reqWrap);
+
+  // special-platoon bonus rules
+  if(s.notes&&s.notes.length){
+    const nb=document.createElement('div');nb.className='pltnotes';
+    nb.innerHTML='<h4>Platoon Special Rules</h4>'+s.notes.map(t=>`<div class="pnote">${glossify(t)}</div>`).join('');
+    el.appendChild(nb);
+  }
+
+  // added units (flat list, each labelled by its role)
+  const listWrap=document.createElement('div');listWrap.className='slot';
+  if(!p.units.length){const e=document.createElement('div');e.className='note';e.style.padding='4px 0';
+    e.textContent='No units yet — use “Add unit” below.';listWrap.appendChild(e);}
+  p.units.forEach((inst,ui)=>{
+    const slot=s.slots[inst.slot];
+    const row=unitRow(inst,slot,pi,p.selectorId,()=>{p.units.splice(ui,1);commit();});
+    const cap=document.createElement('div');cap.className='rolecap';cap.textContent=slot?slot.role:'—';
+    row.insertBefore(cap,row.firstChild);
+    listWrap.appendChild(row);
+  });
+  el.appendChild(listWrap);
+
+  // single Add control: unit-type dropdown -> unit picker -> Add
+  const choices=addChoices(p,s);
+  const addWrap=document.createElement('div');addWrap.className='slot addctrl';
+  if(!choices.length){
+    addWrap.innerHTML='<div class="note">Platoon is full.</div>';
+  }else{
+    if(p._addKey==null||!choices.some(o=>o.key===p._addKey))p._addKey=choices[0].key;
+    const roleSel=document.createElement('select');roleSel.className='rolesel';
+    choices.forEach(o=>{const opt=document.createElement('option');opt.value=o.key;
+      opt.textContent=o.label;if(o.key===p._addKey)opt.selected=true;roleSel.appendChild(opt);});
+    roleSel.onchange=()=>{p._addKey=roleSel.value;commit();};
+    const cur=choices.find(o=>o.key===p._addKey);
+    const pk=picker(cur.elig);
+    const btn=btnEl('+ Add',()=>{const v=pk.value();if(!v)return;cur.add(v);commit();});
+    btn.className='primary';
+    const lbl=document.createElement('div');lbl.className='addlabel';lbl.textContent='Add unit';
+    const bar=document.createElement('div');bar.className='addbar';
+    bar.append(roleSel,pk.el,btn);
+    addWrap.append(lbl,bar);
+    if(cur.note){const n=document.createElement('div');n.className='note';n.textContent=cur.note;addWrap.appendChild(n);}
+  }
+  el.appendChild(addWrap);
+  return el;
+}
+function eligibleUnits(slot,selector){
+  let list=slot.match==='name'
+    ?faction.units.filter(u=>slot.names.includes(u.name))
+    :faction.units.filter(u=>slot.categories.includes(u.category));
+  if(selector&&selector.id==='engineer'&&(slot.categories||[]).some(cat=>/infantry/.test(cat)))
+    list=list.filter(hasEngineerUpgrade);
+  return dropTakenHeroes(list);
+}
+
+// ---------- unit row + options panel ----------
+function unitRow(inst,slot,pi,selectorId,onRemove){
+  const u=unitById[inst.unitId];const row=document.createElement('div');row.className='unitrow';
+  const thumb=thumbHTML(u,true);
+  const models=instModels(u,inst);
+  const q=inst.quality&&inst.quality!=='fixed'?QLABEL[inst.quality]+' · ':'';
+  const rd=u.rift_dice?` · <span class="rift">${u.rift_dice} Rift</span>`:'';
+  const recce=isRecceTransport(inst,selectorId)?' · <span class="c">+10 Recce</span>':'';
+  const hasOpts=(u.options&&u.options.length)||(u.upgrades&&u.upgrades.length)||qualitiesFor(u).length>1||/Command/i.test(slot?.role||'');
+  const main=document.createElement('div');main.className='main';
+  main.innerHTML=`${thumb}<div class="un"><div class="nm">${u.name}</div>
+    <div class="meta">${q}${models} model${models>1?'s':''}${rd}${recce}</div></div>
+    <div class="cost">${instCost(inst,selectorId)}</div>`;
+  const statBtn=u.stats?btnEl('📋',()=>{inst._stats=!inst._stats;commit();}):null;
+  if(statBtn){statBtn.className='iconbtn buildonly';statBtn.title='Show stat line & special rules';main.appendChild(statBtn);}
+  const gear=hasOpts?btnEl('⚙',()=>{inst._open=!inst._open;commit();}):null;
+  if(gear){gear.className='iconbtn buildonly';gear.title='Customise (options & upgrades)';main.appendChild(gear);}
+  const rm=btnEl('✕',onRemove);rm.className='iconbtn buildonly';rm.style.color='var(--bad)';main.appendChild(rm);
+  row.appendChild(main);
+  if((inst._stats||playMode)&&u.stats)row.appendChild(renderStatPanel(u,inst));
+  if(hasOpts&&inst._open&&!playMode)row.appendChild(optionPanel(inst,u,slot));
+  return row;
+}
+
+// ---------- weapon profiles (from Core Rulebook charts) ----------
+const WPROF=DATA.weapon_profiles||[];
+const GALL={...(DATA.weapon_special_rules||{}),...(DATA.unit_special_rules||{})};
+const GALL_L=Object.fromEntries(Object.entries(GALL).map(([k,v])=>[k.toLowerCase(),v]));
+const GALL_NAME=Object.fromEntries(Object.keys(GALL).map(k=>[k.toLowerCase(),k]));
+const GLOSS_RE=(()=>{const t=Object.keys(GALL).sort((a,b)=>b.length-a.length)
+  .map(s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));
+  return t.length?new RegExp('(?<![\\w])('+t.join('|')+')(?![\\w])','gi'):null;})();
+// glossify free text (weapon Special column): wrap any known rule token
+function glossify(text){if(!text||!GLOSS_RE)return text||'';
+  return text.replace(GLOSS_RE,m=>`<span class="gloss" data-term="${m}">${m}</span>`);}
+// glossify a whole label only if it EXACTLY matches a glossary entry (avoids partial matches like HE in "Improved HE")
+function glossChip(name){if(!name)return'';
+  return GALL_L[name.toLowerCase()]?`<span class="gloss" data-term="${name}">${name}</span>`:name;}
+// tooltip chip carrying its own text (for rules whose definition comes from the army list, e.g. "Resourceful")
+function ruleChip(name,text){if(text)return `<span class="gloss" data-tip="${String(text).replace(/"/g,'&quot;')}">${name}</span>`;return glossChip(name);}
+function matchWeapons(text){
+  if(!text)return[];
+  let work=' '+text.toLowerCase().replace(/\s+/g,' ')+' ';
+  const out=[];
+  WPROF.forEach(pr=>{for(const al of pr.aliases){if(work.includes(al)){out.push(pr);
+    work=work.split(al).join(' '.repeat(al.length));break;}}});
+  return out;
+}
+function weaponTable(text){
+  const ms=matchWeapons(text);
+  if(!ms.length){
+    const t=(text||'').trim();
+    if(!t||/^none$/i.test(t))return null;
+    return `<div class="wpnote">${t} <span class="unmatched">· profile not found</span></div>`;
+  }
+  const rows=ms.map(p=>`<tr><td class="rl">${p.name}</td><td>${p.range}</td><td class="mono">${p.shots}</td><td class="mono">${p.pen}</td><td class="sp">${p.special}</td></tr>`).join('');
+  return `<table class="wpntable"><tr><th>Weapon</th><th>Range</th><th>Shots</th><th>Pen</th><th>Special</th></tr>${rows}</table>`;
+}
+function weaponInline(text){
+  const ms=matchWeapons(text);
+  if(!ms.length)return'<span class="unmatched">profile not found</span>';
+  return ms.map(p=>`<span class="wpin"><b>${p.name}</b> ${p.range} · ${p.shots} sh · Pen ${p.pen}${p.special&&p.special!=='–'?' · '+glossify(p.special):''}</span>`).join('');
+}
+const PERMODEL_CATS=['infantry_basic','infantry_advanced','infantry_specialist','platoon_commander','company_commander'];
+// effective weapon loadout for THIS instance: base weapons modified by selected swaps / adds
+function effectiveWeapons(u,inst){
+  const counts=new Map();
+  const key=p=>p.name;
+  const add=(p,n)=>{if(!p||n<=0)return;const e=counts.get(key(p))||{profile:p,count:0};e.count+=n;counts.set(key(p),e);};
+  const sub=(p,n)=>{if(!p)return;const e=counts.get(key(p));if(!e)return;e.count-=n;if(e.count<=0)counts.delete(key(p));};
+  const models=instModels(u,inst);
+  const baseW=(u.stats&&u.stats.weapons)?u.stats.weapons:[];
+  const baseMatched=matchWeapons(baseW.join(' '));
+  const perModel=PERMODEL_CATS.includes(u.category);
+  if(perModel){
+    if(baseMatched.length)add(baseMatched[0],models);           // squad weapon, one per model
+    baseMatched.slice(1).forEach(p=>add(p,1));
+  }else{
+    baseMatched.forEach(p=>add(p,1));                            // vehicle/team mounts
+  }
+  (u.options||[]).forEach((o,oi)=>{const v=inst.opts?.[oi]||0;if(!v)return;
+    if(o.type==='weapon_swap'){
+      const mm=o.desc.match(/^Replace (.+?) with (.+)$/i);
+      if(mm){sub(matchWeapons(mm[1])[0],v);add(matchWeapons(mm[2])[0],v);}
+      else{const mu=o.desc.match(/with (.+)$/i);if(mu)add(matchWeapons(mu[1])[0],v);} // e.g. "…ability to fire Rifle Grenades"
+    }else if(o.type==='vehicle_add'){
+      const mm=o.desc.match(/Add (?:a |an |up to \d+ )?(.+)$/i);
+      if(mm)add(matchWeapons(mm[1])[0],v);
+    }
+  });
+  // squad-wide upgrades that grant a weapon (e.g. ATRDs, Panzerfausts)
+  (u.upgrades||[]).forEach((o,ui)=>{if(inst.ups?.[ui]){const w=matchWeapons(o.desc)[0];if(w)add(w,1);}});
+  return [...counts.values()];
+}
+function weaponRowsHTML(list,fallbackText){
+  if(!list.length){const t=(fallbackText||'').trim();
+    if(!t||/^none$/i.test(t))return null;
+    return `<div class="wpnote">${t} <span class="unmatched">· profile not found</span></div>`;}
+  const rows=list.map(({profile:p,count:c})=>`<tr><td class="rl">${c>1?c+'× ':''}${p.name}</td><td>${p.range}</td><td class="mono">${p.shots}</td><td class="mono">${p.pen}</td><td class="sp">${glossify(p.special)}</td></tr>`).join('');
+  return `<table class="wpntable"><tr><th>Weapon</th><th>Range</th><th>Shots</th><th>Pen</th><th>Special</th></tr>${rows}</table>`;
+}
+
+// ---------- game aid: stat block ----------
+const QSHORT={inexperienced:'Inexp',regular:'Reg',veteran:'Vet',fixed:'—',all:'—'};
+function statVals(dict,tiers){
+  if(!dict)return null;
+  if('fixed'in dict)return[dict.fixed];
+  if('all'in dict)return tiers.map(()=>dict.all);
+  if('list'in dict)return dict.list;
+  return tiers.map(t=>dict[t]??'—');
+}
+function fmtMove(mv){if(!mv||!mv.length)return'—';
+  return mv.map(r=>`${r.label?r.label+': ':''}${r.adv} / ${r.run}`).join('  ·  ');}
+function statSummary(u){const s=u.stats;if(!s)return'';
+  const tiers=s.quality||['fixed'];const rep=tiers.includes('regular')?'regular':tiers[0];
+  const dv=s.damage&&(s.damage[rep]||s.damage.all||s.damage.fixed);
+  const mv=s.morale&&(s.morale[rep]||s.morale.all||s.morale.fixed);
+  const mo=s.movement&&s.movement.length?`${s.movement[0].adv}/${s.movement[0].run}`:'';
+  return [dv?`DV ${dv}`:'',mv?`Mor ${mv}`:'',mo?`Move ${mo}`:''].filter(Boolean).join(' · ');}
+function renderStatPanel(u,inst){
+  const s=u.stats;const p=document.createElement('div');p.className='statpanel';
+  if(!s){p.innerHTML='<div class="note">No stats on file.</div>';return p;}
+  const tiers=(s.quality&&s.quality.length)?s.quality:['fixed'];
+  const single=tiers.length===1;
+  const q=inst&&inst.quality?inst.quality:tiers[0];
+  const selIdx=tiers.indexOf(q);
+  // headline: this model's chosen-quality statline
+  const dvSel=s.damage&&(s.damage[q]??s.damage.all??s.damage.fixed);
+  const mvSel=s.morale&&(s.morale[q]??s.morale.all??s.morale.fixed);
+  const moveSel=s.movement&&s.movement.length?fmtMove(s.movement):'—';
+  const qName=single&&tiers[0]==='fixed'?'':(QLABEL[q]||q);
+  const hl=document.createElement('div');hl.className='statheadline';
+  hl.innerHTML=`<span class="qtag">${qName||'This model'}</span>
+    <span class="hlv"><b>DV</b> ${dvSel??'—'}</span>
+    <span class="hlv"><b>Morale</b> ${mvSel??'—'}</span>
+    <span class="hlv"><b>Move</b> ${moveSel}</span>`;
+  p.appendChild(hl);
+  const dmg=statVals(s.damage,tiers)||[],mor=statVals(s.morale,tiers)||[];
+  const mark=i=>(!single&&i===selIdx)?' class="sel"':'';
+  const marktd=(v,i)=>`<td class="mono${(!single&&i===selIdx)?' sel':''}">${v}</td>`;
+  if(!single){
+    const head=tiers.map((t,i)=>`<th${mark(i)}>${QSHORT[t]||t}</th>`).join('');
+    const dcells=tiers.map((t,i)=>marktd(dmg[i]??'—',i)).join('');
+    const mcells=tiers.map((t,i)=>marktd(mor[i]??'—',i)).join('');
+    const tbl=document.createElement('div');tbl.className='alltiers';
+    tbl.innerHTML=`<div class="tierlbl">All quality tiers</div>
+      <table class="stattable"><tr><th></th>${head}</tr>
+      <tr><td class="rl">Damage Value</td>${dcells}</tr>
+      <tr><td class="rl">Morale Value</td>${mcells}</tr></table>`;
+    p.appendChild(tbl);
+  }
+  const meta=document.createElement('div');meta.className='statmeta';
+  const parts=[];
+  parts.push(`<b>Move</b>${fmtMove(s.movement)}`);
+  if(s.base_size)parts.push(`<b>Base</b>${s.base_size}`);
+  meta.innerHTML=parts.join('<br>');p.appendChild(meta);
+  // weapon profiles (reflect this unit's selected swaps / added weapons)
+  const wtbl=inst?weaponRowsHTML(effectiveWeapons(u,inst),(s.weapons||[]).join(' '))
+                 :weaponTable((s.weapons||[]).join(' '));
+  if(wtbl){const w=document.createElement('div');w.className='wpnwrap';
+    w.innerHTML='<div class="tierlbl">Weapons</div>'+wtbl;p.appendChild(w);}
+  if(expandRules){
+    const profs=inst?effectiveWeapons(u,inst).map(x=>x.profile):matchWeapons((s.weapons||[]).join(' '));
+    const specials=new Set();
+    if(GLOSS_RE)profs.forEach(pr=>{for(const m of (pr.special||'').matchAll(GLOSS_RE)){
+      const c=GALL_NAME[m[0].toLowerCase()];if(c)specials.add(c);}});
+    if(specials.size){const lg=document.createElement('div');lg.className='rulelegend';
+      lg.innerHTML='<div class="tierlbl">Weapon rules</div>'+[...specials].map(t=>`<div class="srule"><span class="rn">${t}</span> — ${GALL_L[t.toLowerCase()]}</div>`).join('');
+      p.appendChild(lg);}
+  }
+  {
+    const ruleItems=(s.rules||[]).map(x=>({name:x.name,text:x.text||''}));
+    if(inst){(u.upgrades||[]).forEach((o,ui)=>{if(!inst.ups?.[ui])return;
+      if(matchWeapons(o.desc).length)return;            // weapon upgrades (ATRDs, Panzerfausts) go to the weapon table
+      if(!ruleItems.some(r=>r.name.toLowerCase()===o.desc.toLowerCase()))
+        ruleItems.push({name:o.desc,text:'',added:true});
+    });}
+    if(ruleItems.length){
+      const r=document.createElement('div');r.className='statrules';r.innerHTML='<h4>Special Rules</h4>';
+      ruleItems.forEach(x=>{const d=document.createElement('div');d.className='srule';const up=x.added?' <span class="c">(upgrade)</span>':'';
+        if(expandRules){let text=x.text||GALL_L[x.name.toLowerCase()]||'';
+          d.innerHTML=`<span class="rn">${x.name}</span>${text?' — '+text:''}${up}`;}
+        else{d.innerHTML=`<span class="rn">${ruleChip(x.name,x.text)}</span>${up}`;}
+        r.appendChild(d);});
+      p.appendChild(r);
+    }
+  }
+  // Hero Abilities: innate hero stats (Guts/Luck/Rift Mastery values) + any option-added Guts/Luck
+  {const innate=(s.hero_stats)||{};const items=[];const seen={};
+    ['Guts','Luck','Rift Mastery','Fearless'].forEach(k=>{if(k in innate){seen[k]=1;items.push({name:k,val:innate[k]===true?'':(''+innate[k])});}});
+    if(inst){(u.options||[]).forEach((o,oi)=>{if(o.type==='hero_stat'&&inst.opts?.[oi]&&!seen[o.desc]){seen[o.desc]=1;items.push({name:o.desc,val:'+1'});}});}
+    if(items.length){const h=document.createElement('div');h.className='statrules';h.innerHTML='<h4>Hero Abilities</h4>';
+      if(expandRules){items.forEach(it=>{const d=document.createElement('div');d.className='srule';
+        const def=GALL_L[it.name.toLowerCase()]||'';d.innerHTML=`<span class="rn">${it.name}${it.val?' '+it.val:''}</span>${def?' — '+def:''}`;h.appendChild(d);});}
+      else{h.insertAdjacentHTML('beforeend',items.map(it=>`<span class="herochip">${glossChip(it.name)}${it.val?(it.val==='+1'?' <span class="c">+1</span>':' '+it.val):''}</span>`).join(' '));}
+      p.appendChild(h);}}
+  if(s.rift&&(s.rift.dice||s.rift.enhancement)){
+    const rf=document.createElement('div');rf.className='statrift';
+    let h=`<div class="rk">Rift Unit${s.rift.dice?' · '+s.rift.dice+' Rift Die'+(s.rift.dice>1?'s':''):''}${s.rift.note?' ('+s.rift.note+')':''}</div>`;
+    if(s.rift.enhancement)h+=`<div class="rt"><b>Active:</b> ${s.rift.enhancement}</div>`;
+    if(s.rift.surging&&!/^none/i.test(s.rift.surging))h+=`<div class="rt"><b>Surging Bonus:</b> ${s.rift.surging}</div>`;
+    if(s.rift.exhausted&&!/^none/i.test(s.rift.exhausted))h+=`<div class="rt"><b>Exhausted Penalty:</b> ${s.rift.exhausted}</div>`;
+    rf.innerHTML=h;p.appendChild(rf);
+  }
+  return p;
+}
+
+function optionPanel(inst,u,slot){
+  const panel=document.createElement('div');panel.className='optpanel';
+  // quality
+  const qs=qualitiesFor(u);
+  if(qs.length>1){
+    const g=document.createElement('div');g.className='optgrp';
+    g.innerHTML='<h4>Quality (No Mixed Quality)</h4>';
+    const row=document.createElement('div');row.className='optrow';
+    const s=document.createElement('select');s.className='qsel';
+    qs.forEach(q=>{const o=document.createElement('option');o.value=q;o.textContent=`${QLABEL[q]} — base ${u.cost[q]}`;if(q===inst.quality)o.selected=true;s.appendChild(o);});
+    s.onchange=()=>{inst.quality=s.value;
+      // clamp option counts to new limits
+      (u.options||[]).forEach((o,oi)=>{if(inst.opts[oi])inst.opts[oi]=Math.min(inst.opts[oi],optMax(u,inst,o,oi));});
+      commit();};
+    row.appendChild(s);g.appendChild(row);panel.appendChild(g);
+  }
+  // command vehicle upgrade (armoured command slots)
+  if(/Command/i.test(slot?.role||'')){
+    const g=document.createElement('div');g.className='optgrp';g.innerHTML='<h4>Platoon Command</h4>';
+    const hasCmd=(u.special_rules||[]).some(r=>/command vehicle/i.test(r));
+    const row=document.createElement('div');row.className='optrow';
+    if(hasCmd){row.innerHTML='<div class="lbl">Already a Command Vehicle</div>';}
+    else{const id='cmd'+Math.random();
+      row.innerHTML=`<label class="lbl" for="${id}">Upgrade to Command Vehicle <span class="c">(+10)</span></label>`;
+      const ck=document.createElement('input');ck.type='checkbox';ck.className='chk';ck.id=id;ck.checked=!!inst.cmdVehicle;
+      ck.onchange=()=>{inst.cmdVehicle=ck.checked;commit();};row.appendChild(ck);}
+    g.appendChild(row);panel.appendChild(g);
+  }
+  // options
+  const byType={add_models:[],weapon_swap:[],vehicle_add:[],hero_stat:[]};
+  (u.options||[]).forEach((o,oi)=>byType[o.type]?.push([o,oi]));
+  const groups=[['Add Models','add_models'],['Weapon Options','weapon_swap'],['Vehicle Upgrades','vehicle_add'],['Hero Stat Points','hero_stat']];
+  groups.forEach(([title,tp])=>{
+    if(!byType[tp].length)return;
+    const g=document.createElement('div');g.className='optgrp';g.innerHTML=`<h4>${title}</h4>`;
+    byType[tp].forEach(([o,oi])=>{
+      const max=optMax(u,inst,o,oi);const cur=inst.opts[oi]||0;
+      const disabled=(o.condition&&/only if/.test(o.condition)&&!engineersOn(u,inst));
+      const row=document.createElement('div');row.className='optrow'+(disabled?' disabled':'');
+      const per=o.type==='add_models'?addPer(o,inst.quality):o.cost;
+      const each=(per>=0?'+':'')+per+(o.per_model||o.type==='add_models'?'/model':'');
+      const limTxt=o.limit?` · max ${o.limit.n}/${o.limit.scope}`:'';
+      const condTxt=o.condition?` · ${o.condition}`:'';
+      let wp='';
+      if(tp==='weapon_swap'){const m=o.desc.match(/with (.+)$/);if(m){const ms=matchWeapons(m[1]);
+        if(ms.length)wp=' '+ms.map(p=>`<span class="gloss" data-wpn="${p.name}">${p.name}</span>`).join(' ');}}
+      const dlabel=tp==='hero_stat'?glossChip(o.desc):o.desc;
+      row.innerHTML=`<div class="lbl">${dlabel} <span class="c">${each}${limTxt}${condTxt}</span>${wp?'<span class="wpcue"> · '+wp+'</span>':''}</div>`;
+      if(tp==='hero_stat'){
+        const ck=document.createElement('input');ck.type='checkbox';ck.className='chk';ck.checked=cur>0;ck.disabled=disabled;
+        ck.onchange=()=>{inst.opts[oi]=ck.checked?1:0;commit();};row.appendChild(ck);
+      }else{
+        row.appendChild(stepper(cur,0,max,disabled,v=>{inst.opts[oi]=v;commit();}));
+      }
+      g.appendChild(row);
+    });
+    panel.appendChild(g);
+  });
+  // squad upgrades
+  if(u.upgrades&&u.upgrades.length){
+    const g=document.createElement('div');g.className='optgrp';g.innerHTML='<h4>Squad Upgrades (whole squad)</h4>';
+    u.upgrades.forEach((o,ui)=>{
+      const models=instModels(u,inst);const tot=models*(o.cost||0);
+      const row=document.createElement('div');row.className='optrow';
+      const lab=document.createElement('div');lab.className='lbl';
+      lab.innerHTML=`${glossChip(o.desc)} <span class="c">${(o.cost>=0?'+':'')}${o.cost}/model · ${tot} total</span>`;
+      row.appendChild(lab);
+      const ck=document.createElement('input');ck.type='checkbox';ck.className='chk';ck.checked=!!inst.ups?.[ui];
+      ck.onchange=()=>{inst.ups=inst.ups||{};inst.ups[ui]=ck.checked;
+        (u.options||[]).forEach((o2,oi2)=>{if(inst.opts[oi2])inst.opts[oi2]=Math.min(inst.opts[oi2],optMax(u,inst,o2,oi2));});
+        commit();};
+      row.appendChild(ck);g.appendChild(row);
+    });
+    panel.appendChild(g);
+  }
+  return panel;
+}
+
+function stepper(cur,min,max,disabled,onChange){
+  const w=document.createElement('div');w.className='stepper';
+  const dec=btnEl('−',()=>{if(cur>min)onChange(cur-1);});
+  const n=document.createElement('span');n.className='n';n.textContent=cur;
+  const inc=btnEl('+',()=>{if(cur<max)onChange(cur+1);});
+  if(disabled||cur<=min)dec.disabled=true;if(disabled||cur>=max)inc.disabled=true;
+  w.append(dec,n,inc);return w;
+}
+
+// ---------- custom thumbnail picker ----------
+function picker(units){
+  const wrap=document.createElement('div');wrap.className='picker';
+  let chosen='';
+  const sel=document.createElement('button');sel.className='sel';sel.type='button';
+  const menu=document.createElement('div');menu.className='menu';menu.style.display='none';
+  function paint(){const u=unitById[chosen];
+    if(u){const ph=photoOf(u);sel.innerHTML=(ph?`<img class="selph thumb" src="${ph}">`:`<span class="selph thumb ph"></span>`)+
+      `<span class="cap">${u.name}</span><span class="cost">${('fixed'in u.cost)?u.cost.fixed:u.cost[qualitiesFor(u)[0]]}</span>`;}
+    else sel.innerHTML='<span class="selph thumb ph"></span><span class="cap" style="color:var(--dim)">Choose unit…</span>';}
+  paint();
+  sel.onclick=()=>{menu.style.display=menu.style.display==='none'?'block':'none';};
+  units.forEach(u=>{
+    const r=document.createElement('div');r.className='mrow';
+    const ph=photoOf(u);const qs=qualitiesFor(u);
+    const base=('fixed'in u.cost)?u.cost.fixed:u.cost[qs[0]];
+    r.innerHTML=`${thumbHTML(u,false)}
+      <div class="info"><div class="n">${u.name}</div><div class="s">${u.unit_type||''}${qs.length>1?' · '+base+'+':''}</div>${statSummary(u)?`<div class="s">${statSummary(u)}</div>`:''}</div>
+      <div class="pc">${base}</div><button class="iconbtn" title="Set photo URL">✎</button>`;
+    r.querySelector('.info').onclick=()=>{chosen=u.id;paint();menu.style.display='none';};
+    r.querySelector('.thumb').onclick=()=>{chosen=u.id;paint();menu.style.display='none';};
+    r.querySelector('.pc').onclick=()=>{chosen=u.id;paint();menu.style.display='none';};
+    r.querySelector('button').onclick=e=>{e.stopPropagation();
+      const cur=photos[u.id]||'';const v=prompt(`Photo URL for ${u.name}:`,cur);
+      if(v!==null){if(v.trim())photos[u.id]=v.trim();else delete photos[u.id];
+        saveJSON('k47_photos_'+faction.id,photos);render();}};
+    menu.appendChild(r);
+  });
+  document.addEventListener('click',e=>{if(!wrap.contains(e.target))menu.style.display='none';});
+  wrap.append(sel,menu);
+  return{el:wrap,value:()=>chosen};
+}
+
+function btnEl(t,fn){const b=document.createElement('button');b.textContent=t;b.onclick=fn;return b;}
+function commit(){persist();render();}
+
+// ---------- weapon-rule glossary popover (hover on desktop, tap on touch) ----------
+let glossPinned=false;
+function glossPopEl(){let e=document.getElementById('glosspop');
+  if(!e){e=document.createElement('div');e.id='glosspop';e.className='glosspop';document.body.appendChild(e);}return e;}
+function showGloss(el){
+  const term=el.getAttribute('data-term');const wpn=el.getAttribute('data-wpn');const tip=el.getAttribute('data-tip');
+  let title,body;
+  if(term){const def=GALL_L[term.toLowerCase()];if(!def)return;title=term;body=def;}
+  else if(wpn){const p=WPROF.find(x=>x.name===wpn);if(!p)return;title=p.name;
+    body=`Range ${p.range} · Shots ${p.shots} · Pen ${p.pen}${p.special&&p.special!=='–'?'<br>'+p.special:''}`;}
+  else if(tip){title=el.textContent;body=tip;}
+  else return;
+  const pop=glossPopEl();pop.dataset.for=term||wpn;pop.innerHTML=`<b>${title}</b><span>${body}</span>`;pop.style.display='block';
+  const r=el.getBoundingClientRect();const w=Math.min(280,window.innerWidth-16);pop.style.maxWidth=w+'px';
+  let left=Math.max(8,Math.min(r.left,window.innerWidth-w-8));pop.style.left=left+'px';
+  const ph=pop.offsetHeight||90;let top=r.bottom+6;if(top+ph>window.innerHeight-8)top=Math.max(8,r.top-ph-6);
+  pop.style.top=top+'px';}
+function hideGloss(){const e=document.getElementById('glosspop');if(e)e.style.display='none';glossPinned=false;}
+document.addEventListener('click',e=>{const g=e.target.closest?e.target.closest('.gloss'):null;
+  if(g){const pop=glossPopEl();
+    if(glossPinned&&pop.dataset.for===g.getAttribute('data-term')&&pop.style.display==='block'){hideGloss();}
+    else{glossPinned=true;showGloss(g);}return;}
+  if(!(e.target.closest&&e.target.closest('#glosspop')))hideGloss();});
+document.addEventListener('mouseover',e=>{const g=e.target.closest?e.target.closest('.gloss'):null;if(g&&!glossPinned)showGloss(g);});
+document.addEventListener('mouseout',e=>{const g=e.target.closest?e.target.closest('.gloss'):null;if(g&&!glossPinned)hideGloss();});
+window.addEventListener('scroll',()=>{if(!glossPinned)hideGloss();},true);
+
+document.getElementById('listName').oninput=e=>{state.name=e.target.value;persist();};
+document.getElementById('gameSize').oninput=e=>{state.gameSize=+e.target.value||0;commit();};
+document.getElementById('btnAddPlatoon').onclick=()=>{const id=document.getElementById('newPlatoonSel').value;if(!id)return;
+  state.platoons.push({selectorId:id,units:[]});commit();};
+document.getElementById('btnClear').onclick=()=>{if(confirm('Reset the whole force?')){state=freshState();commit();}};
+
+// ---------- saved-forces store (localStorage now; swap these 4 methods for API calls later) ----------
+const Store={KEY:'k47_saved_v1',
+  all(){return loadJSON(this.KEY)||[];},
+  _write(a){saveJSON(this.KEY,a);},
+  put(rec){const a=this.all();const i=a.findIndex(x=>x.id===rec.id);if(i>=0)a[i]=rec;else a.unshift(rec);this._write(a);return rec;},
+  remove(id){this._write(this.all().filter(x=>x.id!==id));}};
+function cleanState(){return JSON.parse(JSON.stringify(state,(k,v)=>k.startsWith('_')?undefined:v));}
+// total RP for a saved record (self-contained so it works for any faction, not just the loaded one)
+function recordPoints(rec){
+  const fac=DATA.factions.find(f=>f.id===rec.faction);if(!fac)return null;
+  const byId=Object.fromEntries(fac.units.map(u=>[u.id,u]));const d=rec.data||{};let rp=0;
+  const cost=(inst,selId)=>{const u=byId[inst.unitId];if(!u)return 0;const q=inst.quality;
+    let c=('fixed'in u.cost)?u.cost.fixed:(u.cost[q]??0);let added=0;
+    (u.options||[]).forEach((o,oi)=>{if(o.type==='add_models')added+=(inst.opts?.[oi]||0);});
+    const models=u.model_count+added;
+    (u.options||[]).forEach((o,oi)=>{const v=inst.opts?.[oi]||0;if(!v)return;
+      if(o.type==='add_models')c+=v*(('flat'in o.cost)?o.cost.flat:(o.cost[q]??0));
+      else if(o.type==='weapon_swap'||o.type==='vehicle_add'||o.type==='hero_stat')c+=v*(o.cost||0);});
+    (u.upgrades||[]).forEach((o,ui)=>{if(inst.ups?.[ui])c+=models*(o.cost||0);});
+    if(inst.cmdVehicle)c+=10;if(selId==='recce'&&u.category==='transport')c+=10;return c;};
+  if(d.cc)rp+=cost(d.cc,null);
+  (d.platoons||[]).forEach(p=>(p.units||[]).forEach(i=>rp+=cost(i,p.selectorId)));
+  return rp;
+}
+let toastT;
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
+  clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),1900);}
+function saveCurrent(){
+  const name=(state.name||'').trim()||'Untitled Force';
+  const rec={id:state._id||('L'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)),
+    name,faction:faction.id,updated:Date.now(),data:cleanState()};
+  Store.put(rec);state._id=rec.id;persist();toast('Saved "'+name+'"');
+}
+function loadRecord(rec){
+  if(rec.faction&&rec.faction!==faction.id){initFaction(rec.faction);fsel.value=rec.faction;saveJSON('k47_faction',rec.faction);}
+  state=JSON.parse(JSON.stringify(rec.data));state._id=rec.id;persist();render();
+  document.getElementById('libOverlay').style.display='none';toast('Loaded "'+(rec.name||'force')+'"');
+}
+function showLibrary(){
+  const box=document.getElementById('libList');box.innerHTML='';
+  const recs=Store.all().sort((a,b)=>b.updated-a.updated);
+  if(!recs.length){box.innerHTML='<div class="libempty">No saved forces yet. Use Save to store the current one.</div>';}
+  recs.forEach(rec=>{
+    const fac=(DATA.factions.find(f=>f.id===rec.faction)||{}).name||rec.faction||'';
+    const when=new Date(rec.updated).toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});
+    const pts=recordPoints(rec);const cap=(rec.data||{}).gameSize;
+    const ptsTxt=pts==null?'':` · <b>${pts}${cap?' / '+cap:''} pts</b>`;
+    const row=document.createElement('div');row.className='librow';
+    row.innerHTML=`<div class="li"><div class="n">${rec.name||'Untitled'}</div><div class="m">${fac} · ${when}${ptsTxt}${rec.id===state._id?' · current':''}</div></div>`;
+    const load=btnEl('Load',()=>loadRecord(rec));load.className='primary';
+    const del=btnEl('Delete',()=>{if(confirm('Delete "'+(rec.name||'force')+'"?')){Store.remove(rec.id);if(state._id===rec.id)delete state._id;showLibrary();}});
+    del.className='danger ghost';
+    row.append(load,del);box.appendChild(row);
+  });
+  document.getElementById('libOverlay').style.display='flex';
+}
+document.getElementById('btnSave').onclick=saveCurrent;
+document.getElementById('btnLoad').onclick=showLibrary;
+// ---------- tools menu ----------
+const toolsBtn=document.getElementById('toolsBtn'),toolsMenu=document.getElementById('toolsMenu');
+toolsBtn.onclick=e=>{e.stopPropagation();toolsMenu.style.display=toolsMenu.style.display==='none'?'block':'none';};
+toolsMenu.addEventListener('click',()=>setTimeout(()=>toolsMenu.style.display='none',0));
+document.addEventListener('click',e=>{if(!(e.target.closest&&e.target.closest('.toolswrap')))toolsMenu.style.display='none';});
+// ---------- print / PDF (paper version of the play view) ----------
+function printForPDF(){
+  const t=totals();
+  document.getElementById('printHead').innerHTML=
+    `<div class="pt">${state.name||'Untitled Force'}</div>`+
+    `<div class="pm">${faction.name} · ${t.rp}${state.gameSize?' / '+state.gameSize:''} pts · ${t.rift} Rift Dice · ${t.models} models</div>`;
+  const prev=playMode,prevExp=expandRules;playMode=true;expandRules=true;document.body.classList.add('play');render();
+  const restore=()=>{playMode=prev;expandRules=prevExp;document.body.classList.toggle('play',prev);render();window.removeEventListener('afterprint',restore);};
+  window.addEventListener('afterprint',restore);
+  setTimeout(()=>window.print(),80);
+}
+document.getElementById('btnPrint').onclick=printForPDF;
+// ---------- rules-in-body toggle ----------
+const btnRules=document.getElementById('btnRules');
+function applyExpand(on){expandRules=!!on;saveJSON('k47_expand',expandRules);
+  btnRules.textContent='📖 Rules in body: '+(expandRules?'on':'off');render();}
+btnRules.onclick=()=>applyExpand(!expandRules);
+expandRules=!!loadJSON('k47_expand');btnRules.textContent='📖 Rules in body: '+(expandRules?'on':'off');
+document.getElementById('libClose').onclick=()=>document.getElementById('libOverlay').style.display='none';
+document.getElementById('libOverlay').onclick=e=>{if(e.target.id==='libOverlay')e.target.style.display='none';};
+document.getElementById('btnExport').onclick=()=>{const blob=new Blob([JSON.stringify(cleanState(),null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(state.name||'force').replace(/[^\w-]+/g,'_')+'.k47.json';a.click();};
+document.getElementById('btnImport').onclick=()=>document.getElementById('fileInput').click();
+document.getElementById('fileInput').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();
+  r.onload=()=>{try{const d=JSON.parse(r.result);state=d;delete state._id;
+    // if the file is another faction, switch to it
+    if(state.faction&&DATA.factions.some(x=>x.id===state.faction)&&state.faction!==faction.id){}
+    commit();document.getElementById('libOverlay').style.display='none';toast('Imported from file');}catch(err){alert('Could not read that file.');}};
+  r.readAsText(f);e.target.value='';};
+// ---------- theme switcher ----------
+const swatches=[...document.querySelectorAll('.swatch')];
+function applyTheme(t){t=(t==='modern')?'modern':'military';
+  document.documentElement.dataset.theme=t;saveJSON('k47_theme',t);
+  swatches.forEach(s=>s.classList.toggle('active',s.dataset.theme===t));}
+swatches.forEach(s=>s.onclick=()=>{applyTheme(s.dataset.theme);hideGloss&&hideGloss();});
+applyTheme(loadJSON('k47_theme'));
+
+// ---------- play mode (in-game reference: hides all building controls, shows stats) ----------
+const playBtn=document.getElementById('playBtn');
+function applyPlay(on){playMode=!!on;document.body.classList.toggle('play',playMode);
+  playBtn.textContent=playMode?'✎ Build mode':'▶ Play mode';saveJSON('k47_play',playMode);render();}
+playBtn.onclick=()=>applyPlay(!playMode);
+playMode=!!loadJSON('k47_play');document.body.classList.toggle('play',playMode);
+playBtn.textContent=playMode?'✎ Build mode':'▶ Play mode';
+
+// ---------- faction selector ----------
+const fsel=document.getElementById('factionSel');
+DATA.factions.forEach(f=>{const o=document.createElement('option');o.value=f.id;o.textContent=f.name;fsel.appendChild(o);});
+const savedF=loadJSON('k47_faction');
+const defF=(DATA.factions.find(f=>f.id==='usa')||DATA.factions[0]).id;
+initFaction((savedF&&DATA.factions.some(f=>f.id===savedF))?savedF:defF);
+fsel.value=faction.id;
+fsel.onchange=()=>{saveJSON('k47_faction',fsel.value);initFaction(fsel.value);hideGloss&&hideGloss();render();};
+render();
+</script>
+</body>
+</html>

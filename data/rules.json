@@ -1,0 +1,443 @@
+{
+  "meta": {
+    "game": "Konflikt '47",
+    "version": "JUN 2026",
+    "schema": 5,
+    "rules_source": "Force Creation (Core Rulebook pp.164-171)"
+  },
+  "core_platoons": [
+    {
+      "id": "assault",
+      "name": "Assault Platoon",
+      "is_assault": true,
+      "slots": [
+        {
+          "role": "Platoon Commander",
+          "min": 1,
+          "max": 1,
+          "categories": [
+            "platoon_commander"
+          ]
+        },
+        {
+          "role": "Specialist / Advanced Infantry",
+          "min": 2,
+          "max": 2,
+          "categories": [
+            "infantry_specialist",
+            "infantry_advanced"
+          ]
+        },
+        {
+          "role": "Extra Infantry (Basic allowed)",
+          "min": 0,
+          "max": 2,
+          "categories": [
+            "infantry_specialist",
+            "infantry_advanced",
+            "infantry_basic"
+          ]
+        },
+        {
+          "role": "Medic",
+          "min": 0,
+          "max": 1,
+          "categories": [
+            "medic"
+          ]
+        },
+        {
+          "role": "Forward Observer",
+          "min": 0,
+          "max": 1,
+          "categories": [
+            "forward_observer"
+          ]
+        },
+        {
+          "role": "Sniper Team",
+          "min": 0,
+          "max": 1,
+          "categories": [
+            "sniper_team"
+          ]
+        },
+        {
+          "role": "Anti-tank Team",
+          "min": 0,
+          "max": 1,
+          "categories": [
+            "anti_tank_team"
+          ]
+        },
+        {
+          "role": "Light Mortar Teams",
+          "min": 0,
+          "max": 2,
+          "categories": [
+            "light_mortar_team"
+          ]
+        },
+        {
+          "role": "Transport Vehicle or Tow",
+          "min": 0,
+          "max": 99,
+          "categories": [
+            "transport"
+          ],
+          "note": "Max 1 per Infantry/Artillery unit in the Platoon (enforced)."
+        }
+      ]
+    },
+    {
+      "id": "heavy_weapons",
+      "name": "Heavy Weapons Platoon",
+      "slots": [
+        {
+          "role": "Platoon Commander",
+          "min": 1,
+          "max": 1,
+          "categories": [
+            "platoon_commander"
+          ]
+        },
+        {
+          "role": "Machine Gun or Mortar Teams",
+          "min": 2,
+          "max": 2,
+          "categories": [
+            "machine_gun_team",
+            "mortar_team"
+          ]
+        },
+        {
+          "role": "Machine Gun Teams",
+          "min": 0,
+          "max": 3,
+          "categories": [
+            "machine_gun_team"
+          ]
+        },
+        {
+          "role": "Mortar Teams",
+          "min": 0,
+          "max": 3,
+          "categories": [
+            "mortar_team"
+          ]
+        },
+        {
+          "role": "Anti-tank Teams",
+          "min": 0,
+          "max": 3,
+          "categories": [
+            "anti_tank_team"
+          ]
+        },
+        {
+          "role": "Transport Vehicle or Tow",
+          "min": 0,
+          "max": 99,
+          "categories": [
+            "transport"
+          ],
+          "note": "Max 1 per Infantry/Artillery unit in the Platoon (enforced)."
+        }
+      ]
+    },
+    {
+      "id": "engineer",
+      "name": "Engineer Platoon",
+      "slots": [
+        {
+          "role": "Platoon Commander",
+          "min": 1,
+          "max": 1,
+          "categories": [
+            "platoon_commander"
+          ]
+        },
+        {
+          "role": "Basic/Advanced Infantry (Engineer)",
+          "min": 2,
+          "max": 2,
+          "categories": [
+            "infantry_basic",
+            "infantry_advanced"
+          ],
+          "note": "must have Engineer special rule"
+        },
+        {
+          "role": "Basic/Advanced Infantry (Engineer)",
+          "min": 0,
+          "max": 2,
+          "categories": [
+            "infantry_basic",
+            "infantry_advanced"
+          ],
+          "note": "must have Engineer special rule"
+        },
+        {
+          "role": "Flamethrower Teams",
+          "min": 0,
+          "max": 3,
+          "categories": [
+            "flamethrower_team"
+          ]
+        },
+        {
+          "role": "Transport Vehicle or Tow",
+          "min": 0,
+          "max": 99,
+          "categories": [
+            "transport"
+          ],
+          "note": "Max 1 per Infantry unit in the Platoon (enforced)."
+        }
+      ]
+    },
+    {
+      "id": "artillery",
+      "name": "Artillery Platoon",
+      "slots": [
+        {
+          "role": "Platoon Commander",
+          "min": 1,
+          "max": 1,
+          "categories": [
+            "platoon_commander"
+          ]
+        },
+        {
+          "role": "Field Artillery / AA / Anti-tank Gun",
+          "min": 1,
+          "max": 1,
+          "categories": [
+            "field_artillery",
+            "anti_tank_gun"
+          ]
+        },
+        {
+          "role": "Field Artillery / AA / Anti-tank Gun",
+          "min": 0,
+          "max": 3,
+          "categories": [
+            "field_artillery",
+            "anti_tank_gun"
+          ]
+        },
+        {
+          "role": "Transport Vehicle or Tow",
+          "min": 0,
+          "max": 99,
+          "categories": [
+            "transport"
+          ],
+          "note": "Max 1 per Infantry/Artillery unit in the Platoon (enforced)."
+        }
+      ]
+    },
+    {
+      "id": "armoured",
+      "name": "Armoured Platoon",
+      "slots": [
+        {
+          "role": "Platoon Command Vehicle",
+          "min": 1,
+          "max": 1,
+          "categories": [
+            "armoured_walker",
+            "tank",
+            "tank_destroyer",
+            "assault_gun",
+            "armoured_car"
+          ],
+          "note": "+10 pts if not a Command Vehicle"
+        },
+        {
+          "role": "Vehicle",
+          "min": 1,
+          "max": 1,
+          "categories": [
+            "armoured_walker",
+            "tank",
+            "tank_destroyer",
+            "assault_gun",
+            "armoured_car"
+          ]
+        },
+        {
+          "role": "Vehicle",
+          "min": 0,
+          "max": 3,
+          "categories": [
+            "armoured_walker",
+            "tank",
+            "tank_destroyer",
+            "assault_gun",
+            "armoured_car"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "armoured_walker",
+      "name": "Armoured Walker Platoon",
+      "slots": [
+        {
+          "role": "Armoured Walker",
+          "min": 1,
+          "max": 1,
+          "categories": [
+            "armoured_walker"
+          ],
+          "note": "must be Platoon Command Walker if any optional units chosen"
+        },
+        {
+          "role": "Armoured Walkers",
+          "min": 0,
+          "max": 2,
+          "categories": [
+            "armoured_walker"
+          ]
+        },
+        {
+          "role": "Vehicle",
+          "min": 0,
+          "max": 1,
+          "categories": [
+            "armoured_walker",
+            "tank",
+            "tank_destroyer",
+            "assault_gun",
+            "armoured_car"
+          ]
+        },
+        {
+          "role": "Basic/Advanced Infantry Squads",
+          "min": 0,
+          "max": 2,
+          "categories": [
+            "infantry_basic",
+            "infantry_advanced"
+          ]
+        },
+        {
+          "role": "Specialist Infantry Squad",
+          "min": 0,
+          "max": 1,
+          "categories": [
+            "infantry_specialist"
+          ]
+        },
+        {
+          "role": "Anti-tank Team",
+          "min": 0,
+          "max": 1,
+          "categories": [
+            "anti_tank_team"
+          ]
+        },
+        {
+          "role": "Transport Vehicles",
+          "min": 0,
+          "max": 99,
+          "categories": [
+            "transport"
+          ],
+          "note": "Must carry all non-Fast/Flight infantry; max 1 per Infantry unit (enforced)."
+        }
+      ]
+    },
+    {
+      "id": "recce",
+      "name": "Recce Infantry Platoon",
+      "slots": [
+        {
+          "role": "Platoon Commander",
+          "min": 1,
+          "max": 1,
+          "categories": [
+            "platoon_commander"
+          ]
+        },
+        {
+          "role": "Basic/Advanced Infantry Squad",
+          "min": 1,
+          "max": 1,
+          "categories": [
+            "infantry_basic",
+            "infantry_advanced"
+          ]
+        },
+        {
+          "role": "Basic/Advanced Infantry Squads",
+          "min": 0,
+          "max": 3,
+          "categories": [
+            "infantry_basic",
+            "infantry_advanced"
+          ]
+        },
+        {
+          "role": "Specialist Infantry Squad",
+          "min": 0,
+          "max": 1,
+          "categories": [
+            "infantry_specialist"
+          ]
+        },
+        {
+          "role": "Forward Observer",
+          "min": 0,
+          "max": 1,
+          "categories": [
+            "forward_observer"
+          ]
+        },
+        {
+          "role": "Anti-tank Team",
+          "min": 0,
+          "max": 1,
+          "categories": [
+            "anti_tank_team"
+          ]
+        },
+        {
+          "role": "Transport Vehicles",
+          "min": 0,
+          "max": 99,
+          "categories": [
+            "transport"
+          ],
+          "note": "Must carry all non-Fast/Flight infantry; all Transports gain Recce at +10 each (enforced)."
+        }
+      ]
+    }
+  ],
+  "unit_special_rules": {
+    "Guts": "Hero stat. Spend a point to shift any die roll by ±1 after it's rolled, to return an Order Die to the bag (reactivate a unit within 6\"), or to cheat death (D6 + remaining Guts ≥ 7 keeps the Hero in play).",
+    "Luck": "Hero stat. Spend a point to re-roll a die (one die per point). Can also give the Hero a reprieve when removed as a casualty.",
+    "Rift Mastery": "Hero stat. Grants extra personal Rift Dice, usable for the Hero's own enhancements/weapons or allocated to nearby Rift units.",
+    "Flight": "Can make powered leaps over terrain and enemies during Advance/Run moves, landing in Open Ground.",
+    "Fast": "Moves further than ordinary infantry: 8\" on an Advance, 16\" on a Run.",
+    "Jump": "A Vehicle may jump on Advance/Run Orders: pivot once at the start, then ignore all terrain while moving.",
+    "Heavy": "Strong enough to wield squad-support weapons (LMG, Flamethrower) single-handed, ignoring their Team requirement.",
+    "Infiltrator": "Scout/stealth troops. Gain an extra Cover-save bonus when they have no Advance/Run Order die; often deploy forward.",
+    "Tank Hunters": "Close-assault anti-tank specialists. When winning an Assault against an Armoured Vehicle, damage is resolved as for a dedicated anti-tank weapon.",
+    "Tough Fighters": "Roll one additional die for damage when fighting at Close Quarters.",
+    "Stubborn": "Ignore negative Morale modifiers from Pin Markers when taking a Morale Check.",
+    "Fanatics": "Ignore Pin-Marker Morale penalties (while at least two models remain); they fight rather than flee.",
+    "Amphibious": "Can move forward over deep water at half speed with an Advance (no pivot or reverse while in the water).",
+    "Open-topped": "Open turret/compartment: more exposed to HE and assaults than a fully enclosed vehicle.",
+    "Two-legged": "A two-legged Walker may pivot up to twice (instead of once) when moving forward at Run speed.",
+    "Single-crew Walker": "Operated by a single crew member, limiting how many of its weapons can be used at once.",
+    "Recce": "Light recon vehicle: can reverse at its full Advance rate (e.g. when pulling back) rather than half.",
+    "Command Vehicle": "Adds +1 Morale Value to itself and to friendly Vehicles within 12\" (not cumulative with other bonuses).",
+    "Gun Shield": "A shield protecting the crew, improving their save against fire from the front.",
+    "ATRDs": "US disposable anti-tank rocket launchers (Anti-Tank Rocket Devices). Once per Order, one model may fire an ATRD instead of its normal weapon: 12\", 1 shot, +6 Pen, Shaped Charge. Disposable (may fire all at once, then out of ammo).",
+    "Panzerfausts": "Axis disposable anti-tank rockets. Once per Order, one model may fire a Panzerfaust instead of its normal weapon: 12\", 1 shot, +6 Pen, Shaped Charge. Disposable (may fire all at once, then out of ammo).",
+    "Anti-tank Grenades": "A squad upgrade giving the unit hand-thrown anti-tank grenades — the close-assault anti-tank gear (grenade bundles, sticky bombs and the like) that lets infantry threaten Armoured Vehicles in Close Quarters. It's the same category of weaponry the Tank Hunters rule represents; the core rulebook doesn't give it a separate stat line, so its effect is resolved through the assault / Close Quarters rules.",
+    "Engineers": "Combat engineers: trained for demolitions and clearing obstacles/fortifications, and required to form an Engineer Platoon. The upgrade also unlocks certain equipment options (e.g. an infantry flamethrower) for the squad."
+  }
+}
