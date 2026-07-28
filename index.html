@@ -196,6 +196,12 @@
   .empty{color:var(--dim);font-style:italic;padding:20px;text-align:center}
   .addbar{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
   .foot{color:var(--dim);font-size:11px;text-align:center;margin:24px 0 40px}
+  .refgrp{margin:10px 0}
+  .refgrp h4{margin:0 0 6px;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--accent);
+    border-bottom:1px solid var(--line);padding-bottom:4px}
+  .refrule{font-size:13px;margin:0 0 9px;line-height:1.5}
+  .refrule .rn{font-weight:700;display:block;color:var(--ink)}
+  #rulesSearch{width:100%;margin:2px 0 4px}
   .modal{position:fixed;inset:0;z-index:150;display:flex;align-items:flex-start;justify-content:center;
     background:rgba(20,16,8,.55);padding:40px 14px;overflow:auto}
   .modalcard{background:var(--panel);border:1px solid var(--ink);border-radius:8px;max-width:520px;width:100%;
@@ -228,7 +234,7 @@
       --accent:#333;--accent2:#333;--tablehead:#eee;--shadow:transparent;--framebd:#999;--headborder:#333;
       --topbar:#fff;--headbar:#efefef;--paper:none;--selbg:#eee;}
     body{background:#fff}
-    header,.foot,#toast,#libOverlay,.bar,.addbar,.addctrl,.reqstrip,.buildonly,.armyhead .tw{display:none!important}
+    header,.foot,#toast,#libOverlay,#rulesOverlay,.bar,.addbar,.addctrl,.reqstrip,.buildonly,.armyhead .tw{display:none!important}
     .wrap{max-width:none;padding:0}
     .platoon,.armybox{break-inside:avoid;page-break-inside:avoid;box-shadow:none;border-color:#999}
     .statpanel,.wpntable,.stattable{break-inside:avoid;page-break-inside:avoid}
@@ -263,6 +269,7 @@
         <button id="btnImport">📥 Import from file…</button>
         <button id="btnExport">📤 Export to file</button>
         <button id="btnRules">📖 Rules in body: off</button>
+        <button id="btnRulesRef">📚 Rules reference</button>
         <button id="btnPrint">🖨 Print / PDF</button>
         <button id="btnClear" class="danger">✕ Reset</button>
       </div>
@@ -301,6 +308,13 @@
   <div class="modalcard">
     <div class="modalhd"><span>Saved Forces</span><button class="ghost" id="libClose">✕</button></div>
     <div id="libList" class="liblist"></div>
+  </div>
+</div>
+<div id="rulesOverlay" class="modal" style="display:none">
+  <div class="modalcard" style="max-width:640px">
+    <div class="modalhd"><span>Rules Reference</span><button class="ghost" id="rulesClose">✕</button></div>
+    <div style="padding:10px 14px 0"><input type="text" id="rulesSearch" placeholder="Search rules…"></div>
+    <div id="rulesList" class="liblist" style="max-height:64vh"></div>
   </div>
 </div>
 <div id="toast" class="toast"></div>
@@ -1104,6 +1118,31 @@ btnRules.onclick=()=>applyExpand(!expandRules);
 expandRules=!!loadJSON('k47_expand');btnRules.textContent='📖 Rules in body: '+(expandRules?'on':'off');
 document.getElementById('libClose').onclick=()=>document.getElementById('libOverlay').style.display='none';
 document.getElementById('libOverlay').onclick=e=>{if(e.target.id==='libOverlay')e.target.style.display='none';};
+// ---------- rules reference (every rule that shows an underline+tooltip in the app, in one list) ----------
+function buildRulesRef(filter){
+  const f=(filter||'').trim().toLowerCase();
+  const groups=[['Weapon Special Rules',DATA.weapon_special_rules||{}],
+                ['Unit & Hero Special Rules',DATA.unit_special_rules||{}]];
+  const box=document.getElementById('rulesList');box.innerHTML='';
+  let any=false;
+  groups.forEach(([title,dict])=>{
+    const names=Object.keys(dict).sort((a,b)=>a.localeCompare(b))
+      .filter(n=>!f||n.toLowerCase().includes(f)||(dict[n]||'').toLowerCase().includes(f));
+    if(!names.length)return;
+    any=true;
+    const g=document.createElement('div');g.className='refgrp';g.innerHTML=`<h4>${title}</h4>`;
+    names.forEach(n=>{const d=document.createElement('div');d.className='refrule';
+      d.innerHTML=`<span class="rn">${n}</span>${dict[n]||''}`;g.appendChild(d);});
+    box.appendChild(g);
+  });
+  if(!any)box.innerHTML=`<div class="libempty">No rules match "${filter}".</div>`;
+}
+function showRulesRef(){document.getElementById('rulesSearch').value='';buildRulesRef('');
+  document.getElementById('rulesOverlay').style.display='flex';}
+document.getElementById('btnRulesRef').onclick=showRulesRef;
+document.getElementById('rulesClose').onclick=()=>document.getElementById('rulesOverlay').style.display='none';
+document.getElementById('rulesOverlay').onclick=e=>{if(e.target.id==='rulesOverlay')e.target.style.display='none';};
+document.getElementById('rulesSearch').oninput=e=>buildRulesRef(e.target.value);
 document.getElementById('btnExport').onclick=()=>{const blob=new Blob([JSON.stringify(cleanState(),null,2)],{type:'application/json'});
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(state.name||'force').replace(/[^\w-]+/g,'_')+'.k47.json';a.click();};
 document.getElementById('btnImport').onclick=()=>document.getElementById('fileInput').click();
