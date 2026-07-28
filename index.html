@@ -259,7 +259,7 @@
     <button class="ghost" id="playBtn">▶ Play mode</button></div>
   <div class="bar">
     <label>List</label><input type="text" id="listName" value="Untitled Force">
-    <label>Game size</label><input type="number" id="gameSize" value="1000" min="0" step="50">
+    <label>Game size</label><input type="number" id="gameSize" value="1500" min="0" step="50">
     <span class="spacer"></span>
     <div class="toolswrap">
       <button class="ghost" id="toolsBtn">Tools ▾</button>
@@ -333,7 +333,7 @@ function initFaction(id){
   photos=loadJSON('k47_photos_'+faction.id)||{};
   state=loadJSON('k47_'+faction.id)||freshState();
 }
-function freshState(){return{name:'Untitled Force',gameSize:1000,cc:null,platoons:[]};}
+function freshState(){return{name:'Untitled Force',gameSize:1500,cc:null,platoons:[]};}
 function loadJSON(k){try{const s=localStorage.getItem(k);return s?JSON.parse(s):null;}catch(e){return null;}}
 function saveJSON(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
 function persist(){saveJSON('k47_'+faction.id,state);}
@@ -369,14 +369,23 @@ function unitIcon(cat,cls){
 }
 // thumbnail markup; zoomImg=true lets the image itself open the lightbox (unit rows),
 // false keeps the image's own click (picker menu = select) and only the 🔍 badge enlarges.
-// each unit auto-looks for images/<unit-id>.jpg (or an explicit/override photo); falls back to the tactical symbol if the file isn't there
+// each unit auto-looks for images/<unit-id>.jpg, then images/<unit-id>.webp (or an explicit/override photo);
+// falls back to the tactical symbol if neither file is there
 function thumbHTML(u,zoomImg){
-  const src=photoOf(u)||('images/'+u.id+'.jpg');
+  const explicit=photoOf(u);
+  const src=explicit||('images/'+u.id+'.jpg');
+  const webp=explicit?'':('images/'+u.id+'.webp');
   const nm=(u.name||'').replace(/"/g,'&quot;');
-  return `<span class="thumbwrap" data-cat="${u.category}"><img class="thumb${zoomImg?' zoomable':''}" src="${src}"${zoomImg?` data-full="${src}" data-cap="${nm}"`:''} onerror="thumbFail(this)" alt="">`
+  return `<span class="thumbwrap" data-cat="${u.category}"><img class="thumb${zoomImg?' zoomable':''}" src="${src}"${zoomImg?` data-full="${src}" data-cap="${nm}"`:''}${webp?` data-webp="${webp}"`:''} onerror="thumbFail(this)" alt="">`
     +`<span class="zoomcue" data-full="${src}" data-cap="${nm}" title="Tap to enlarge">🔍</span></span>`;
 }
-function thumbFail(img){const w=img.closest('.thumbwrap');if(!w)return;
+function thumbFail(img){
+  const webp=img.getAttribute('data-webp');
+  if(webp){img.removeAttribute('data-webp');img.src=webp;
+    if(img.hasAttribute('data-full')){img.setAttribute('data-full',webp);
+      const zc=img.closest('.thumbwrap')?.querySelector('.zoomcue');if(zc)zc.setAttribute('data-full',webp);}
+    return;}
+  const w=img.closest('.thumbwrap');if(!w)return;
   const cat=w.getAttribute('data-cat');w.outerHTML=`<div class="thumb ph sym">${unitIcon(cat,'phicon')}</div>`;}
 function openLightbox(src,cap){let lb=document.getElementById('lightbox');
   if(!lb){lb=document.createElement('div');lb.id='lightbox';lb.className='lightbox';
