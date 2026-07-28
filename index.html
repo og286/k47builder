@@ -392,6 +392,9 @@ function openLightbox(src,cap){let lb=document.getElementById('lightbox');
     lb.innerHTML='<img><div class="cap"></div>';lb.onclick=()=>{lb.style.display='none';};
     document.body.appendChild(lb);}
   lb.querySelector('img').src=src;lb.querySelector('.cap').textContent=cap||'';lb.style.display='flex';}
+// the lightbox lives on <body>, outside any dropdown. Menus that close on an outside
+// click must ignore clicks that land on it, or dismissing the zoom also shuts the menu.
+function inLightbox(e){return !!(e.target.closest&&e.target.closest('.lightbox'));}
 document.addEventListener('click',e=>{const z=e.target.closest?e.target.closest('[data-full]'):null;
   if(z){e.stopPropagation();openLightbox(z.getAttribute('data-full'),z.getAttribute('data-cap'));}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){const lb=document.getElementById('lightbox');if(lb)lb.style.display='none';}});
@@ -1003,7 +1006,7 @@ function picker(units){
         saveJSON('k47_photos_'+faction.id,photos);render();}};
     menu.appendChild(r);
   });
-  document.addEventListener('click',e=>{if(!wrap.contains(e.target))menu.style.display='none';});
+  document.addEventListener('click',e=>{if(inLightbox(e))return;if(!wrap.contains(e.target))menu.style.display='none';});
   wrap.append(sel,menu);
   return{el:wrap,value:()=>chosen};
 }
